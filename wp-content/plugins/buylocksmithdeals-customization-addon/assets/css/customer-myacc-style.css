@@ -1,0 +1,286 @@
+.myaccount_dispute_count{
+    background: #d9452b;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    color: white;
+    border-radius:100px;
+    display: inline-block;    
+    text-align: center;
+    line-height:22px;
+        
+}
+
+
+.make_icon_#d9452b{
+    color: #d9452b !important;
+}
+
+
+.make_curcle_icon{
+    width: 20px;
+    height: 20px;
+    border: 1px solid;
+    border-radius: 32px;
+    font-size: 17px;
+    display: table-caption;
+    text-align: center;
+    position: relative;
+    top: 7px;
+}
+
+
+.strong_link{
+    font-weight: 700;
+    font-size: 15px;
+}
+.remove_btn{
+    float: right !important;
+    position: relative !important;
+    top: 10px !important;
+    color: #d9452b !important;
+    cursor: pointer;
+}
+
+.remove_action_icon{
+    margin:  0 !important
+}
+
+.add_more{
+    margin-top: 10px;
+}
+#add_dispute textarea#message {
+    margin-bottom: 15px;
+}
+.dispute_id_area{
+    font-size: 25px;
+    margin-bottom: 20px; 
+    width: 50%;
+    float: left;
+    color: #000;
+}
+.dispute_date_area{
+    font-size: 12px;
+    margin-bottom: 15px;
+    font-weight: 400;
+    width: auto;
+    float: right;
+    text-align: left;
+}
+
+.dispute_detail_area{
+    width: 100%;
+    display:flex;
+    border: 1px solid #eee;
+    padding: 15px;
+    box-sizing: border-box;
+    word-break: break-word;
+}
+.dispute_detail_area label{
+   /* font-weight: 900;*/
+}
+.dispute_show_field{
+    font-weight: 200 !important;
+}
+
+.list_attachment{
+    list-style: square !important;
+}
+
+
+.message_list_area{
+    height: 300px;
+    border:1px solid #eee;
+    padding: 10px;
+    overflow-y: scroll;
+    margin-bottom: 24px;
+    margin-top: 20px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+
+   /* -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;*/
+}
+
+.message_main_area{
+    margin: 10px;
+    width: 85%;
+    float: left;
+    background-color: #eee;
+    padding: 5px;
+    border-radius: 10px
+}
+.message_main_area_self{
+
+    float: right !important;
+    background-color: #d3dbe2 !important;
+
+}
+.message_date_area{
+    float: right;
+    text-align: right;
+    width: auto;
+    font-size: 10px;
+    position: relative;
+    bottom:70px;     
+}
+.message_date_area_botton_down{
+
+    bottom:25px !important;    
+}
+.message_sender_name{
+
+    border: 1px solid;
+    width: 81px;
+    height: 42px;
+    text-align: center;
+    border-radius: 19px;
+    line-height: 17px;
+    position: relative;
+    bottom: 11px;
+    margin-left: -21px;
+    background: #3f85b9;
+    color: white;
+    font-size: 11px;
+    padding:  2px;
+}
+
+.message_main_area .message_area{
+    font-size: 15px;
+    font-weight: 400;
+    padding: 5px;
+    color: #000;
+}
+
+.attachment_area_in_message{
+    background: white;
+    padding: 5px;
+        word-break: break-word;
+}
+.detail_area_dispute_area{
+    margin-top: 60px
+}
+
+
+.height_label{
+    color: #d9452b !important;
+    font-size: 25px !important;
+
+}
+
+form.form-inline {
+    float: right;
+}
+.right-primary-info-custom{
+    width: 100%
+}
+
+.blsd_count_badge_custom{
+    border: 1px solid;
+    border-radius: 25px;
+    background: #d9452b;
+}
+
+.form-group-row {
+    width: 100%;
+}
+.detail_area_dispute_area .form-group {
+    display: flex;
+}
+.detail_area_dispute_area .form-group label {
+    min-width: 200px;
+}
+.area_dispute_by_sub_order {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+.text_area_dispute {
+       display: inline-block;
+    margin-right: 10px;
+    font-weight: 500;
+    color: #000;
+}
+.area_dispute_by_sub_order a button {
+    background-color: #77c84e;
+    border: 0;
+    color: #fff;
+    border-radius: 4px;
+    padding: 5px 15px;
+    cursor: pointer;
+    float: right;
+}
+
+
+.input_file_area_main{
+    margin-top: 10px
+}
+.btn-primary{
+    margin-bottom: 10px;
+    color: white;
+    background: #d9452b;
+    border: 1px solid #d9452b;
+    height: 30px;
+    box-shadow: 0px 2px 7px #ddd;
+    border-radius: 3px;  
+    cursor: pointer;
+}
+#_sale_price {
+    margin-bottom: 10px;
+    color: white;
+    background: #77c84e;
+    border: 1px solid #77c84e;
+    height: 30px;
+    box-shadow: 0px 2px 7px #ddd;
+    border-radius: 3px;
+}
+
+#_sale_price{
+    margin-top:15px;
+}
+.btn-primary:hover, #_sale_price:hover {
+    margin-bottom: 10px;
+    color: white;
+    background: #eb3515;
+    border: 1px solid #eb3515;
+    height: 30px;
+    box-shadow: 0px 2px 7px 1px #888888;
+    border-radius: 3px;
+/*    background-color: #bfc3c6;*/
+}
+
+
+.dispute_show_field ul.list_attachment {
+    margin-left: 15px;
+}
+.dispute_show_field ul.list_attachment li a {
+    color: #0569a3;
+}
+input#attachment {
+    border: 1px solid #ddd;
+    padding: 6px;
+    width: 90%;
+    border-radius: 4px;
+}   
+.taxonomy-dropdown.product_cat-wrapper .select2-container,
+.taxonomy-dropdown.location-wrapper .select2-container{
+    width: 100% !important;
+}
+.woocommerce-thankyou-order-received {
+    font-size: 22px;
+}
+
+@media (max-width:767px){
+    .dispute_id_area, .dispute_date_area {
+        width: 100%;
+        float: none;
+        padding-left: 15px;
+    }
+    .detail_area_dispute_area .form-group {
+        display: block;
+    }
+    .detail_area_dispute_area {
+        margin-top: 20px;
+        padding-left: 15px;
+    }
+}

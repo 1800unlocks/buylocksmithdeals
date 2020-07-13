@@ -1,0 +1,10 @@
+1. Assign same service to multiple vendor.
+	a. check filters in vendor dashboard.
+2. Tax class selection on edit product.
+3. Booking plugin.
+4. Email on order complete for rating. after that another email asking to leave additional reviews on that vendors other social media accounts like google and Facebook.
+5. Emails on diffrent dispute action
+
+
+
+

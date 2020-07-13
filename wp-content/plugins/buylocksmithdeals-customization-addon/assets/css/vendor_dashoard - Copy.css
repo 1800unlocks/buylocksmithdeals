@@ -1,0 +1,176 @@
+.make_icon_red{
+    color: red !important;
+}
+
+
+.make_curcle_icon{
+    width: 20px;
+    height: 20px;
+    border: 1px solid;
+    border-radius: 32px;
+    font-size: 17px;
+    display: table-caption;
+    text-align: center;
+    position: relative;
+    top: 7px;
+}
+
+
+.strong_link{
+    font-weight: 700;
+    font-size: 15px;
+}
+.remove_btn{
+    float: right !important;
+    position: relative !important;
+    top: 10px !important;
+    color: red !important;
+
+}
+
+.remove_action_icon{
+    margin:  0 !important
+}
+
+.add_more{
+    margin-top: 10px;
+}
+
+.dispute_id_area{
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+    width:26%;
+    float: left;
+}
+.dispute_date_area{
+    font-size:13px;
+    margin-bottom: 15px;
+    font-weight: 400;
+    width: auto;
+    float: right;
+    text-align: left;
+}
+
+.dispute_detail_area{
+    width: 100%;
+    display:flex
+}
+.dispute_detail_area label{
+    font-weight: 900;
+}
+.dispute_show_field{
+    font-weight: 200 !important;
+}
+
+.list_attachment{
+    list-style: square !important;
+}
+
+
+.message_list_area{
+    height: 300px;
+    border:2px solid #ccc;
+    padding: 10px;
+    overflow-y: scroll;
+    margin-bottom: 24px;
+
+   /* -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;*/
+}
+
+.message_main_area{
+    margin: 10px;
+    width: 85%;
+    float: left;
+    background-color: #eee;
+    padding: 5px;
+    border-radius: 10px
+}
+.message_main_area_self{
+
+    float: right !important;
+    background-color: #d3dbe2 !important;
+
+}
+.message_date_area{
+    float: right;
+    text-align: right;
+    width: 50%;
+    font-size: 10px;
+    position: relative;
+    bottom: 60px;     
+}
+.message_date_area_botton_down{
+
+    bottom: 19px !important;    
+}
+.message_sender_name{
+
+    border: 1px solid;
+    width: 81px;
+    height: 42px;
+    text-align: center;
+    border-radius: 19px;
+    line-height: 17px;
+    position: relative;
+    bottom: 11px;
+    margin-left: -21px;
+    background: #3f85b9;
+    color: white;
+    font-size: 11px;
+    padding: 2px;
+}
+
+.message_main_area .message_area{
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.attachment_area_in_message{
+    background: white;
+    padding: 5px;
+}
+.detail_area_dispute_area{
+    margin-top: 60px
+}
+
+
+.height_label{
+    color: red !important;
+    font-size:18px !important;
+
+}
+
+form.form-inline {
+    float: right;
+}
+.right-primary-info-custom{
+    width: 100%
+}
+
+.blsd_count_badge_custom{
+    border: 1px solid;
+    border-radius: 25px;
+    background: red;
+}
+
+.form-group-row {
+    width: 100%;
+}
+
+@media (max-width:767px){
+    .dispute_id_area, .dispute_date_area{
+        width: 100%;
+        float: none;
+    }
+    
+    .detail_area_dispute_area {
+        margin-top: 20px;
+    }
+    .message_date_area{
+        width: auto;
+    }
+}

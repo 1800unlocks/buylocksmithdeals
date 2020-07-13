@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+
+body{
+	font-family: 'Montserrat', sans-serif;
+	font-weight:400;
+}
+
+
+.owl-slider .owl-nav button {
+  position: absolute;
+  top: 50%;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+}
+.owl-slider  .owl-carousel .owl-nav.disabled {
+    display: block;
+}
+.owl-slider  .owl-nav button.owl-prev {
+    left: 5px;    
+}
+.owl-slider .owl-nav button.owl-next {
+  right: 5px;
+}
+.owl-slider .owl-nav button.owl-prev span,
+.owl-slider .owl-nav button.owl-next span {
+    font-size: 51px;
+     color: #7ac755;
+    line-height: 35px;
+    padding: 0;
+    margin: 0;
+}
+.owl-slider .owl-nav button.owl-prev ,
+.owl-slider .owl-nav button.owl-next  {
+    background: #fff !important;
+    width: 40px;
+    height: 40px;
+    padding: 0 !important;
+	border-radius:4px;
+}
+
+ 
+ 
+ 
+ 
+.owl-slider .owl-nav button {
+    position: absolute;
+    top: 27%;
+    transform: translateY(-50%); 
+}
+ 
+.owl-slider .owl-nav button:focus {
+    outline: none;
+}
+.owl-slider .owl-carousel .owl-item img {   
+	max-height: 268px;
+	min-height: 268px;
+	width:auto;
+}
+
+.buy-now-btn {
+    /*position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	opacity: 0;
+	transition: all 0.5s ease;*/
+}
+.prd-image:hover .buy-now-btn{
+	opacity: 1;
+	transition: all 0.5s ease;
+}
+
+.prd-image{
+    position: relative;
+}
+.buy-now-btn {
+    background: #f7f8fa;
+    padding: 10px;
+    text-align: right;
+}
+.buy-now-btn a{
+    background: #7ac755;
+    display: inline-block;
+    padding:5px 10px;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+.owl-slider .content{ 
+	/*padding:20px;*/
+}
+.owl-slider .content h2 {    
+    font-size: 18px;
+    font-weight: 500;
+    margin:0;
+    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.owl-slider span.price{
+    font-size: 14px;
+    color: #909090;
+    display: block;
+    margin-top: 8px;
+    margin: 10px 20px;
+    font-weight: 400;
+}
+.owl-slider .content p {
+    font-size: 14px;
+    color: #999;
+    margin: 0 20px 20px;
+}
+.owl-slider{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.owl-slider  .item{
+    border: 1px solid #ddd;
+    border-radius: 6px; 
+    border-radius: 4px;
+}
+
+.discout-today-label {
+    text-align: right;
+}
+.discout-today-label span{
+    background: #7ac755;
+    display: inline-block;
+    padding: 5px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+}
+.owl-slider span.price b{
+    font-size:22px;
+    color: #000;
+    font-weight:600;
+	margin-left:5px;
+}
+.owl-slider .content h2{
+    border-left: 3px solid #7ac755;
+    padding: 25px 10px;
+    margin: 0 10px;
+    margin-top: -16px;
+    font-weight: 700;
+}
+
+.owl-slider .item{
+  min-height:484px;
+}
+.owl-slider .owl-carousel .owl-item img{
+  width:100%;
+  object-fit:cover;
+}
+.prd-image{
+  margin-bottom:5px;
+}
+.buy-now-btn { 
+    position: absolute;
+    bottom: 1px;
+    left: 1px; 
+    right: 1px;
+}

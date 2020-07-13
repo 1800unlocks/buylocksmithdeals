@@ -1,0 +1,351 @@
+.site-logo.text-center.pos-middle {
+    font-size: 13px;
+}
+.make_icon_red{
+    color: red !important;
+}
+
+
+.make_curcle_icon{
+    width: 20px;
+    height: 20px;
+    border: 1px solid;
+    border-radius: 32px;
+    font-size: 17px;
+    display: table-caption;
+    text-align: center;
+    position: relative;
+    top: 7px;
+}
+
+
+.strong_link{
+    font-weight: 700;
+    font-size: 15px;
+}
+.remove_btn{
+    float: right !important;
+    position: relative !important;
+    top: 10px !important;
+    color: red !important;
+
+}
+
+.remove_action_icon{
+    margin:  0 !important
+}
+
+.add_more{
+    margin-top: 10px;
+}
+
+.dispute_id_area{
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+    width:26%;
+    float: left;
+    font-weight: 400;
+    color: #000;
+}
+.dispute_date_area{
+    font-size:13px;
+    margin-bottom: 15px;
+    font-weight: 400;
+    width: auto;
+    float: right;
+    text-align: left;
+    color: #333;
+}
+
+.dispute_detail_area{
+    width: 100%;
+    display:flex
+}
+.dispute_detail_area label{
+    font-weight: 900;
+    padding-left: 0px;
+    color: #000;
+}
+.dispute_show_field{
+    font-weight: 200 !important;
+}
+
+.list_attachment{
+    list-style: square !important;
+}
+
+
+.message_list_area{
+    height: 300px;
+    /* border:2px solid #ccc;*/
+    padding: 10px;
+    overflow-y: scroll;
+    margin-bottom: 24px;
+    font-family: 'Roboto', sans-serif;
+    /* -moz-box-shadow:    inset 0 0 10px #000000;
+     -webkit-box-shadow: inset 0 0 10px #000000;
+     box-shadow:         inset 0 0 10px #000000;*/
+}
+
+.message_main_area{
+    margin: 10px;
+    width: 85%;
+    float: left;
+    background-color: #eee;
+    padding: 5px;
+    border-radius: 10px
+}
+.message_main_area_self{
+
+    float: right !important;
+    background-color: #d3dbe2 !important;
+
+}
+.message_date_area{
+    float: right;
+    text-align: right;
+    width: 50%;
+    font-size: 10px;
+    position: relative;
+    bottom: 60px;     
+}
+.message_date_area_botton_down{
+
+    bottom: 19px !important;    
+}
+.message_sender_name{
+
+    border: 1px solid;
+    width: 81px;
+    height: 42px;
+    text-align: center;
+    border-radius: 19px;
+    line-height: 17px;
+    position: relative;
+    bottom: 11px;
+    margin-left: -21px;
+    background: #3f85b9;
+    color: white;
+    font-size: 11px;
+    padding: 2px;
+}
+
+.message_main_area .message_area{
+    font-size: 14px;
+    font-weight: 400;
+    padding: 5px;
+    line-height: 24px;
+    color: #333;
+}
+
+.attachment_area_in_message{
+    background: white;
+    padding: 5px;
+    word-break: break-word;
+}
+.detail_area_dispute_area{
+    margin-top: 60px
+}
+
+
+.height_label{
+    color: red !important;
+    font-size:18px !important;
+
+}
+
+form.form-inline {
+    float: right;
+}
+.right-primary-info-custom{
+    width: 100%
+}
+
+.blsd_count_badge_custom{
+    border: 1px solid;
+    border-radius: 25px;
+    background: red;
+}
+
+.form-group-row {
+    width: 100%;
+}
+
+.image_loader img {
+    width: 50px;
+    margin: 0 auto;
+    opacity: 0.7;
+    z-index: 9999999;
+    position: relative;
+
+}
+.image_loader {
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+.error{
+    color: red;
+}
+
+
+/***  11-10-2019 ***/
+.detail_area_dispute_area  ul.list_attachment li {
+    margin-bottom: 5px;
+    margin-left: 18px;
+}
+.wcmp_black_btn{
+    border-radius: 4px !important;
+}
+div#wcmp-vendor-orders_filter input[type="search"] {
+    height: 37px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+div#wcmp-vendor-orders_paginate .paginate_button{
+    border: 1px solid #c5c5c5;
+    padding: 5px 20px;
+    font-size: 16px;
+}
+div#wcmp-vendor-orders_paginate .paginate_button a{
+    color:#777;
+}
+div#wcmp-vendor-orders_paginate a.paginate_button.current {
+    background: #3f85b9;
+    color: #fff;
+    border-color: #3f85b9;
+}
+
+
+.post_title_detail_page {
+    border-bottom: 1px solid #bfc3c4;
+    margin-bottom: 14px;
+    width: 100%;
+}
+
+
+/***  11-10-2019 ***/
+
+
+@media (max-width:767px){
+    .dispute_id_area, .dispute_date_area{
+        width: 100%;
+        float: none;
+    }
+
+    .detail_area_dispute_area {
+        margin-top: 20px;
+    }
+    .message_date_area{
+        width: auto;
+    }
+    .dispute_show_field{
+        padding-left: 0;
+    }
+
+    div#wcmp-vendor-orders_info {
+        height: 50px;
+    }
+}
+
+
+@media (max-width:480px){
+
+
+    .vend-disp-list-form .date-inp-wrap .hasDatepicker{
+        width: 100%;
+    }
+    .vend-disp-list-form   button.wcmp_black_btn.btn.btn-default {
+        margin-top: 10px;
+    }
+    div#wcmp-vendor-orders_wrapper select, div#wcmp-vendor-orders_wrapper label{
+        width: 100%;
+        display: block;    
+        text-align: center;
+    }
+    div#wcmp-vendor-orders_wrapper select{
+        margin-left: 0px;
+        margin-top: 8px;    
+    }
+
+
+
+
+
+    /* Force table to not be like tables anymore */
+    table.vendor-dispute-list thead,
+    table.vendor-dispute-list tbody,
+    table.vendor-dispute-list th,
+    table.vendor-dispute-list td,
+    table.vendor-dispute-list tr{
+        display: block;
+    }
+
+    table.vendor-dispute-list thead{
+        display: none;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    table.vendor-dispute-list tbody tr th{
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    table.vendor-dispute-list tr {
+        margin: 0 0 1rem 0;
+    }
+
+    table.vendor-dispute-list  tr:nth-child(odd) {
+        /* background: #ccc;*/
+    }
+
+    table.vendor-dispute-list	td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50% !important;
+        word-break: break-word !important;
+        white-space: normal;
+        padding: 5px;
+        text-align: left !important;
+    }
+
+    table.vendor-dispute-list td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 8px;
+        left: 15px;
+        width: 45%;
+        padding-right: 10px;
+        font-weight: 600;
+        color: #333;
+        text-align: left;
+    }
+
+
+
+    table.vendor-dispute-list  td:nth-of-type(1):before { content: "Select"; }
+    table.vendor-dispute-list  td:nth-of-type(2):before { content: "Dispute ID"; }
+    table.vendor-dispute-list  td:nth-of-type(3):before { content: "Title"; }
+    table.vendor-dispute-list  td:nth-of-type(4):before { content: "Status"; }
+    table.vendor-dispute-list  td:nth-of-type(5):before { content: "Date"; }
+    table.vendor-dispute-list  td:nth-of-type(6):before { content: "Action"; } 
+
+
+
+
+
+
+
+}
+

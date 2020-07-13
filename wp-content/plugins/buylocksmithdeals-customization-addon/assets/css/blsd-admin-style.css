@@ -1,0 +1,532 @@
+
+    .make_icon_red{
+        color: red !important;
+    }
+
+
+    .make_curcle_icon{
+        width: 20px;
+        height: 20px;
+        border: 1px solid;
+        border-radius: 32px;
+        font-size: 17px;
+        display: table-caption;
+        text-align: center;
+        position: relative;
+        top: 7px;
+    }
+
+
+    .strong_link{
+        font-weight: 700;
+        font-size: 15px;
+    }
+    .remove_btn{
+        float: right !important;
+        position: relative !important;
+        top: 30px !important;
+        color: red !important;
+
+    }
+
+    .remove_action_icon{
+        margin:  0 !important
+    }
+
+    .add_more{
+        margin-top: 10px;
+    }
+
+    .dispute_id_area{
+        font-size: 25px;
+        margin-bottom: 20px;
+        font-weight: bolder;
+        width: 50%;
+        float: left;
+    }
+    .dispute_date_area{
+        font-size: 12px;
+        margin-bottom: 15px;
+        font-weight: 400;
+        width: 20%;
+        float: right;
+        text-align: left;
+    }
+
+	.detail_area_dispute_area label {
+		font-size: 15px;
+	}
+
+    .dispute_detail_area{
+        width: 100%;
+        display:flex
+    }
+    .dispute_detail_area label{
+        font-weight:700;
+    }
+    .dispute_show_field{
+        font-weight:400 !important;
+		padding: 12px 0;
+		font-size: 15px;
+		color: #000;
+    }
+
+    .list_attachment{
+        list-style: square !important;
+    }
+
+
+    .message_list_area{
+       height: 300px;
+        border:2px solid #ccc;
+        padding: 10px;
+        overflow-y: scroll;
+        margin-bottom: 24px;
+
+       /* -moz-box-shadow:    inset 0 0 10px #000000;
+        -webkit-box-shadow: inset 0 0 10px #000000;
+        box-shadow:         inset 0 0 10px #000000;*/
+    }
+
+    .message_main_area{
+        margin: 10px;
+        width: 85%;
+        float: left;
+        background-color: #ddd;
+        padding: 5px;
+        border-radius: 10px
+    }
+    .message_main_area_self{
+
+        float: right !important;
+        background-color: #d3dbe2 !important;
+
+    }
+    .message_date_area{
+        float: right;
+        text-align: right;
+        width: auto;
+        font-size: 11px;
+        position: relative;
+        bottom:65px;     
+    }
+    .message_date_area_botton_down{
+
+        bottom:22px !important;    
+    }
+    .message_sender_name{
+
+        border: 1px solid;
+        width: 81px;
+        height: auto;
+        text-align: center;
+        border-radius: 19px;
+        line-height: 17px;
+        position: relative;
+        bottom: 11px;
+        margin-left: -21px;
+        background: #3f85b9;
+        color: white;
+        font-size: 11px;
+        padding: 2px;
+    }
+
+    .message_main_area .message_area{
+        font-size: 15px;
+        font-weight: 500;
+        padding: 5px;
+    }
+
+    .attachment_area_in_message{
+        padding: 0 5px;
+    }
+	.attachment_area_in_message a {
+		color: #0037ff;
+		font-size: 13px;
+	}
+    .detail_area_dispute_area{
+        margin-top: 60px
+    }
+	.attachment_area_in_message p {
+		padding: 0;
+		margin: 0;
+	}
+	
+	svg.dashicon.dashicons-external.components-external-link__icon {
+		width: 1.4em;
+		height: 1.4em;
+		margin: -.2em .1em 0;
+		vertical-align: middle;
+		fill: currentColor;
+		outline: none;
+	}
+	
+	ul.list_attachment li {
+		list-style: none;
+	}
+	.disput_css{
+		width:100%;
+	}
+	
+	.label_form_show {
+		width: 35%;
+		display: inline-block;
+		margin-top:10px;
+		font-size: 14px;
+	}
+	.input_type_form {
+		width: 60%;
+		display: inline-block;
+		vertical-align: top;
+		margin-top:10px;
+	}
+		
+	textarea#message {
+		width: 100%;
+		height: 80px;
+	}
+	select#who_won_user_id {
+		width: 100%;
+	}
+	select#status {
+		width: 100%;
+	}
+	
+	input#attachment {
+		width: 100%;
+		border: 1px solid #ddd;
+		padding: 6px;
+		border-radius: 4px;
+	}
+        
+        
+        .success-message.btn-success {
+    padding: 10px 0;
+    color: green;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.btn-danger.error_message_area{
+		color:red;
+}
+    
+ .form-group-row {
+    width: 100%;
+}
+.detail_area_dispute_area .form-group {
+    display: flex;
+}
+.detail_area_dispute_area .form-group label {
+    min-width: 200px;
+}
+    
+    
+    
+/******* 11-10-2019 ********/
+    
+.form-group-row.disput_css {
+    background: #fff;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
+
+.dispute_id_area {
+    color: #000;
+    font-weight: 400;
+}
+.dispute_detail_area label {
+    font-weight: 400 !important;
+    color: #000;
+}
+
+.dispute_show_field ul.list_attachment {
+    margin-top: 0;
+}
+
+
+.message_list_area {    
+    border: 0;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    background: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.message_main_area{
+    border-radius: 20px;  
+    margin: 10px 10px 20px;
+    background-color: #f1f1f1;
+}
+
+.message_main_area .message_area {
+    font-size: 14px;    
+    font-weight: 400;
+    color: #000;
+}
+.message_main_area_self {   
+    background-color: #e6edf3 !important;
+}
+.attachment_area_in_message a {
+    color: #0569a3;
+}
+
+form#add_dispute {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    font-family: 'Roboto', sans-serif;
+}
+form#add_dispute  .label_form_show {
+    color: #000;
+}
+
+form#add_dispute  input#_sale_price {
+    background: #77c84e;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 4px;
+    border: 0;
+    font-weight: 500;
+        float: right;
+    margin-top: 10px;
+}
+
+form#add_dispute  select#status, form#add_dispute  #who_won_user_id {
+    height: 45px;
+    border-radius: 4px;
+    box-shadow: none;
+}
+form#add_dispute  textarea#message{
+  border-radius: 4px;
+}
+
+form#add_dispute  button.add_more{
+    padding: 10px 15px !important;
+    display: inline-block;
+    color: #000 !important;
+    border-radius: 4px !important;
+    background-color: #fff !important;
+}
+
+ 
+    
+/******* 11-10-2019 ********/  
+    
+    
+    
+@media (max-width:767px){
+    .dispute_id_area, .dispute_date_area {
+        width: 100%;
+        float: none;
+    }
+    .detail_area_dispute_area .form-group {
+        display: block;
+    }
+    .detail_area_dispute_area {
+        margin-top: 20px; 
+    }
+    .label_form_show{
+        width: 100%;
+        display: block;
+    }
+    .input_type_form {
+        width: 100%;
+    }
+}    
+
+/******* 11-10-2019 ********/  
+    
+.report_inner_area li.container_product {
+    margin-bottom: 15px;
+}
+    
+.report_inner_area{
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 15px !important;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}    
+.report_inner_area  input[type="submit"] {
+    background: #77c84e;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 4px;
+    border: 0;
+    font-weight: 500;
+    text-transform: capitalize;
+} 
+.report_inner_area li.container_product {
+    position: relative;
+    padding-left: 25px;
+}
+.report_inner_area li.container_product input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 5px;
+} 
+    
+@media screen and (max-width: 782px){
+   .report_inner_area li.container_product {
+        
+        padding-left:30px;
+    } 
+   .report_inner_area li.container_product  input[type=checkbox]{
+        height: 20px;
+        width: 20px;
+       top: 8px;
+    }
+}
+    
+/******* 11-10-2019 ********/  
+    
+    
+	.deal_table_list {
+		width: 45%;
+		border: 1px solid #fff5f5;
+		margin-right: 5px;
+		padding: 5px;
+		margin: 0 auto;
+		box-shadow: 0px 0px 1px 1px #d2d2d2;
+		border-radius: 4px;
+	}
+    .deal_table_list_main{
+        width: 100%;
+    display: flex;
+    margin-top: 10px;
+    }
+    table{
+        font-size: 15px
+    }
+    .nodata_message{
+        display: none
+    }
+    .deal_table_list_table{
+        display: none
+    }
+    .image_loader{
+        display: none
+    }
+	
+	
+	
+    /* css start 15-10-2019*/
+	  .char_area_part {
+		width: 100%;
+		max-width: 49%;
+		display: inline-block;
+	}
+
+	.count_title {
+		font-size: 16px;
+		padding-bottom: 8px;
+		color: #000;
+	}
+
+	.show_count_area_main {
+		width: 32%;
+		display: inline-block;
+		text-align: center;
+	}
+
+	.icon-count {
+		padding:0 0 15px;
+	}
+	.show_count_area .dashicons {
+		border: 1px solid #00adff;
+		border-radius: 50%;
+		text-align: center;
+		padding: 12px;
+		background: #0073aa;
+		color: #fff;
+	}
+	.count_number {
+		font-size: 17px;
+		color: #127700;
+		font-weight: 600;
+		font-family: inherit;
+	}
+	.image_loader img {
+		width: 50px;
+		margin: 0 auto;
+	}
+	.image_loader {
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+	}
+
+	@media(max-width:560px){
+		.deal_table_list_main {
+			display: initial;
+		}
+		.deal_table_list {
+			width: 100%;
+			border: 1px solid #0073aa;
+			margin-right: 5px;
+			padding: 5px;
+			margin-bottom:2px;
+		}
+		
+	}
+	
+	
+	/*css end 15-10-2019*/
+	
+	
+    .float_area_right{
+        
+    }
+    
+    report-inner-area-2-column{
+        
+    display: flex !important;
+    width: 100%;
+    height: 300px !important;
+    
+    }
+    
+    
+    .paginationCustom {
+            margin-bottom: 12px;
+    }
+    .paginationCustom .current {
+    /* width: 32px !important; */
+  /*  margin: 3px;
+    border: 1px solid;
+    padding: 4px 8px;
+    color: white;
+    background: #ccc;*/
+}
+span.current a {
+    font-weight: 500;
+    background: #5273aa;
+    color: #fff;
+    border: 1px solid #5273aa;
+}
+    .paginationCustom a {
+    /* width: 32px !important; */
+ margin: 0 3px;
+    border: 1px solid;
+    padding: 6px 12px;
+    color: #5273aa;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.vendor_products_table .paginationCustom {
+    position: absolute;
+    top: -45px;
+    right: 0;
+}
+.vendor_products_table {
+    position: relative;
+}
