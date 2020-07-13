@@ -70,7 +70,7 @@ function blsd_set_global_class_instance() {
 
 add_action( 'widgets_init', 'my_register_footer', 200 );
 function my_register_footer(){
-    
+
         register_sidebar(
             array(
                 'id' => 'dynamic_footer',
@@ -98,9 +98,9 @@ function wpa3396_page_template( $page_template )
     }
     if ( is_page( 'preview' ) ) {
         $page_template = BUYLOCKSMITH_DEALS_PLUGIN_DIR . '/vendor-dashboard-custom-page/preview-shortcode.php';;
-        
+
     }
-    
+
     return $page_template;
 }
 
@@ -121,7 +121,7 @@ function test_commission(){
             $vendor = get_wcmp_vendor_by_term($vendor_term_id);
             if ($vendor) {
                 $payment_method = get_user_meta($vendor->id, '_vendor_payment_mode', true);
-                if($_REQUEST['test'] == '123456')
+                if(!isset($_REQUEST) && $_REQUEST['test'] == '123456')
                 {
                     echo $vendor->id."<br>";
                 }
@@ -135,7 +135,7 @@ function test_commission(){
                 }
             }
         }
-    if($_REQUEST['test'] == '123456')
+    if(!isset($_REQUEST) && $_REQUEST['test'] == '123456')
     {
         echo "<pre>";
         print_r($commission_to_pay);
