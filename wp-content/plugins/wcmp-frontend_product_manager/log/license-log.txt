@@ -1,0 +1,1101 @@
+Target url: https://wc-marketplace.com?wc-api=upgrade-api&request=pluginupdatecheck&plugin_name=wcmp-frontend_product_manager%2Fwcmp_frontend_product_manager.php&version=3.0.0&product_id=wcmp-frontend-product-manager&api_key=&activation_email=&instance=LHsNghaPWbE7&domain=http%3A%2F%2Flocalhost%2Fwp1013&software_version=3.0.0&extra=
+Array
+(
+    [headers] => Requests_Utility_CaseInsensitiveDictionary Object
+        (
+            [data:protected] => Array
+                (
+                    [server] => nginx
+                    [date] => Fri, 01 Mar 2019 04:40:25 GMT
+                    [content-type] => text/html; charset=UTF-8
+                    [content-length] => 168
+                    [expires] => Wed, 11 Jan 1984 05:00:00 GMT
+                    [pragma] => no-cache
+                    [wpe-backend] => apache
+                    [x-wpe-loopback-upstream-addr] => 127.0.0.1:6783
+                    [x-cacheable] => SHORT
+                    [vary] => Accept-Encoding,Cookie
+                    [cache-control] => max-age=600, must-revalidate
+                    [x-cache] => MISS
+                    [x-pass-why] => 
+                    [x-cache-group] => normal
+                    [accept-ranges] => bytes
+                    [x-type] => default
+                )
+
+        )
+
+    [body] => 
+
+O:8:"stdClass":6:{s:4:"slug";s:0:"";s:6:"plugin";s:0:"";s:11:"new_version";s:0:"";s:3:"url";s:0:"";s:7:"package";s:0:"";s:6:"errors";a:1:{s:6:"no_key";s:6:"no_key";}}
+    [response] => Array
+        (
+            [code] => 200
+            [message] => OK
+        )
+
+    [cookies] => Array
+        (
+        )
+
+    [filename] => 
+    [http_response] => WP_HTTP_Requests_Response Object
+        (
+            [response:protected] => Requests_Response Object
+                (
+                    [body] => 
+
+O:8:"stdClass":6:{s:4:"slug";s:0:"";s:6:"plugin";s:0:"";s:11:"new_version";s:0:"";s:3:"url";s:0:"";s:7:"package";s:0:"";s:6:"errors";a:1:{s:6:"no_key";s:6:"no_key";}}
+                    [raw] => HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 01 Mar 2019 04:40:25 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 168
+Connection: close
+Expires: Wed, 11 Jan 1984 05:00:00 GMT
+Pragma: no-cache
+WPE-Backend: apache
+X-WPE-Loopback-Upstream-Addr: 127.0.0.1:6783
+X-Cacheable: SHORT
+Vary: Accept-Encoding,Cookie
+Cache-Control: max-age=600, must-revalidate
+X-Cache: MISS
+X-Pass-Why: 
+X-Cache-Group: normal
+Accept-Ranges: bytes
+X-Type: default
+
+
+
+O:8:"stdClass":6:{s:4:"slug";s:0:"";s:6:"plugin";s:0:"";s:11:"new_version";s:0:"";s:3:"url";s:0:"";s:7:"package";s:0:"";s:6:"errors";a:1:{s:6:"no_key";s:6:"no_key";}}
+                    [headers] => Requests_Response_Headers Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [server] => Array
+                                        (
+                                            [0] => nginx
+                                        )
+
+                                    [date] => Array
+                                        (
+                                            [0] => Fri, 01 Mar 2019 04:40:25 GMT
+                                        )
+
+                                    [content-type] => Array
+                                        (
+                                            [0] => text/html; charset=UTF-8
+                                        )
+
+                                    [content-length] => Array
+                                        (
+                                            [0] => 168
+                                        )
+
+                                    [expires] => Array
+                                        (
+                                            [0] => Wed, 11 Jan 1984 05:00:00 GMT
+                                        )
+
+                                    [pragma] => Array
+                                        (
+                                            [0] => no-cache
+                                        )
+
+                                    [wpe-backend] => Array
+                                        (
+                                            [0] => apache
+                                        )
+
+                                    [x-wpe-loopback-upstream-addr] => Array
+                                        (
+                                            [0] => 127.0.0.1:6783
+                                        )
+
+                                    [x-cacheable] => Array
+                                        (
+                                            [0] => SHORT
+                                        )
+
+                                    [vary] => Array
+                                        (
+                                            [0] => Accept-Encoding,Cookie
+                                        )
+
+                                    [cache-control] => Array
+                                        (
+                                            [0] => max-age=600, must-revalidate
+                                        )
+
+                                    [x-cache] => Array
+                                        (
+                                            [0] => MISS
+                                        )
+
+                                    [x-pass-why] => Array
+                                        (
+                                            [0] => 
+                                        )
+
+                                    [x-cache-group] => Array
+                                        (
+                                            [0] => normal
+                                        )
+
+                                    [accept-ranges] => Array
+                                        (
+                                            [0] => bytes
+                                        )
+
+                                    [x-type] => Array
+                                        (
+                                            [0] => default
+                                        )
+
+                                )
+
+                        )
+
+                    [status_code] => 200
+                    [protocol_version] => 1.1
+                    [success] => 1
+                    [redirects] => 0
+                    [url] => https://wc-marketplace.com/?wc-api=upgrade-api&request=pluginupdatecheck&plugin_name=wcmp-frontend_product_manager%2Fwcmp_frontend_product_manager.php&version=3.0.0&product_id=wcmp-frontend-product-manager&api_key=&activation_email=&instance=LHsNghaPWbE7&domain=http%3A%2F%2Flocalhost%2Fwp1013&software_version=3.0.0&extra=
+                    [history] => Array
+                        (
+                        )
+
+                    [cookies] => Requests_Cookie_Jar Object
+                        (
+                            [cookies:protected] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [filename:protected] => 
+            [data] => 
+            [headers] => 
+            [status] => 
+        )
+
+)
+
+---------------
+Array
+(
+    [headers] => Requests_Utility_CaseInsensitiveDictionary Object
+        (
+            [data:protected] => Array
+                (
+                    [server] => nginx
+                    [date] => Fri, 01 Mar 2019 04:40:25 GMT
+                    [content-type] => text/html; charset=UTF-8
+                    [content-length] => 168
+                    [expires] => Wed, 11 Jan 1984 05:00:00 GMT
+                    [pragma] => no-cache
+                    [wpe-backend] => apache
+                    [x-wpe-loopback-upstream-addr] => 127.0.0.1:6783
+                    [x-cacheable] => SHORT
+                    [vary] => Accept-Encoding,Cookie
+                    [cache-control] => max-age=600, must-revalidate
+                    [x-cache] => MISS
+                    [x-pass-why] => 
+                    [x-cache-group] => normal
+                    [accept-ranges] => bytes
+                    [x-type] => default
+                )
+
+        )
+
+    [body] => 
+
+O:8:"stdClass":6:{s:4:"slug";s:0:"";s:6:"plugin";s:0:"";s:11:"new_version";s:0:"";s:3:"url";s:0:"";s:7:"package";s:0:"";s:6:"errors";a:1:{s:6:"no_key";s:6:"no_key";}}
+    [response] => Array
+        (
+            [code] => 200
+            [message] => OK
+        )
+
+    [cookies] => Array
+        (
+        )
+
+    [filename] => 
+    [http_response] => WP_HTTP_Requests_Response Object
+        (
+            [response:protected] => Requests_Response Object
+                (
+                    [body] => 
+
+O:8:"stdClass":6:{s:4:"slug";s:0:"";s:6:"plugin";s:0:"";s:11:"new_version";s:0:"";s:3:"url";s:0:"";s:7:"package";s:0:"";s:6:"errors";a:1:{s:6:"no_key";s:6:"no_key";}}
+                    [raw] => HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 01 Mar 2019 04:40:25 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 168
+Connection: close
+Expires: Wed, 11 Jan 1984 05:00:00 GMT
+Pragma: no-cache
+WPE-Backend: apache
+X-WPE-Loopback-Upstream-Addr: 127.0.0.1:6783
+X-Cacheable: SHORT
+Vary: Accept-Encoding,Cookie
+Cache-Control: max-age=600, must-revalidate
+X-Cache: MISS
+X-Pass-Why: 
+X-Cache-Group: normal
+Accept-Ranges: bytes
+X-Type: default
+
+
+
+O:8:"stdClass":6:{s:4:"slug";s:0:"";s:6:"plugin";s:0:"";s:11:"new_version";s:0:"";s:3:"url";s:0:"";s:7:"package";s:0:"";s:6:"errors";a:1:{s:6:"no_key";s:6:"no_key";}}
+                    [headers] => Requests_Response_Headers Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [server] => Array
+                                        (
+                                            [0] => nginx
+                                        )
+
+                                    [date] => Array
+                                        (
+                                            [0] => Fri, 01 Mar 2019 04:40:25 GMT
+                                        )
+
+                                    [content-type] => Array
+                                        (
+                                            [0] => text/html; charset=UTF-8
+                                        )
+
+                                    [content-length] => Array
+                                        (
+                                            [0] => 168
+                                        )
+
+                                    [expires] => Array
+                                        (
+                                            [0] => Wed, 11 Jan 1984 05:00:00 GMT
+                                        )
+
+                                    [pragma] => Array
+                                        (
+                                            [0] => no-cache
+                                        )
+
+                                    [wpe-backend] => Array
+                                        (
+                                            [0] => apache
+                                        )
+
+                                    [x-wpe-loopback-upstream-addr] => Array
+                                        (
+                                            [0] => 127.0.0.1:6783
+                                        )
+
+                                    [x-cacheable] => Array
+                                        (
+                                            [0] => SHORT
+                                        )
+
+                                    [vary] => Array
+                                        (
+                                            [0] => Accept-Encoding,Cookie
+                                        )
+
+                                    [cache-control] => Array
+                                        (
+                                            [0] => max-age=600, must-revalidate
+                                        )
+
+                                    [x-cache] => Array
+                                        (
+                                            [0] => MISS
+                                        )
+
+                                    [x-pass-why] => Array
+                                        (
+                                            [0] => 
+                                        )
+
+                                    [x-cache-group] => Array
+                                        (
+                                            [0] => normal
+                                        )
+
+                                    [accept-ranges] => Array
+                                        (
+                                            [0] => bytes
+                                        )
+
+                                    [x-type] => Array
+                                        (
+                                            [0] => default
+                                        )
+
+                                )
+
+                        )
+
+                    [status_code] => 200
+                    [protocol_version] => 1.1
+                    [success] => 1
+                    [redirects] => 0
+                    [url] => https://wc-marketplace.com/?wc-api=upgrade-api&request=pluginupdatecheck&plugin_name=wcmp-frontend_product_manager%2Fwcmp_frontend_product_manager.php&version=3.0.0&product_id=wcmp-frontend-product-manager&api_key=&activation_email=&instance=LHsNghaPWbE7&domain=http%3A%2F%2Flocalhost%2Fwp1013&software_version=3.0.0&extra=
+                    [history] => Array
+                        (
+                        )
+
+                    [cookies] => Requests_Cookie_Jar Object
+                        (
+                            [cookies:protected] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [filename:protected] => 
+            [data] => 
+            [headers] => 
+            [status] => 
+        )
+
+)
+
+==========================================================
+Target url: https://wc-marketplace.com?wc-api=upgrade-api&request=pluginupdatecheck&plugin_name=wcmp-frontend_product_manager%2Fwcmp_frontend_product_manager.php&version=3.0.0&product_id=wcmp-frontend-product-manager&api_key=&activation_email=&instance=LHsNghaPWbE7&domain=http%3A%2F%2Flocalhost%2Fwp1013&software_version=3.0.0&extra=
+Array
+(
+    [headers] => Requests_Utility_CaseInsensitiveDictionary Object
+        (
+            [data:protected] => Array
+                (
+                    [server] => nginx
+                    [date] => Sat, 02 Mar 2019 05:17:23 GMT
+                    [content-type] => text/html; charset=UTF-8
+                    [expires] => Wed, 11 Jan 1984 05:00:00 GMT
+                    [pragma] => no-cache
+                    [wpe-backend] => apache
+                    [x-wpe-loopback-upstream-addr] => 127.0.0.1:6783
+                    [x-cacheable] => SHORT
+                    [vary] => Accept-Encoding,Cookie
+                    [cache-control] => max-age=600, must-revalidate
+                    [x-cache] => MISS
+                    [x-pass-why] => 
+                    [x-cache-group] => normal
+                    [x-type] => default
+                    [content-encoding] => gzip
+                )
+
+        )
+
+    [body] => 
+
+O:8:"stdClass":6:{s:4:"slug";s:0:"";s:6:"plugin";s:0:"";s:11:"new_version";s:0:"";s:3:"url";s:0:"";s:7:"package";s:0:"";s:6:"errors";a:1:{s:6:"no_key";s:6:"no_key";}}
+    [response] => Array
+        (
+            [code] => 200
+            [message] => OK
+        )
+
+    [cookies] => Array
+        (
+        )
+
+    [filename] => 
+    [http_response] => WP_HTTP_Requests_Response Object
+        (
+            [response:protected] => Requests_Response Object
+                (
+                    [body] => 
+
+O:8:"stdClass":6:{s:4:"slug";s:0:"";s:6:"plugin";s:0:"";s:11:"new_version";s:0:"";s:3:"url";s:0:"";s:7:"package";s:0:"";s:6:"errors";a:1:{s:6:"no_key";s:6:"no_key";}}
+                    [raw] => HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 02 Mar 2019 05:17:23 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: close
+Expires: Wed, 11 Jan 1984 05:00:00 GMT
+Pragma: no-cache
+WPE-Backend: apache
+X-WPE-Loopback-Upstream-Addr: 127.0.0.1:6783
+X-Cacheable: SHORT
+Vary: Accept-Encoding,Cookie
+Cache-Control: max-age=600, must-revalidate
+X-Cache: MISS
+X-Pass-Why: 
+X-Cache-Group: normal
+X-Type: default
+Content-Encoding: gzip
+
+
+
+O:8:"stdClass":6:{s:4:"slug";s:0:"";s:6:"plugin";s:0:"";s:11:"new_version";s:0:"";s:3:"url";s:0:"";s:7:"package";s:0:"";s:6:"errors";a:1:{s:6:"no_key";s:6:"no_key";}}
+                    [headers] => Requests_Response_Headers Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [server] => Array
+                                        (
+                                            [0] => nginx
+                                        )
+
+                                    [date] => Array
+                                        (
+                                            [0] => Sat, 02 Mar 2019 05:17:23 GMT
+                                        )
+
+                                    [content-type] => Array
+                                        (
+                                            [0] => text/html; charset=UTF-8
+                                        )
+
+                                    [expires] => Array
+                                        (
+                                            [0] => Wed, 11 Jan 1984 05:00:00 GMT
+                                        )
+
+                                    [pragma] => Array
+                                        (
+                                            [0] => no-cache
+                                        )
+
+                                    [wpe-backend] => Array
+                                        (
+                                            [0] => apache
+                                        )
+
+                                    [x-wpe-loopback-upstream-addr] => Array
+                                        (
+                                            [0] => 127.0.0.1:6783
+                                        )
+
+                                    [x-cacheable] => Array
+                                        (
+                                            [0] => SHORT
+                                        )
+
+                                    [vary] => Array
+                                        (
+                                            [0] => Accept-Encoding,Cookie
+                                        )
+
+                                    [cache-control] => Array
+                                        (
+                                            [0] => max-age=600, must-revalidate
+                                        )
+
+                                    [x-cache] => Array
+                                        (
+                                            [0] => MISS
+                                        )
+
+                                    [x-pass-why] => Array
+                                        (
+                                            [0] => 
+                                        )
+
+                                    [x-cache-group] => Array
+                                        (
+                                            [0] => normal
+                                        )
+
+                                    [x-type] => Array
+                                        (
+                                            [0] => default
+                                        )
+
+                                    [content-encoding] => Array
+                                        (
+                                            [0] => gzip
+                                        )
+
+                                )
+
+                        )
+
+                    [status_code] => 200
+                    [protocol_version] => 1.1
+                    [success] => 1
+                    [redirects] => 0
+                    [url] => https://wc-marketplace.com/?wc-api=upgrade-api&request=pluginupdatecheck&plugin_name=wcmp-frontend_product_manager%2Fwcmp_frontend_product_manager.php&version=3.0.0&product_id=wcmp-frontend-product-manager&api_key=&activation_email=&instance=LHsNghaPWbE7&domain=http%3A%2F%2Flocalhost%2Fwp1013&software_version=3.0.0&extra=
+                    [history] => Array
+                        (
+                        )
+
+                    [cookies] => Requests_Cookie_Jar Object
+                        (
+                            [cookies:protected] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [filename:protected] => 
+            [data] => 
+            [headers] => 
+            [status] => 
+        )
+
+)
+
+---------------
+Array
+(
+    [headers] => Requests_Utility_CaseInsensitiveDictionary Object
+        (
+            [data:protected] => Array
+                (
+                    [server] => nginx
+                    [date] => Sat, 02 Mar 2019 05:17:23 GMT
+                    [content-type] => text/html; charset=UTF-8
+                    [expires] => Wed, 11 Jan 1984 05:00:00 GMT
+                    [pragma] => no-cache
+                    [wpe-backend] => apache
+                    [x-wpe-loopback-upstream-addr] => 127.0.0.1:6783
+                    [x-cacheable] => SHORT
+                    [vary] => Accept-Encoding,Cookie
+                    [cache-control] => max-age=600, must-revalidate
+                    [x-cache] => MISS
+                    [x-pass-why] => 
+                    [x-cache-group] => normal
+                    [x-type] => default
+                    [content-encoding] => gzip
+                )
+
+        )
+
+    [body] => 
+
+O:8:"stdClass":6:{s:4:"slug";s:0:"";s:6:"plugin";s:0:"";s:11:"new_version";s:0:"";s:3:"url";s:0:"";s:7:"package";s:0:"";s:6:"errors";a:1:{s:6:"no_key";s:6:"no_key";}}
+    [response] => Array
+        (
+            [code] => 200
+            [message] => OK
+        )
+
+    [cookies] => Array
+        (
+        )
+
+    [filename] => 
+    [http_response] => WP_HTTP_Requests_Response Object
+        (
+            [response:protected] => Requests_Response Object
+                (
+                    [body] => 
+
+O:8:"stdClass":6:{s:4:"slug";s:0:"";s:6:"plugin";s:0:"";s:11:"new_version";s:0:"";s:3:"url";s:0:"";s:7:"package";s:0:"";s:6:"errors";a:1:{s:6:"no_key";s:6:"no_key";}}
+                    [raw] => HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 02 Mar 2019 05:17:23 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: close
+Expires: Wed, 11 Jan 1984 05:00:00 GMT
+Pragma: no-cache
+WPE-Backend: apache
+X-WPE-Loopback-Upstream-Addr: 127.0.0.1:6783
+X-Cacheable: SHORT
+Vary: Accept-Encoding,Cookie
+Cache-Control: max-age=600, must-revalidate
+X-Cache: MISS
+X-Pass-Why: 
+X-Cache-Group: normal
+X-Type: default
+Content-Encoding: gzip
+
+
+
+O:8:"stdClass":6:{s:4:"slug";s:0:"";s:6:"plugin";s:0:"";s:11:"new_version";s:0:"";s:3:"url";s:0:"";s:7:"package";s:0:"";s:6:"errors";a:1:{s:6:"no_key";s:6:"no_key";}}
+                    [headers] => Requests_Response_Headers Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [server] => Array
+                                        (
+                                            [0] => nginx
+                                        )
+
+                                    [date] => Array
+                                        (
+                                            [0] => Sat, 02 Mar 2019 05:17:23 GMT
+                                        )
+
+                                    [content-type] => Array
+                                        (
+                                            [0] => text/html; charset=UTF-8
+                                        )
+
+                                    [expires] => Array
+                                        (
+                                            [0] => Wed, 11 Jan 1984 05:00:00 GMT
+                                        )
+
+                                    [pragma] => Array
+                                        (
+                                            [0] => no-cache
+                                        )
+
+                                    [wpe-backend] => Array
+                                        (
+                                            [0] => apache
+                                        )
+
+                                    [x-wpe-loopback-upstream-addr] => Array
+                                        (
+                                            [0] => 127.0.0.1:6783
+                                        )
+
+                                    [x-cacheable] => Array
+                                        (
+                                            [0] => SHORT
+                                        )
+
+                                    [vary] => Array
+                                        (
+                                            [0] => Accept-Encoding,Cookie
+                                        )
+
+                                    [cache-control] => Array
+                                        (
+                                            [0] => max-age=600, must-revalidate
+                                        )
+
+                                    [x-cache] => Array
+                                        (
+                                            [0] => MISS
+                                        )
+
+                                    [x-pass-why] => Array
+                                        (
+                                            [0] => 
+                                        )
+
+                                    [x-cache-group] => Array
+                                        (
+                                            [0] => normal
+                                        )
+
+                                    [x-type] => Array
+                                        (
+                                            [0] => default
+                                        )
+
+                                    [content-encoding] => Array
+                                        (
+                                            [0] => gzip
+                                        )
+
+                                )
+
+                        )
+
+                    [status_code] => 200
+                    [protocol_version] => 1.1
+                    [success] => 1
+                    [redirects] => 0
+                    [url] => https://wc-marketplace.com/?wc-api=upgrade-api&request=pluginupdatecheck&plugin_name=wcmp-frontend_product_manager%2Fwcmp_frontend_product_manager.php&version=3.0.0&product_id=wcmp-frontend-product-manager&api_key=&activation_email=&instance=LHsNghaPWbE7&domain=http%3A%2F%2Flocalhost%2Fwp1013&software_version=3.0.0&extra=
+                    [history] => Array
+                        (
+                        )
+
+                    [cookies] => Requests_Cookie_Jar Object
+                        (
+                            [cookies:protected] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [filename:protected] => 
+            [data] => 
+            [headers] => 
+            [status] => 
+        )
+
+)
+
+==========================================================
+Target url: https://wc-marketplace.com?wc-api=upgrade-api&request=pluginupdatecheck&plugin_name=wcmp-frontend_product_manager%2Fwcmp_frontend_product_manager.php&version=3.0.0&product_id=wcmp-frontend-product-manager&api_key=&activation_email=&instance=LHsNghaPWbE7&domain=http%3A%2F%2Flocalhost%2Fwp1013&software_version=3.0.0&extra=
+Array
+(
+    [headers] => Requests_Utility_CaseInsensitiveDictionary Object
+        (
+            [data:protected] => Array
+                (
+                    [server] => nginx
+                    [date] => Mon, 04 Mar 2019 13:23:43 GMT
+                    [content-type] => text/html; charset=UTF-8
+                    [content-length] => 168
+                    [expires] => Wed, 11 Jan 1984 05:00:00 GMT
+                    [pragma] => no-cache
+                    [wpe-backend] => apache
+                    [x-wpe-loopback-upstream-addr] => 127.0.0.1:6783
+                    [x-cacheable] => SHORT
+                    [vary] => Accept-Encoding,Cookie
+                    [cache-control] => max-age=600, must-revalidate
+                    [x-cache] => MISS
+                    [x-pass-why] => 
+                    [x-cache-group] => normal
+                    [accept-ranges] => bytes
+                    [x-type] => default
+                )
+
+        )
+
+    [body] => 
+
+O:8:"stdClass":6:{s:4:"slug";s:0:"";s:6:"plugin";s:0:"";s:11:"new_version";s:0:"";s:3:"url";s:0:"";s:7:"package";s:0:"";s:6:"errors";a:1:{s:6:"no_key";s:6:"no_key";}}
+    [response] => Array
+        (
+            [code] => 200
+            [message] => OK
+        )
+
+    [cookies] => Array
+        (
+        )
+
+    [filename] => 
+    [http_response] => WP_HTTP_Requests_Response Object
+        (
+            [response:protected] => Requests_Response Object
+                (
+                    [body] => 
+
+O:8:"stdClass":6:{s:4:"slug";s:0:"";s:6:"plugin";s:0:"";s:11:"new_version";s:0:"";s:3:"url";s:0:"";s:7:"package";s:0:"";s:6:"errors";a:1:{s:6:"no_key";s:6:"no_key";}}
+                    [raw] => HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 04 Mar 2019 13:23:43 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 168
+Connection: close
+Expires: Wed, 11 Jan 1984 05:00:00 GMT
+Pragma: no-cache
+WPE-Backend: apache
+X-WPE-Loopback-Upstream-Addr: 127.0.0.1:6783
+X-Cacheable: SHORT
+Vary: Accept-Encoding,Cookie
+Cache-Control: max-age=600, must-revalidate
+X-Cache: MISS
+X-Pass-Why: 
+X-Cache-Group: normal
+Accept-Ranges: bytes
+X-Type: default
+
+
+
+O:8:"stdClass":6:{s:4:"slug";s:0:"";s:6:"plugin";s:0:"";s:11:"new_version";s:0:"";s:3:"url";s:0:"";s:7:"package";s:0:"";s:6:"errors";a:1:{s:6:"no_key";s:6:"no_key";}}
+                    [headers] => Requests_Response_Headers Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [server] => Array
+                                        (
+                                            [0] => nginx
+                                        )
+
+                                    [date] => Array
+                                        (
+                                            [0] => Mon, 04 Mar 2019 13:23:43 GMT
+                                        )
+
+                                    [content-type] => Array
+                                        (
+                                            [0] => text/html; charset=UTF-8
+                                        )
+
+                                    [content-length] => Array
+                                        (
+                                            [0] => 168
+                                        )
+
+                                    [expires] => Array
+                                        (
+                                            [0] => Wed, 11 Jan 1984 05:00:00 GMT
+                                        )
+
+                                    [pragma] => Array
+                                        (
+                                            [0] => no-cache
+                                        )
+
+                                    [wpe-backend] => Array
+                                        (
+                                            [0] => apache
+                                        )
+
+                                    [x-wpe-loopback-upstream-addr] => Array
+                                        (
+                                            [0] => 127.0.0.1:6783
+                                        )
+
+                                    [x-cacheable] => Array
+                                        (
+                                            [0] => SHORT
+                                        )
+
+                                    [vary] => Array
+                                        (
+                                            [0] => Accept-Encoding,Cookie
+                                        )
+
+                                    [cache-control] => Array
+                                        (
+                                            [0] => max-age=600, must-revalidate
+                                        )
+
+                                    [x-cache] => Array
+                                        (
+                                            [0] => MISS
+                                        )
+
+                                    [x-pass-why] => Array
+                                        (
+                                            [0] => 
+                                        )
+
+                                    [x-cache-group] => Array
+                                        (
+                                            [0] => normal
+                                        )
+
+                                    [accept-ranges] => Array
+                                        (
+                                            [0] => bytes
+                                        )
+
+                                    [x-type] => Array
+                                        (
+                                            [0] => default
+                                        )
+
+                                )
+
+                        )
+
+                    [status_code] => 200
+                    [protocol_version] => 1.1
+                    [success] => 1
+                    [redirects] => 0
+                    [url] => https://wc-marketplace.com/?wc-api=upgrade-api&request=pluginupdatecheck&plugin_name=wcmp-frontend_product_manager%2Fwcmp_frontend_product_manager.php&version=3.0.0&product_id=wcmp-frontend-product-manager&api_key=&activation_email=&instance=LHsNghaPWbE7&domain=http%3A%2F%2Flocalhost%2Fwp1013&software_version=3.0.0&extra=
+                    [history] => Array
+                        (
+                        )
+
+                    [cookies] => Requests_Cookie_Jar Object
+                        (
+                            [cookies:protected] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [filename:protected] => 
+            [data] => 
+            [headers] => 
+            [status] => 
+        )
+
+)
+
+---------------
+Array
+(
+    [headers] => Requests_Utility_CaseInsensitiveDictionary Object
+        (
+            [data:protected] => Array
+                (
+                    [server] => nginx
+                    [date] => Mon, 04 Mar 2019 13:23:43 GMT
+                    [content-type] => text/html; charset=UTF-8
+                    [content-length] => 168
+                    [expires] => Wed, 11 Jan 1984 05:00:00 GMT
+                    [pragma] => no-cache
+                    [wpe-backend] => apache
+                    [x-wpe-loopback-upstream-addr] => 127.0.0.1:6783
+                    [x-cacheable] => SHORT
+                    [vary] => Accept-Encoding,Cookie
+                    [cache-control] => max-age=600, must-revalidate
+                    [x-cache] => MISS
+                    [x-pass-why] => 
+                    [x-cache-group] => normal
+                    [accept-ranges] => bytes
+                    [x-type] => default
+                )
+
+        )
+
+    [body] => 
+
+O:8:"stdClass":6:{s:4:"slug";s:0:"";s:6:"plugin";s:0:"";s:11:"new_version";s:0:"";s:3:"url";s:0:"";s:7:"package";s:0:"";s:6:"errors";a:1:{s:6:"no_key";s:6:"no_key";}}
+    [response] => Array
+        (
+            [code] => 200
+            [message] => OK
+        )
+
+    [cookies] => Array
+        (
+        )
+
+    [filename] => 
+    [http_response] => WP_HTTP_Requests_Response Object
+        (
+            [response:protected] => Requests_Response Object
+                (
+                    [body] => 
+
+O:8:"stdClass":6:{s:4:"slug";s:0:"";s:6:"plugin";s:0:"";s:11:"new_version";s:0:"";s:3:"url";s:0:"";s:7:"package";s:0:"";s:6:"errors";a:1:{s:6:"no_key";s:6:"no_key";}}
+                    [raw] => HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 04 Mar 2019 13:23:43 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 168
+Connection: close
+Expires: Wed, 11 Jan 1984 05:00:00 GMT
+Pragma: no-cache
+WPE-Backend: apache
+X-WPE-Loopback-Upstream-Addr: 127.0.0.1:6783
+X-Cacheable: SHORT
+Vary: Accept-Encoding,Cookie
+Cache-Control: max-age=600, must-revalidate
+X-Cache: MISS
+X-Pass-Why: 
+X-Cache-Group: normal
+Accept-Ranges: bytes
+X-Type: default
+
+
+
+O:8:"stdClass":6:{s:4:"slug";s:0:"";s:6:"plugin";s:0:"";s:11:"new_version";s:0:"";s:3:"url";s:0:"";s:7:"package";s:0:"";s:6:"errors";a:1:{s:6:"no_key";s:6:"no_key";}}
+                    [headers] => Requests_Response_Headers Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [server] => Array
+                                        (
+                                            [0] => nginx
+                                        )
+
+                                    [date] => Array
+                                        (
+                                            [0] => Mon, 04 Mar 2019 13:23:43 GMT
+                                        )
+
+                                    [content-type] => Array
+                                        (
+                                            [0] => text/html; charset=UTF-8
+                                        )
+
+                                    [content-length] => Array
+                                        (
+                                            [0] => 168
+                                        )
+
+                                    [expires] => Array
+                                        (
+                                            [0] => Wed, 11 Jan 1984 05:00:00 GMT
+                                        )
+
+                                    [pragma] => Array
+                                        (
+                                            [0] => no-cache
+                                        )
+
+                                    [wpe-backend] => Array
+                                        (
+                                            [0] => apache
+                                        )
+
+                                    [x-wpe-loopback-upstream-addr] => Array
+                                        (
+                                            [0] => 127.0.0.1:6783
+                                        )
+
+                                    [x-cacheable] => Array
+                                        (
+                                            [0] => SHORT
+                                        )
+
+                                    [vary] => Array
+                                        (
+                                            [0] => Accept-Encoding,Cookie
+                                        )
+
+                                    [cache-control] => Array
+                                        (
+                                            [0] => max-age=600, must-revalidate
+                                        )
+
+                                    [x-cache] => Array
+                                        (
+                                            [0] => MISS
+                                        )
+
+                                    [x-pass-why] => Array
+                                        (
+                                            [0] => 
+                                        )
+
+                                    [x-cache-group] => Array
+                                        (
+                                            [0] => normal
+                                        )
+
+                                    [accept-ranges] => Array
+                                        (
+                                            [0] => bytes
+                                        )
+
+                                    [x-type] => Array
+                                        (
+                                            [0] => default
+                                        )
+
+                                )
+
+                        )
+
+                    [status_code] => 200
+                    [protocol_version] => 1.1
+                    [success] => 1
+                    [redirects] => 0
+                    [url] => https://wc-marketplace.com/?wc-api=upgrade-api&request=pluginupdatecheck&plugin_name=wcmp-frontend_product_manager%2Fwcmp_frontend_product_manager.php&version=3.0.0&product_id=wcmp-frontend-product-manager&api_key=&activation_email=&instance=LHsNghaPWbE7&domain=http%3A%2F%2Flocalhost%2Fwp1013&software_version=3.0.0&extra=
+                    [history] => Array
+                        (
+                        )
+
+                    [cookies] => Requests_Cookie_Jar Object
+                        (
+                            [cookies:protected] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [filename:protected] => 
+            [data] => 
+            [headers] => 
+            [status] => 
+        )
+
+)
+
+==========================================================

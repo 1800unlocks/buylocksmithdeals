@@ -1,0 +1,562 @@
+.wc_appointments_calendar_form .wc_appointments_calendar td {
+    color: #bbb;
+    text-align: right;
+    padding: 8px 0 0 0;
+    font-size: 20px;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    height: 120px;
+}
+.wc_appointments_calendar_form .wc_appointments_calendar td .appointments {
+    overflow: auto;
+    height: 100px;
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+}
+.wc_appointments_calendar_form .wc_appointments_calendar td .appointments ul {
+    padding: 0;
+    margin: 0;
+}
+.wc_appointments_calendar_form .wc_appointments_calendar td .appointments ul li {
+    padding: 0;
+    margin: 0 0 4px 0;
+    list-style: none;
+}
+.wc_appointments_calendar_form .wc_appointments_calendar td .appointments ul li a {
+    border-left: 4px solid #eee;
+    padding: 3px 3px 3px 8px;
+    display: block
+}
+.wc_appointments_calendar_form .wc_appointments_calendar td .appointments ul li a ul {
+    padding: 0;
+    margin: 0
+}
+.wc_appointments_calendar_form .wc_appointments_calendar td .appointments ul li a ul li {
+    list-style: none;
+    font-size: .75em;
+    padding: 0;
+    margin: 0;
+    border: 0
+}
+.wc_appointments_calendar_form .wc_appointments_calendar td .appointments ul li a:hover {
+    border-left-color: #ccc;
+    background: #fafafa
+}
+.wc_appointments_calendar_form .wc_appointments_calendar tr {
+    background: #fff
+}
+.wc_appointments_calendar_form .wc_appointments_calendar .calendar-diff-month {
+    background: #efefef
+}
+.wc_appointments_calendar_form .wc_appointments_calendar tbody tr td:last-child {
+    border-right: 0
+}
+.wc_appointments_calendar_form .wc_appointments_calendar tbody tr:last-child td {
+    border-bottom: 0
+}
+.wc_bookings_calendar_form {
+    margin: 1em 0 0!important
+}
+.wc_appointments_calendar_form .calendar_days {
+    position: relative;
+    height: 1440px;
+    overflow: hidden;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA8CAYAAACn8dD6AAAAIElEQVQYGWO4e/fuf4afP3/+Z2IAgsFCfP36lWHQuQoAvaoOvF/jxHkAAAAASUVORK5CYII=);
+    background-repeat: repeat;
+    background-position: 0 0;
+}
+.wc_appointments_calendar_form .calendar_day.date-picker{
+    height: 34px;
+    margin-top: -5px;
+    border-radius: 3px;
+    box-shadow: none;
+    outline: none;
+    padding: 0 40px 0 15px;
+    border: 1px solid #c5c5c5;
+    width: 165px;
+}
+.wc_appointments_calendar_form .calendar_days .hours {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -0.5em 0 0 0;
+}
+.wc_appointments_calendar_form .calendar_days .hours li {
+    height: 60px;
+    vertical-align: top;
+    padding: 0;
+    margin: 0;
+}
+.wc_appointments_calendar_form .calendar_days .hours li label {
+    float: left;
+    background: #f9f9f9;
+    padding: 0 8px;
+}
+.wc_appointments_calendar_form .calendar_days .appointments {
+    margin: 0 0 0 100px;
+    padding: 0;
+    height: 100%;
+    white-space: nowrap;
+    position: relative;
+    width : 100%;
+}
+.wc_appointments_calendar_form .calendar_days .appointments li {
+    position: absolute;
+    width: 98px;
+    border-radius: 2px;
+    margin: 0;
+    overflow: hidden;
+    color: #fff;
+}
+.wc_appointments_calendar_form .calendar_days .appointments li a {
+    display: block;
+    padding: 2px 4px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    color: #fff;
+    text-decoration: none
+}
+.wc_appointments_calendar_form .tablenav, .wc_bookings_calendar_form .tablenav {
+    margin: 0 0 25px;
+    display: inline-block;
+    width: 100%;
+    border-bottom: solid 1px #d3dbe2;
+    padding-bottom: 20px;
+    
+}
+x.wc_appointments_calendar_form .tablenav:after {
+    clear: both
+}
+.wc_appointments_calendar_form .tablenav .filters {
+    float: left;
+    line-height: 30px;
+    padding: 5px 15px 5px 5px;
+    border-right: 1px solid #ddd;
+}
+.wc_appointments_calendar_form .tablenav .filters .chosen-container {
+    width: 12em
+}
+.wc_appointments_calendar_form .tablenav .views {
+    float: right;
+    padding: 0;
+    border-left: 1px solid #ddd;
+}
+.wc_appointments_calendar_form .tablenav .views a {
+    padding: 11px 20px;
+    display: inline-block;
+    text-decoration: none
+}
+.wc_appointments_calendar_form .tablenav .date_selector {
+    margin-left: 5px;
+    display: block;
+    float: left;
+}
+.wc_appointments_calendar_form .tablenav .date_selector div {
+    padding: 5px 0;
+    float: left
+}
+.wc_appointments_calendar_form .tablenav .date_selector div:first-of-type select {
+    margin-right: 5px
+}
+.wc_appointments_calendar_form .tablenav .date_selector select {
+    vertical-align: middle;
+    width: 6em
+}
+.wc_appointments_calendar_form .tablenav .date_selector a {
+    display: block;
+    position: relative;
+    font-size: 29px;
+    padding: 5px .1em;
+    line-height: 26px;
+}
+.wc_appointments_calendar_form .tablenav .date_selector a.prev {
+    float: left
+}
+.wc_appointments_calendar_form .tablenav .date_selector a.next {
+    float: right
+}
+.wc_appointments_calendar_form .appointments.days .event_card {
+    border-radius: 4px;
+    font-size: 15px;
+    line-height: 22px;
+    margin: 0 0 4px 0;
+    min-height: 25px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+.wc_appointments_calendar_form .appointments.weeks .event_card {
+    border-radius: 4px;
+    font-size: 15px;
+    line-height: 22px;
+    min-height: 25px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 12.5%;
+    z-index: 5;
+    margin-left: -10px;
+}
+.wc_appointments_calendar_form .appointments.weeks .body_wrapper {
+    position: relative;
+    clear: both;
+}
+.wc_appointments_calendar_form .tablenav .week_selector a.prev {
+    display: inline-block;
+    position: relative;
+    font-size: 29px;
+    padding: 5px .1em;
+    line-height: 26px;
+}
+.wc_appointments_calendar_form .tablenav .week_selector a.next {
+    display: inline-block;
+    position: relative;
+    font-size: 29px;
+    padding: 5px .1em;
+    line-height: 26px;
+}
+.week_selector {
+    float: left;
+}
+.week_picker {
+    display: inline-block;
+}
+input.calendar_week.date-picker {
+    height: 34px;
+    border: 1px solid #c5c5c5;
+    border-radius: 3px;
+    padding: 0 10px;
+}
+.wc_appointments_calendar_form.week_view{
+    background: #fff;
+    padding: 15px;
+}
+.wc_appointments_calendar_form.week_view .calendar_days .hours {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 121px;
+    left: 0;
+    margin: 0 0 0 0;
+    padding: 0 9px;
+    background: #f9f9f9;
+}
+.calendar_presentation {
+    background: #fff;
+    clear: both;
+    /*border: 1px solid black;*/
+    overflow: hidden;
+}
+.wc_appointments_calendar_form.week_view .calendar_days{
+    height: 1562px;
+}
+.wc_appointments_calendar_form .header_labels {
+    float: left;
+    width: 100px;
+    background: #fff;
+    height: 120px;
+}
+.wc_appointments_calendar_form .header_days {
+    /*float: left;
+    width: 93%;*/
+    height: 100px;
+    background: #fff;
+}
+.wc_appointments_calendar_form .header_column{
+    float: left;
+    width: 12.5%;
+    border-left: 1px solid #ccc;
+    height: 120px;
+    padding: 10px;
+    background: #fff;
+}
+.wc_appointments_calendar_form .body_column {
+    float: left;
+    width: 12.5%;
+    padding : 10px;
+    border-left: 1px solid #ccc;
+    height: 300vh;
+}
+.wc_appointments_calendar_form label.empty_label {
+    height: 105px;
+}
+.wc_appointments_calendar_form label.allday_label {
+    padding: 0 5px;
+}
+.wc_appointments_calendar_form .header_label a{
+    color: #00000066;
+}
+.wc_appointments_calendar_form span.daynum {
+    color: #00000066;
+    font-size: 42px;
+    display: block;
+    font-weight: 700;
+}
+.wc_appointments_calendar_form .hours{
+    padding: 0 !important;
+}
+
+
+#filter_appointments {
+    width : auto;
+}
+.event_card {
+    padding: 10px;
+    border-left: 3px solid #e0dddd;
+    width: 100%;
+}
+.appointments.days .event_card{
+    padding: 10px !IMPORTANT;
+}
+.wc_appointments_calendar_form .calendar_days .appointments li{
+    color: #3f85b9;
+}
+.appointments.weeks .event_card{
+    padding: 10px !IMPORTANT;
+}
+.wc_appointments_calendar_form .wc_appointments_calendar td a{
+    padding-right: 8px;
+}
+.woocommerce-BlankState-message{
+    color: #aaa;
+    margin: 0 auto 1.5em;
+    line-height: 1.5em;
+    font-size: 1.2em;
+    clear: both;
+    text-align: center;
+    padding-top: 100px;
+}
+.woocommerce-BlankState-buttons{
+    display:block;
+    text-align: center;
+}
+.woocommerce-BlankState-cta.button{
+    color: #0071a1;
+    border:1px solid #0071a1;
+    background: #f3f5f6;
+    font-size: 1.2em;
+    padding: .75em 1.5em;
+    margin: 0 .25em;
+    height: auto;
+    border-radius: 3px;
+    display: inline-block;
+}
+.add-product-info-holder .select {
+    margin-bottom: 10px;
+}
+.range_capacity input, .priority input{
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    min-height: 34px;
+    padding: 0 10px;
+}
+.form-horizontal .control-label .img_tip{
+        margin: 7px -5px 0 0;
+}
+#availability_rows td {
+    padding: 20px 5px;
+}
+#availability_rows{
+    overflow: hidden;
+}
+#availability_rows .select.wc_appointment_availability_type select {
+    width: 100%;
+}
+#availability_rows .range_capacity input, .priority input{
+    width: 100%;
+}
+.table_grid.availability_table_grid {
+    border-right: 1px solid #ddd;
+}
+@media (min-width: 768px) and (max-width: 979px){
+    .wc_appointments_calendar_form .tablenav .views{
+        float: none;
+        border:0;
+    }
+    .wc_appointments_calendar_form .header_days{
+        float: none;
+    }
+    .wc_appointments_calendar_form .header_labels{
+        width: 14%;
+    }
+    .wc_appointments_calendar_form .header_column{
+        width: 12%;
+    }
+    .wc_appointments_calendar_form .calendar_days .appointments {
+    margin: 0 0 0 14%;}
+    .wc_appointments_calendar_form .body_column{
+        width: 12%
+    }
+    .appointments.weeks .event_card{
+        width: 12% !important;
+    }
+    .wc_appointments_calendar_form .tablenav .views a {
+    padding: 11px 8px;}
+    .table > tbody > tr > td {
+    padding: 10px 5px;
+}
+.select.wc_appointment_pricing_type select {
+    width: 170px;
+}
+table{
+    border-collapse: initial;
+}
+.range_capacity, .priority{
+    max-width: 100px;
+}
+.range_capacity input, .priority input{
+    width: 100%;
+    max-width: 100%;
+}
+.wc_appointment_availability_type select{
+   
+    width: 140px;
+}
+.tab-pane .col-md-6.col-sm-9 .form-control{
+    margin-bottom: 10px;
+}
+.tab-pane .table > thead > tr > th {
+    padding: 8px 5px;
+}
+.wc_booking_restricted_days_field{
+    overflow: hidden;
+}
+.wc_booking_restricted_days_field li{
+    margin-right: 0 !important;
+}
+}
+@media (max-width: 767px){
+.side-collapse-container{
+        overflow: scroll;
+}
+.wc_appointments_calendar_form .tablenav .wc-enhanced-select{
+    width: 37% !important;
+}
+#calendar-bookings-filter{
+    width: 100% !important;
+}
+.wc_appointments_calendar_form .tablenav .filters, .wc_bookings_calendar_form .tablenav .filters{
+    float: none !important;
+    padding: 20px 0;
+    border: 0 !important;
+}
+.wc_appointments_calendar_form .tablenav .views {
+    float: none;
+    padding: 0;
+    border-left: 0;
+    text-align: center;
+}
+body .wc_bookings_calendar_form .tablenav .views {
+    float: left;
+    padding: 0;
+    border-left: 0;
+}
+.wc_appointments_calendar_form .table > thead > tr > th, .wc_bookings_calendar_form .table > thead > tr > th{
+    padding: 8px 2px;
+    font-size: 10px;
+    text-align: center;
+}
+.event_card{
+    padding:0;
+}
+.panel-content-padding{
+    padding: 20px 10px !important;
+}
+.wc_appointments_calendar_form .wc_appointments_calendar td .appointments{
+    font-size: 10px;
+}
+.wc_appointments_calendar_form .wc_appointments_calendar td, .wc_bookings_calendar_form .wc_bookings_calendar td{
+    font-size: 16px !important;
+}
+.wc_appointments_calendar_form .tablenav .date_selector{
+    float: none;
+}
+.wc_appointments_calendar_form .tablenav .date_selector a.next, .wc_bookings_calendar_form .tablenav .date_selector a.prev{
+    float: none;
+    display: inline-block;
+    padding: 0px 0 0;
+}
+.wc_appointments_calendar_form label.allday_label {
+    padding: 0 2px;
+    font-size: 10px;
+}
+/*week*/
+.wc_appointments_calendar_form .header_days{
+    float: none;
+}
+.wc_appointments_calendar_form .header_labels{
+    width: 20%;
+}
+.wc_appointments_calendar_form span.daynum{
+    font-size: 18px;
+}
+.wc_appointments_calendar_form .header_label a{
+    font-size: 12px;
+}
+.wc_appointments_calendar_form .header_column{
+    padding: 5px;
+    width: 11%;
+}
+.calendar_presentation{
+    min-height: 120px;
+}
+.wc_appointments_calendar_form .calendar_days .appointments{
+    margin: 0 0 0 20%;
+}
+.wc_appointments_calendar_form .calendar_days .hours li label {
+    padding: 0 5px;
+    font-size: 12px;
+}
+.wc_appointments_calendar_form .body_column{
+    width: 11%;
+    padding: 5px;
+}
+.wc_appointments_calendar_form .tablenav .date_selector div{
+    display: inline-block;
+    float: none;
+}
+.wc_appointments_calendar_form .appointments.weeks .event_card{
+    margin-left: -7px;
+    border-radius: 0;
+    font-size: 10px;
+    padding: 0 !IMPORTANT;
+    z-index: 1;
+    width: 11%;
+}
+.appointment_range_pricing .table > thead > tr > th{
+    padding:8px 5px;
+    font-size: 12px;
+}
+.add-product-info-holder .table > thead {
+    display: flex;
+    flex-direction: column;
+}
+.add-product-info-holder .table > tbody > tr > td{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.add-product-info-holder table{
+    border-collapse: initial;
+}
+.add-product-info-holder .table > thead > tr > th {
+    padding: 8px 2px;
+    font-size: 12px;
+}
+.wc_booking_restricted_days_field li{
+    margin-right: 0;
+}
+.cat-step3 .product-title-wrap .cat-visiblity {
+    text-align: right;
+    margin-top: 10px;
+}
+}

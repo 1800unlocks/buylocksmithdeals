@@ -1,0 +1,37 @@
+/* .days-range-wrapper .redq_days_range .days-range-title,  {
+    cursor: move;
+    overflow: hidden;
+    padding: .5em .75em .5em 1em!important;
+    border-top: 1px solid #d3dbe2;
+}
+
+.days-range-wrapper .redq_days_range .days_range_group,  
+.rental-inventory-wrapper .redq_inventory .inventory_group {
+    float: left;
+    width: calc(100% - 150px);
+}
+
+.days-range-wrapper .redq_days_range .days_range_action {
+    float: right;
+    margin: 11px 0 0;
+    width: 150px;
+    text-align: right;
+    visibility: hidden;
+}
+
+.days-range-wrapper .redq_days_range:hover .days_range_action, 
+.price-discount-wrapper .redq_price_discount:hover .price_discount_action,
+.rental-inventory-wrapper .redq_inventory:hover .inventory_action {
+    visibility: visible;
+}
+
+.days-range-wrapper .redq_days_range .days_range_action i, 
+.rental-inventory-wrapper .redq_inventory .inventory_action i {
+    margin-right: 15px;
+} */
+
+.days-range-wrapper .redq_days_range .days-range-title[aria-expanded='true'] .ico-up-arrow-icon::before,
+.price-discount-wrapper .redq_price_discount .price-discount-title[aria-expanded='true'] .ico-up-arrow-icon::before,
+.rental-inventory-wrapper .redq_inventory .inventory-title[aria-expanded='true'] .ico-up-arrow-icon::before {
+    content: '\e90f';
+}
