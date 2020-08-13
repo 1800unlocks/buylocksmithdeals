@@ -142,3 +142,39 @@ function test_commission(){
         echo "</pre>";
     }
 }
+
+/**************************29-07-2020**************************************/
+//add_action( 'woocommerce_order_status_processing', 'avlabs_woocommerce_order_status_processing', 10, 1 );
+
+function avlabs_woocommerce_order_status_processing($order_id){
+	
+		global $WCMp;
+		$is_withdrawed = get_post_meta($order_id,'is_withdrawed',true);
+		 if($is_withdrawed == ''){
+			
+			   $suborder_details = get_wcmp_suborders($order_id);
+			   foreach ($suborder_details as $key => $value) {
+				  $suborderid = $value->get_id();
+				  $commission_id = get_post_meta($suborderid,'_commission_id',true);
+				  $vendor_id = get_post_meta($suborderid,'_vendor_id',true);
+				  $vendor = get_wcmp_vendor($vendor_id);
+				  $commission = array($commission_id);
+				  $payment_method = get_user_meta($vendor_id, '_vendor_payment_mode', true);
+				  
+				  if($commission_id != '' && $payment_method == 'stripe_masspay' && !empty($vendor)){
+					$response = $WCMp->payment_gateway->payment_gateways[$payment_method]->process_payment($vendor,$commission,'manual');
+					 if ($response) {
+							if (isset($response['transaction_id'])) {
+								do_action( 'wcmp_after_vendor_withdrawal_transaction_success', $response['transaction_id'] );
+								update_post_meta($order_id,'is_withdrawed',1);
+								
+							}
+					 }
+					
+				  }
+				
+				 
+			  }
+		 }
+		 
+}
