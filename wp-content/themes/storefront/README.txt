@@ -1,9 +1,9 @@
 === Storefront ===
 Contributors: automattic, tiagonoronha, jameskoster
-Requires at least: 5.2.6
-Tested up to: 5.4.1
-Stable tag: 2.5.6
-Version: 2.5.7
+Requires at least: 5.2.7
+Tested up to: 5.4.2
+Stable tag: 2.5.8
+Version: 2.5.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: e-commerce, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, threaded-comments, accessibility-ready, rtl-language-support, footer-widgets, sticky-post, theme-options, editor-style
@@ -48,6 +48,14 @@ To the best of our knowledge, Google doesn’t track nor share end user data.
 Privacy Policy for the Google Fonts API: https://developers.google.com/fonts/faq#what_does_using_the_google_fonts_api_mean_for_the_privacy_of_my_users
 
 == Changelog ==
+
+= 2.5.8 - 2020-06-19 =
+* Fix – Stylesheet storefront-woocommerce-style has storefront-style and storefront-icons as explicit dependencies, so child themes can define storefront-woocommerce-style as a dependency without the risk of breaking the stylesheets order. #1369
+* Fix – Removed woocommerce-legacy.css stylesheets for unsupported versions of WooCommerce (< 4.0). #1368
+* Dev - Adopt RenovateBot for managing dependencies. #1363
+* Dev - Update various dependencies, including major updates:
+  - `@wordpress/babel-preset-default` v4 #1387
+  - `stylelint` v13 #1390
 
 = 2.5.7 - 2020-06-02 =
 * Fix - Edit, reply and author icons are now displayed in comment list. #1319
