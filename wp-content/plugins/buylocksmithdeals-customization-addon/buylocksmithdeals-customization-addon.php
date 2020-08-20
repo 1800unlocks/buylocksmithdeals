@@ -144,7 +144,8 @@ function test_commission(){
 }
 
 /**************************29-07-2020**************************************/
-//add_action( 'woocommerce_order_status_processing', 'avlabs_woocommerce_order_status_processing', 10, 1 );
+add_action( 'woocommerce_order_status_processing', 'avlabs_woocommerce_order_status_processing', 10, 1 );
+add_action( 'woocommerce_order_status_completed', 'avlabs_woocommerce_order_status_processing', 10, 1 );
 
 function avlabs_woocommerce_order_status_processing($order_id){
 	
@@ -167,6 +168,12 @@ function avlabs_woocommerce_order_status_processing($order_id){
 							if (isset($response['transaction_id'])) {
 								do_action( 'wcmp_after_vendor_withdrawal_transaction_success', $response['transaction_id'] );
 								update_post_meta($order_id,'is_withdrawed',1);
+								
+								/* mail('vijay.webnware@gmail.com','order data',serialize($response));
+		
+								$myfile = fopen("order_created.txt", "w") or die("Unable to open file!");
+								fwrite($myfile, serialize($response));
+								fclose($myfile); */
 								
 							}
 					 }
