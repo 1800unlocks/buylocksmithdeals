@@ -27,11 +27,11 @@ do_action( 'before_wcmp_vendor_dashboard_simple_auctions_table' );
         <table id="auctions_table" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th><?php _e( 'Name', WCMp_AFM_TEXT_DOMAIN ); ?></th>
-                    <th><?php _e( 'Start Date', WCMp_AFM_TEXT_DOMAIN ); ?></th>
-                    <th><?php _e( 'End Date', WCMp_AFM_TEXT_DOMAIN ); ?></th>
-                    <th><?php _e( 'Auction status', WCMp_AFM_TEXT_DOMAIN ); ?></th>
-                    <th><?php _e( 'Max bid', WCMp_AFM_TEXT_DOMAIN ); ?></th>
+                    <th><?php _e( 'Name', 'wcmp-afm' ); ?></th>
+                    <th><?php _e( 'Start Date', 'wcmp-afm' ); ?></th>
+                    <th><?php _e( 'End Date', 'wcmp-afm' ); ?></th>
+                    <th><?php _e( 'Auction status', 'wcmp-afm' ); ?></th>
+                    <th><?php _e( 'Max bid', 'wcmp-afm' ); ?></th>
                 </tr>
             </thead>
             <tbody>

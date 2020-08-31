@@ -54,7 +54,7 @@ class WCMp_AFM_Admin {
 
     public function is_wcmp_backend_disabled( $option ) {
         $option['custom_tags'] = array();
-        $option['text'] = __( 'Offer a single frontend dashboard for all vendor purpose and eliminate their backend access requirement.', WCMp_AFM_TEXT_DOMAIN );
+        $option['text'] = __( 'Offer a single frontend dashboard for all vendor purpose and eliminate their backend access requirement.', 'wcmp-afm' );
         return $option;
     }
 
@@ -72,8 +72,8 @@ class WCMp_AFM_Admin {
 	*@return array
 	*/
 	public function enable_import_export_capabilites($settings_tab_options) {
-		$settings_tab_options["sections"]["products_capability"]["fields"]["vendor_import_capability"] = array('title' => __('Vendor Import Capability', WCMp_AFM_TEXT_DOMAIN), 'type' => 'checkbox', 'id' => 'vendor_import_capability', 'label_for' => 'vendor_import_capability', 'text' => __('Allow vendors to import products.', WCMp_AFM_TEXT_DOMAIN), 'name' => 'vendor_import_capability', 'value' => 'Enable');
-		$settings_tab_options["sections"]["products_capability"]["fields"]["vendor_export_capability"] = array('title' => __('Vendor Export Capability', WCMp_AFM_TEXT_DOMAIN), 'type' => 'checkbox', 'id' => 'vendor_export_capability', 'label_for' => 'vendor_export_capability', 'text' => __('Allow vendors to export products.', WCMp_AFM_TEXT_DOMAIN), 'name' => 'vendor_export_capability', 'value' => 'Enable');
+		$settings_tab_options["sections"]["products_capability"]["fields"]["vendor_import_capability"] = array('title' => __('Vendor Import Capability', 'wcmp-afm'), 'type' => 'checkbox', 'id' => 'vendor_import_capability', 'label_for' => 'vendor_import_capability', 'text' => __('Allow vendors to import products.', 'wcmp-afm'), 'name' => 'vendor_import_capability', 'value' => 'Enable');
+		$settings_tab_options["sections"]["products_capability"]["fields"]["vendor_export_capability"] = array('title' => __('Vendor Export Capability', 'wcmp-afm'), 'type' => 'checkbox', 'id' => 'vendor_export_capability', 'label_for' => 'vendor_export_capability', 'text' => __('Allow vendors to export products.', 'wcmp-afm'), 'name' => 'vendor_export_capability', 'value' => 'Enable');
 		return $settings_tab_options;
 	}
 	

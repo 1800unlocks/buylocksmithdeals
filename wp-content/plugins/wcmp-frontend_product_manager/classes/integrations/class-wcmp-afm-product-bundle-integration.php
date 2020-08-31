@@ -181,7 +181,7 @@ class WCMp_AFM_Product_Bundle_Integration {
 
         $new_params = array(
             'add_bundled_product_nonce'   => wp_create_nonce( 'wc_bundles_add_bundled_product' ),
-            'i18n_remove_bundled_product' => esc_js( __( 'Are you sure you want to remove this product?', WCMp_AFM_TEXT_DOMAIN ) ),
+            'i18n_remove_bundled_product' => esc_js( __( 'Are you sure you want to remove this product?', 'wcmp-afm' ) ),
             'group_modes_with_parent'     => $group_modes_with_parent,
             'is_wc_version_gte_3_2'       => WC_PB_Core_Compatibility::is_wc_version_gte( '3.2' ) ? 'yes' : 'no'
         );

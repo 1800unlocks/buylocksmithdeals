@@ -129,10 +129,10 @@ if ( ! function_exists( 'generate_hierarchical_taxonomy_html' ) ) {
             $label = '';
             switch ( $taxonomy ) {
                 case 'product_cat':
-                    $label = __( 'Add new product category', WCMp_AFM_TEXT_DOMAIN );
+                    $label = __( 'Add new product category', 'wcmp-afm' );
                     break;
                 default:
-                    $label = __( 'Add new item', WCMp_AFM_TEXT_DOMAIN );
+                    $label = __( 'Add new item', 'wcmp-afm' );
             }
             $tax_html .= '<a href="#">' . $label . '</a>';
         }
@@ -371,7 +371,7 @@ if ( ! function_exists( 'generate_non_hierarchical_taxonomy_html' ) ) {
         if ( ! empty( $product_terms ) || $add_cap ) {
             ob_start();
             ?>
-            <select multiple = "multiple" data-placeholder = "<?php esc_attr_e( 'Select', WCMp_AFM_TEXT_DOMAIN ); ?>" class = "multiselect form-control <?php echo $taxonomy; ?>" name = "tax_input[<?php echo $taxonomy; ?>][]">
+            <select multiple = "multiple" data-placeholder = "<?php esc_attr_e( 'Select', 'wcmp-afm' ); ?>" class = "multiselect form-control <?php echo $taxonomy; ?>" name = "tax_input[<?php echo $taxonomy; ?>][]">
                 <?php
                 foreach ( $product_terms as $term_id => $term_name ) {
                     echo '<option value="' . $term_id . '" ' . selected( in_array( $term_id, $seleted_terms ), true, false ) . '>' . $term_name . '</option>';

@@ -131,7 +131,7 @@ if ( $auctionable_product && 'auction' == $auctionable_product->get_type() && ($
         <div class="form-group wc_auction_reschedule">
             <div class="col-md-6 col-sm-9 col-md-offset-3">
                 <input type="button" class="btn btn-default" id="reschedule_button" value="<?php esc_attr_e( 'Re-schedule', 'yith-auctions-for-woocommerce' );?>">
-                <span class="description form-text" id="yith_reschedule_notice_admin"><?php esc_html_e( 'Change the dates and click on the update button to re-schedule the auction', WCMp_AFM_TEXT_DOMAIN ); ?></span>
+                <span class="description form-text" id="yith_reschedule_notice_admin"><?php esc_html_e( 'Change the dates and click on the update button to re-schedule the auction', 'wcmp-afm' ); ?></span>
             </div>
         </div> 
     </div>

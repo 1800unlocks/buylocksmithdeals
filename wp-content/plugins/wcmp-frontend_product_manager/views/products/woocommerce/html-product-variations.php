@@ -1,18 +1,21 @@
 <?php
+
 /**
  * Outputs a variation for editing.
  * Used by WCMp_AFM_Ajax->load_variations_callback()
  * Used by WCMp_AFM_Ajax->add_variation_callback()
- * Not overridable
  *
- * @author 		WC Marketplace
- * @package 	WCMp_AFM/views/products/woocommerce
+ * This template can be overridden by copying it to yourtheme/wcmp-afm/products/woocommerce/html-product-variations.php.
+ *
+ * HOWEVER, on occasion AFM will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @author      WC Marketplace
+ * @package     WCMp_AFM/views/products/woocommerce
  * @version     3.0.0
- * 
- * @var int $variation_id
- * @var WP_POST $variation
- * @var WC_Product_Variation $variation_object
- * @var array $variation_data array of variation data @deprecated.
  */
 defined( 'ABSPATH' ) || exit;
 ?>

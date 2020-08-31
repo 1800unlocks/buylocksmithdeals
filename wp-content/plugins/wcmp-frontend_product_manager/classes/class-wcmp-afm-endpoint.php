@@ -132,7 +132,7 @@ class WCMp_AFM_Endpoint {
         $vendor_id = afm()->vendor_id;
         $vendor = get_wcmp_vendor( $vendor_id );
         if ( ! ( $vendor && is_current_vendor_product( $src_id ) ) ) {
-            wp_die( __( 'You are not authorized to perform this action!', WCMp_AFM_TEXT_DOMAIN ) );
+            wp_die( __( 'You are not authorized to perform this action!', 'wcmp-afm' ) );
         }
 
         if ( apply_filters( 'wcmp_vendor_can_duplicate_owned_product', true, $vendor, $src_product ) ) {

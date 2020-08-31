@@ -229,7 +229,7 @@ class WCMp_AFM_Rentalpro_Integration {
 
     public function rental_dashboard_navs( $navs ) {
         $parent_menu = array(
-            'label'      => __( 'Rentals', WCMp_AFM_TEXT_DOMAIN ),
+            'label'      => __( 'Rentals', 'wcmp-afm' ),
             'capability' => 'wcmp_vendor_dashboard_menu_vendor_rentals_capability',
             'position'   => 31,
             'nav_icon'   => 'wcmp-font ico-rental-icon',
@@ -290,10 +290,10 @@ class WCMp_AFM_Rentalpro_Integration {
             'add_availability_nonce'   => wp_create_nonce( 'add-inventory-availability' ),
             'add_days_range_nonce'     => wp_create_nonce( 'add-days-range' ),
             'add_price_discount_nonce' => wp_create_nonce( 'add-price-discount' ),
-            'remove_inventory_item'    => esc_js( __( 'Remove this inventory item?', WCMp_AFM_TEXT_DOMAIN ) ),
-            'remove_availability'      => esc_js( __( 'Remove this availability range?', WCMp_AFM_TEXT_DOMAIN ) ),
-            'remove_days_range'        => esc_js( __( 'Remove this days range?', WCMp_AFM_TEXT_DOMAIN ) ),
-            'remove_price_discount'    => esc_js( __( 'Remove this discount?', WCMp_AFM_TEXT_DOMAIN ) ),
+            'remove_inventory_item'    => esc_js( __( 'Remove this inventory item?', 'wcmp-afm' ) ),
+            'remove_availability'      => esc_js( __( 'Remove this availability range?', 'wcmp-afm' ) ),
+            'remove_days_range'        => esc_js( __( 'Remove this days range?', 'wcmp-afm' ) ),
+            'remove_price_discount'    => esc_js( __( 'Remove this discount?', 'wcmp-afm' ) ),
             'currency_symbol'          => get_woocommerce_currency_symbol(),
         );
         return array_merge( $params, $new_params );

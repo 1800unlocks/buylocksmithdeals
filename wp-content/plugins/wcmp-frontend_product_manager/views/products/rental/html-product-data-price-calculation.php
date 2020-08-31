@@ -71,7 +71,7 @@ if ( ! afm()->integrations->is_active_class( 'rentalpro' ) ) {
         </div>
         <?php if ( afm()->integrations->is_active_class( 'rentalpro' ) ) : ?>
             <div class="daily-pricing-panel show_if_daily_pricing">
-                <h4 class="redq-headings"><?php esc_html_e( 'Set daily pricing plan', WCMp_AFM_TEXT_DOMAIN ); ?></h4>
+                <h4 class="redq-headings"><?php esc_html_e( 'Set daily pricing plan', 'wcmp-afm' ); ?></h4>
                 <?php foreach ( $week_days as $day ) : ?>
                     <div class="form-group">
                         <label class="control-label col-sm-3 col-md-3" for="<?php esc_attr_e( $day ); ?>_price"><?php esc_html_e( sprintf( __( '%s ( %s )', 'redq-rental' ), ucfirst( $day ), get_woocommerce_currency_symbol() ) ); ?></label>

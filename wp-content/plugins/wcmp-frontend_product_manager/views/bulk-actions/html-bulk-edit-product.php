@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
     <div class="row">
         <div class="col-md-5">
             <div class="form-group">
-                <label class="control-label col-md-12"><?php esc_html_e( 'Products to edit', WCMp_AFM_TEXT_DOMAIN ); ?></label>
+                <label class="control-label col-md-12"><?php esc_html_e( 'Products to edit', 'wcmp-afm' ); ?></label>
                 <div class="col-md-12">
                     <select multiple class="edit_product_list form-control" name="edit_product_list[]"></select>
                 </div>

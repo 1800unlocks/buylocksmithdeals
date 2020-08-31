@@ -2,10 +2,17 @@
 
 /**
  * Inventory items template under Inventory tab
- * Not overridable
  *
- * @author 		WC Marketplace
- * @package 	WCMp_AFM/views/products/rental
+ * This template can be overridden by copying it to yourtheme/wcmp-afm/products/rental/html-product-rental-inventory.php.
+ *
+ * HOWEVER, on occasion AFM will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @author      WC Marketplace
+ * @package     WCMp_AFM/views/products/rental
  * @version     3.0.0
  */
 defined( 'ABSPATH' ) || exit;
@@ -52,10 +59,10 @@ foreach ( $rnb_taxonomies as $taxonomy ) {
         }
     }
     $inventory_field_options[$taxonomy] = array(
-        'label'             => __( $label, WCMp_AFM_TEXT_DOMAIN ),
+        'label'             => __( $label, 'wcmp-afm' ),
         'type'              => 'select',
         'options'           => $term_list_options[$taxonomy],
-        'custom_attributes' => array( 'placeholder' => __( $placeholder, WCMp_AFM_TEXT_DOMAIN ) ),
+        'custom_attributes' => array( 'placeholder' => __( $placeholder, 'wcmp-afm' ) ),
         'attributes'        => array( 'multiple' => 'multiple' ),
         'class'             => 'regular-select multiselect inventory-taxonomy form-control',
     );

@@ -4,7 +4,7 @@ Donate link: https://wc-marketplace.com/donate
 Requires at least: 4.2
 Tested up to: 5.4.2
 Requires PHP: 7.0
-Stable tag: 3.2.1
+Stable tag: 3.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,14 @@ To know more about installation procedure, follow our [installation guide](https
 
 
 == Changelog ==
+
+= 3.2.2 - 2020-08-06 =
+* Enhancement - WooCommerce Product Add-ons compatibility with version 3.0.36
+* Fixed - Translation missing for auction page
+* Fixed - Template Override issue in AFM
+* Fixed - Booking availability mail to vendor
+* Fixed - Tooltip issue
+* Fixed - Catagory assign issue during product import
 
 = 3.2.1 - 2020-07-21 =
 * Fixed - Fatal error issue with ACF Pro plugin

@@ -84,7 +84,7 @@ class WCMp_AFM_Rental_Integration {
     public function add_localize_params( $params ) {
         $new_params = array(
             'add_availability_nonce'   => wp_create_nonce( 'add-own-availability' ),
-            'remove_availability'      => esc_js( __( 'Remove this availability range?', WCMp_AFM_TEXT_DOMAIN ) ),
+            'remove_availability'      => esc_js( __( 'Remove this availability range?', 'wcmp-afm' ) ),
             'currency_symbol'          => get_woocommerce_currency_symbol(),
         );
         return array_merge( $params, $new_params );

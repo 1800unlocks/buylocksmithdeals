@@ -23,7 +23,7 @@ if ( empty( $quote_post ) || empty( $product_id ) ) {
     ?>
     <div class="col-md-12">
         <div class="panel panel-default">
-            <?php esc_html_e( 'Invalid quote', WCMp_AFM_TEXT_DOMAIN ); ?>
+            <?php esc_html_e( 'Invalid quote', 'wcmp-afm' ); ?>
         </div>
     </div>
     <?php
@@ -43,7 +43,7 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' ) {
         ?>
         <div class="col-md-12">
             <div class="panel panel-default">
-                <?php _e( 'Invalid quote', WCMp_AFM_TEXT_DOMAIN ); ?>
+                <?php _e( 'Invalid quote', 'wcmp-afm' ); ?>
             </div>
         </div>
         <?php
@@ -147,21 +147,21 @@ do_action( 'before_wcmp_vendor_dashboard_quote_details' );
     <form method="post" name="quote-request-details">
         <div class="icon-header">
             <span><i class="wcmp-font ico-order-details-icon"></i></span>
-            <h2><?php esc_html_e( 'Quote request #', WCMp_AFM_TEXT_DOMAIN ); ?><?php esc_html_e( $quote_id ); ?></h2>
+            <h2><?php esc_html_e( 'Quote request #', 'wcmp-afm' ); ?><?php esc_html_e( $quote_id ); ?></h2>
             <h3><?php _e( sprintf( 'was placed on %s and is currently <span class="%s">%s</span>', date_i18n( get_option( 'date_format' ), strtotime( $quote_post->post_date ) ), $quote_post->post_status, ucwords( str_replace( '-', ' ', str_replace( 'quote-', '', $quote_post->post_status ) ) ) ) ); ?></h3>
         </div>
         <div class="clearfix"></div>
         <div class="row">
             <div class="col-md-8">
                 <div class="panel panel-default pannel-outer-heading mt-0">
-                    <div class="panel-heading"><h3><?php esc_html_e( 'Quote message', WCMp_AFM_TEXT_DOMAIN ); ?></h3></div>
+                    <div class="panel-heading"><h3><?php esc_html_e( 'Quote message', 'wcmp-afm' ); ?></h3></div>
                     <div class="panel-body panel-content-padding">
                         <?php if ( apply_filters( 'is_vendor_can_add_quote_message', true, $vendor->id ) ) : ?>
                             <div class="panel-form-content">
                                 <div class="form-group">
                                     <textarea name="add-quote-message" id="add-quote-message" class="form-control"></textarea>
                                 </div>
-                                <input type="submit" class="btn btn-default add-quote-reply" value="<?php esc_html_e( 'Add Message', WCMp_AFM_TEXT_DOMAIN ); ?>"/>
+                                <input type="submit" class="btn btn-default add-quote-reply" value="<?php esc_html_e( 'Add Message', 'wcmp-afm' ); ?>"/>
                             </div>
                         <?php endif; ?>
                         <ul class="rental-quote-message">
@@ -178,8 +178,8 @@ do_action( 'before_wcmp_vendor_dashboard_quote_details' );
                                     <div class="<?php echo $content_class ?>">
                                         <?php echo wpautop( wptexturize( wp_kses_post( $comment->comment_content ) ) ); ?>
                                     </div>
-                                    <p class="meta"><?php printf( __( 'added on %1$s at %2$s', WCMp_AFM_TEXT_DOMAIN ), date_i18n( wc_date_format(), strtotime( $comment->comment_date ) ), date_i18n( wc_time_format(), strtotime( $comment->comment_date ) ) ); ?>
-                                        <?php printf( ' ' . __( 'by %s', WCMp_AFM_TEXT_DOMAIN ), $comment->comment_author ); ?>
+                                    <p class="meta"><?php printf( __( 'added on %1$s at %2$s', 'wcmp-afm' ), date_i18n( wc_date_format(), strtotime( $comment->comment_date ) ), date_i18n( wc_time_format(), strtotime( $comment->comment_date ) ) ); ?>
+                                        <?php printf( ' ' . __( 'by %s', 'wcmp-afm' ), $comment->comment_author ); ?>
                                     </p>
                                 </li>
                             <?php endforeach; ?>
@@ -188,7 +188,7 @@ do_action( 'before_wcmp_vendor_dashboard_quote_details' );
                 </div>
                 <div class="panel panel-default pannel-outer-heading">
                     <div class="panel-heading">
-                        <h3><?php esc_html_e( 'Quote management', WCMp_AFM_TEXT_DOMAIN ); ?></h3>
+                        <h3><?php esc_html_e( 'Quote management', 'wcmp-afm' ); ?></h3>
                     </div>
                     <div class="panel-body panel-content-padding qoute-managment-wrap">
                         <div class="col-md-6">
@@ -304,9 +304,9 @@ do_action( 'before_wcmp_vendor_dashboard_quote_details' );
                                             }
                                             foreach ( $payable_resource as $key => $value ) {
                                                 if ( $value['cost_multiply'] === 'per_day' ) {
-                                                    $resource_name .= $value['resource_name'] . ' ( ' . wc_price( $value['resource_cost'] ) . ' - ' . __( 'Per Day', WCMp_AFM_TEXT_DOMAIN ) . ' )' . ' , <br> ';
+                                                    $resource_name .= $value['resource_name'] . ' ( ' . wc_price( $value['resource_cost'] ) . ' - ' . __( 'Per Day', 'wcmp-afm' ) . ' )' . ' , <br> ';
                                                 } else {
-                                                    $resource_name .= $value['resource_name'] . ' ( ' . wc_price( $value['resource_cost'] ) . ' - ' . __( 'One Time', WCMp_AFM_TEXT_DOMAIN ) . ' )' . ' , <br> ';
+                                                    $resource_name .= $value['resource_name'] . ' ( ' . wc_price( $value['resource_cost'] ) . ' - ' . __( 'One Time', 'wcmp-afm' ) . ' )' . ' , <br> ';
                                                 }
                                             }
                                             ?>
@@ -328,9 +328,9 @@ do_action( 'before_wcmp_vendor_dashboard_quote_details' );
                                             }
                                             foreach ( $payable_deposits as $key => $value ) {
                                                 if ( $value['cost_multiply'] === 'per_day' ) {
-                                                    $deposite_name .= $value['deposite_name'] . ' ( ' . wc_price( $value['deposite_cost'] ) . ' - ' . __( 'Per Day', WCMp_AFM_TEXT_DOMAIN ) . ' )' . ' , <br> ';
+                                                    $deposite_name .= $value['deposite_name'] . ' ( ' . wc_price( $value['deposite_cost'] ) . ' - ' . __( 'Per Day', 'wcmp-afm' ) . ' )' . ' , <br> ';
                                                 } else {
-                                                    $deposite_name .= $value['deposite_name'] . ' ( ' . wc_price( $value['deposite_cost'] ) . ' - ' . __( 'One Time', WCMp_AFM_TEXT_DOMAIN ) . ' )' . ' , <br> ';
+                                                    $deposite_name .= $value['deposite_name'] . ' ( ' . wc_price( $value['deposite_cost'] ) . ' - ' . __( 'One Time', 'wcmp-afm' ) . ' )' . ' , <br> ';
                                                 }
                                             }
                                             ?>
@@ -353,7 +353,7 @@ do_action( 'before_wcmp_vendor_dashboard_quote_details' );
                                     ob_start();
                                     ?>
                                     <div class="col-md-6">
-                                        <h2><?php esc_html_e( 'Customer information', WCMp_AFM_TEXT_DOMAIN ); ?></h2>
+                                        <h2><?php esc_html_e( 'Customer information', 'wcmp-afm' ); ?></h2>
                                         <?php foreach ( $contacts as $key => $value ) { ?>
                                             <?php if ( ! ( $key === 'quote_message' || $key === 'quote_username' || $key === 'quote_password' ) ) : ?>
                                                 <p><?php echo ucfirst( substr( $key, 6 ) ) ?> : <?php echo $value ?></p>
@@ -372,7 +372,7 @@ do_action( 'before_wcmp_vendor_dashboard_quote_details' );
                 </div>
             </div>
             <div class="col-md-4">
-                <h3><?php esc_html_e( 'Quote actions :', WCMp_AFM_TEXT_DOMAIN ); ?></h3>
+                <h3><?php esc_html_e( 'Quote actions :', 'wcmp-afm' ); ?></h3>
                 <ul class="quote_actions submitbox list-group">
                     <li class="list-group-item list-group-item-action flex-column align-items-start">
                         <?php
@@ -389,7 +389,7 @@ do_action( 'before_wcmp_vendor_dashboard_quote_details' );
                         <?php if ( apply_filters( 'is_vendor_can_take_quote_actions', true, $vendor->id ) ) { ?>
                             <div>
                                 <p class="form-group">
-                                    <label><?php esc_html_e( 'Quote Status', WCMp_AFM_TEXT_DOMAIN ) ?></label>
+                                    <label><?php esc_html_e( 'Quote Status', 'wcmp-afm' ) ?></label>
                                     <select name="post_status" class="form-control">
                                         <?php foreach ( $quote_statuses as $key => $value ) : ?>
                                             <option value="<?php echo $key ?>" <?php echo ( $quote_post->post_status === $key) ? 'selected="selected"' : '' ?>><?php echo $value ?></option>
@@ -397,17 +397,17 @@ do_action( 'before_wcmp_vendor_dashboard_quote_details' );
                                     </select>
                                 </p>
                                 <p class="form-group">
-                                    <label><?php esc_html_e( 'Price', WCMp_AFM_TEXT_DOMAIN ) ?> (<?php echo esc_attr( get_post_meta( $quote_id, 'currency-symbol', true ) ) ?>)</label>
+                                    <label><?php esc_html_e( 'Price', 'wcmp-afm' ) ?> (<?php echo esc_attr( get_post_meta( $quote_id, 'currency-symbol', true ) ) ?>)</label>
                                     <?php
                                     $price = floatval( get_post_meta( $quote_id, '_quote_price', true ) );
                                     ?>
                                     <input type="text" class="redq_input_price form-control" name="quote_price" value="<?php echo $price ?>">
                                 </p>
                             </div>
-                            <input class="btn btn-default button-primary wcmp-save-quote" type="submit" name="save" value="<?php esc_html_e( 'Update Quote', WCMp_AFM_TEXT_DOMAIN ); ?>" />
+                            <input class="btn btn-default button-primary wcmp-save-quote" type="submit" name="save" value="<?php esc_html_e( 'Update Quote', 'wcmp-afm' ); ?>" />
                         <?php } else { ?>
-                            <p><?php esc_html_e( 'Quote Status', WCMp_AFM_TEXT_DOMAIN ) ?> <strong><?php esc_html_e( $quote_statuses[$quote_post->post_status] ); ?></strong></p>
-                            <p><?php esc_html_e( 'Price', WCMp_AFM_TEXT_DOMAIN ) ?> <strong><?php esc_html_e( get_post_meta( $quote_id, '_quote_price', true ) ); ?><?php esc_html_e( get_post_meta( $quote_id, 'currency-symbol', true ) ) ?></strong></p>
+                            <p><?php esc_html_e( 'Quote Status', 'wcmp-afm' ) ?> <strong><?php esc_html_e( $quote_statuses[$quote_post->post_status] ); ?></strong></p>
+                            <p><?php esc_html_e( 'Price', 'wcmp-afm' ) ?> <strong><?php esc_html_e( get_post_meta( $quote_id, '_quote_price', true ) ); ?><?php esc_html_e( get_post_meta( $quote_id, 'currency-symbol', true ) ) ?></strong></p>
                         <?php } ?>
                     </li>
                 </ul>

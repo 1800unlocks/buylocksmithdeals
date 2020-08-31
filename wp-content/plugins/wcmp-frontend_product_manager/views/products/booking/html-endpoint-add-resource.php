@@ -32,7 +32,7 @@ $is_update = $resource ? true : false;
             </div>
             <div class="panel-body panel-content-padding form-horizontal" id="bookings_availability">
                 <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3" for="post_title"><strong><?php esc_html_e( 'Resource Title', WCMp_AFM_TEXT_DOMAIN ); ?></strong></label>
+                    <label class="control-label col-md-3 col-sm-3" for="post_title"><strong><?php esc_html_e( 'Resource Title', 'wcmp-afm' ); ?></strong></label>
                     <div class=" col-md-6 col-sm-9">
                         <input type="text" name="post_title" id="post_title" value="<?php esc_attr_e( $title ); ?>" placeholder="<?php esc_html_e( 'Enter title here' ); ?>" class="form-control" size="30" />
                         <input type="hidden" name="resource_id" id="resource_id" value="<?php esc_attr_e( $id ); ?>" />
@@ -101,7 +101,7 @@ $is_update = $resource ? true : false;
                     </div>
                 <?php else : ?>
                     <div class="wcmp-action-container">
-                        <a href="<?php echo esc_url( wcmp_get_vendor_dashboard_endpoint_url( 'resources' ) ); ?>" class="btn btn-default"><?php esc_html_e( 'Back', WCMp_AFM_TEXT_DOMAIN ); ?></>
+                        <a href="<?php echo esc_url( wcmp_get_vendor_dashboard_endpoint_url( 'resources' ) ); ?>" class="btn btn-default"><?php esc_html_e( 'Back', 'wcmp-afm' ); ?></>
                     </div>
                 <?php endif; ?>
                 <?php wp_nonce_field( 'bookable_resource_details', 'bookable_resource_details_nonce' ); ?>

@@ -17,7 +17,7 @@ class WCMp_AFM_Rental_Calendar_Endpoint {
             ?>
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <?php esc_html_e( 'You do not have permission to view this content. Please contact site administrator.', WCMp_AFM_TEXT_DOMAIN ); ?>
+                    <?php esc_html_e( 'You do not have permission to view this content. Please contact site administrator.', 'wcmp-afm' ); ?>
                 </div>
             </div>
             <?php
@@ -84,7 +84,7 @@ class WCMp_AFM_Rental_Calendar_Endpoint {
 
                     $order_total = $order->get_formatted_order_total();
 
-                    $fullcalendar[$order_item_id]['description'] .= '<tr><th>' . esc_html__( 'Order Total', WCMp_AFM_TEXT_DOMAIN ) . '</th><td>' . $order_total . '</td>';
+                    $fullcalendar[$order_item_id]['description'] .= '<tr><th>' . esc_html__( 'Order Total', 'wcmp-afm' ) . '</th><td>' . $order_total . '</td>';
                     $fullcalendar[$order_item_id]['description'] .= '</tbody></table>';
                 }
             }
@@ -131,10 +131,10 @@ class WCMp_AFM_Rental_Calendar_Endpoint {
         <div id="eventContent" class="popup-modal white-popup-block mfp-hide">
             <div class="white-popup">
                 <h2><a id="eventProduct" href=""></a></h2>
-                <strong><?php esc_html_e( 'Start:', WCMp_AFM_TEXT_DOMAIN ) ?></strong> <span id="startTime"></span><br>
-                <strong><?php esc_html_e( 'End:', WCMp_AFM_TEXT_DOMAIN ) ?></strong> <span id="endTime"></span><br><br>
+                <strong><?php esc_html_e( 'Start:', 'wcmp-afm' ) ?></strong> <span id="startTime"></span><br>
+                <strong><?php esc_html_e( 'End:', 'wcmp-afm' ) ?></strong> <span id="endTime"></span><br><br>
                 <div id="eventInfo"></div>
-                <p><strong><a id="eventLink" href=""><?php esc_html_e( 'View Order', WCMp_AFM_TEXT_DOMAIN ) ?></a></strong></p>
+                <p><strong><a id="eventLink" href=""><?php esc_html_e( 'View Order', 'wcmp-afm' ) ?></a></strong></p>
             </div>
         </div><?php
     }
