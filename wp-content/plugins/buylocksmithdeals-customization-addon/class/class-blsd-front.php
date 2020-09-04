@@ -859,7 +859,9 @@ class BuyLockSmithDealsCustomizationFrontEnd {
         $default_product_car_cat_id = get_post_meta($product_parent_id, 'default_product_car_cat_id', true);
         $default_product_lock_rekeying_cat_id = get_post_meta($product_parent_id, 'default_product_lock_rekeying_cat_id', true);
         if ($product_car_key == 'yes') {
-            echo do_shortcode('[faq cat_id="' . $default_product_car_cat_id . '"]');
+	   $faqterm = get_term( $default_product_car_cat_id, $taxonomy );
+	   $faqslug = $faqterm->slug;
+	   echo do_shortcode('[faq cat="' . $faqslug . '"]');
         }
         /*if ($product_lock_rekeying == 'yes') {
             echo do_shortcode('[faq cat_id="' . $default_product_lock_rekeying_cat_id . '"]');
