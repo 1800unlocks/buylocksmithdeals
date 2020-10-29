@@ -24,7 +24,7 @@ do_action( 'before_wcmp_vendor_dashboard_appointments_table' );
 <div class="col-md-12">
     <div class="panel panel-default panel-pading mt-0">
         <?php
-        $statuses = array_unique( array_merge( array( 'all' => __( 'All', WCMp_AFM_TEXT_DOMAIN ) ), get_wc_appointment_statuses( 'user', true ), get_wc_appointment_statuses( 'cancel', true ) ) );
+        $statuses = array_unique( array_merge( array( 'all' => __( 'All', 'wcmp-afm' ) ), get_wc_appointment_statuses( 'user', true ), get_wc_appointment_statuses( 'cancel', true ) ) );
         $current_status = ! empty( $_GET['post_status'] ) ? wc_clean( $_GET['post_status'] ) : 'all';
         echo '<ul class="appointment_status by_status nav nav-pills category-filter-nav">';
         foreach ( $statuses as $key => $label ) {

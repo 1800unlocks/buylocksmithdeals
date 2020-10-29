@@ -5,11 +5,11 @@
  * Description: Allow your vendors to manage their individual shops from the front end using the Advanced Frontend Manager.
  * Author: WC Marketplace
  * Author URI: https://wc-marketplace.com
- * Version: 3.2.1
+ * Version: 3.2.2
  * Requires at least: 4.2
  * Tested up to: 5.4.2
  * WC requires at least: 3.0
- * WC tested up to: 4.3.0
+ * WC tested up to: 4.3.1
  * Text Domain: wcmp-afm
  * Domain Path: /languages/
  *

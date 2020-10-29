@@ -26,11 +26,11 @@ do_action('before_wcmp_vendor_dashboard_quote_list_table');
         <table id="rental_quotes_table" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th><?php _e('Quote', WCMp_AFM_TEXT_DOMAIN); ?></th>
-                    <th><?php  _e('Status', WCMp_AFM_TEXT_DOMAIN); ?></th>
-                    <th><?php _e('Product', WCMp_AFM_TEXT_DOMAIN); ?></th>
-                    <th><?php _e('Email', WCMp_AFM_TEXT_DOMAIN); ?></th>
-                    <th><?php _e('Date', WCMp_AFM_TEXT_DOMAIN); ?></th>
+                    <th><?php _e('Quote', 'wcmp-afm'); ?></th>
+                    <th><?php  _e('Status', 'wcmp-afm'); ?></th>
+                    <th><?php _e('Product', 'wcmp-afm'); ?></th>
+                    <th><?php _e('Email', 'wcmp-afm'); ?></th>
+                    <th><?php _e('Date', 'wcmp-afm'); ?></th>
                 </tr>
             </thead>
             <tbody>

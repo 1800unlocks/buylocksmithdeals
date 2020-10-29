@@ -20,7 +20,7 @@ class WCMp_AFM_Bookings_Endpoint {
             ?>
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <?php esc_html_e( 'You do not have permission to view this content. Please contact site administrator.', WCMp_AFM_TEXT_DOMAIN ); ?>
+                    <?php esc_html_e( 'You do not have permission to view this content. Please contact site administrator.', 'wcmp-afm' ); ?>
                 </div>
             </div>
             <?php
@@ -45,15 +45,15 @@ class WCMp_AFM_Bookings_Endpoint {
             $bookings_params = array(
                 'ajax_url'               => admin_url( 'admin-ajax.php' ),
                 'post_status'            => ! empty( $_GET['post_status'] ) ? wc_clean( $_GET['post_status'] ) : '',
-                'empty_table'            => esc_js( __( 'No bookings found!', WCMp_AFM_TEXT_DOMAIN ) ),
-                'processing'             => esc_js( __( 'Processing...', WCMp_AFM_TEXT_DOMAIN ) ),
-                'info'                   => esc_js( __( 'Showing _START_ to _END_ of _TOTAL_ bookings', WCMp_AFM_TEXT_DOMAIN ) ),
-                'info_empty'             => esc_js( __( 'Showing 0 to 0 of 0 bookings', WCMp_AFM_TEXT_DOMAIN ) ),
-                'length_menu'            => esc_js( __( 'Number of rows _MENU_', WCMp_AFM_TEXT_DOMAIN ) ),
-                'zero_records'           => esc_js( __( 'No matching bookings found', WCMp_AFM_TEXT_DOMAIN ) ),
-                'next'                   => esc_js( __( 'Next', WCMp_AFM_TEXT_DOMAIN ) ),
-                'previous'               => esc_js( __( 'Previous', WCMp_AFM_TEXT_DOMAIN ) ),
-                'reload'                 => esc_js( __( 'Reload', WCMp_AFM_TEXT_DOMAIN ) ),
+                'empty_table'            => esc_js( __( 'No bookings found!', 'wcmp-afm' ) ),
+                'processing'             => esc_js( __( 'Processing...', 'wcmp-afm' ) ),
+                'info'                   => esc_js( __( 'Showing _START_ to _END_ of _TOTAL_ bookings', 'wcmp-afm' ) ),
+                'info_empty'             => esc_js( __( 'Showing 0 to 0 of 0 bookings', 'wcmp-afm' ) ),
+                'length_menu'            => esc_js( __( 'Number of rows _MENU_', 'wcmp-afm' ) ),
+                'zero_records'           => esc_js( __( 'No matching bookings found', 'wcmp-afm' ) ),
+                'next'                   => esc_js( __( 'Next', 'wcmp-afm' ) ),
+                'previous'               => esc_js( __( 'Previous', 'wcmp-afm' ) ),
+                'reload'                 => esc_js( __( 'Reload', 'wcmp-afm' ) ),
                 'booking_filter_default' => esc_js( __( 'All Bookable Products', 'woocommerce-bookings' ) ),
                 'booking_filter_options' => json_encode( $filters ),
             );

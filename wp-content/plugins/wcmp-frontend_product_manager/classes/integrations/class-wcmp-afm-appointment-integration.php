@@ -601,9 +601,9 @@ class WCMp_AFM_Appointment_Integration {
                         'status' => wc_clean( $_POST['_appointment_status'] ),
                     ) );
                     $appointment->save();
-                    wc_add_notice( __( 'Appointment status updated successfully', WCMp_AFM_TEXT_DOMAIN ), 'success' );
+                    wc_add_notice( __( 'Appointment status updated successfully', 'wcmp-afm' ), 'success' );
                 } else {
-                    wc_add_notice( __( 'Update failed! Invalid appointment, ', WCMp_AFM_TEXT_DOMAIN ), 'success' );
+                    wc_add_notice( __( 'Update failed! Invalid appointment, ', 'wcmp-afm' ), 'success' );
                 }
             } else {
                 wp_die( -1 );

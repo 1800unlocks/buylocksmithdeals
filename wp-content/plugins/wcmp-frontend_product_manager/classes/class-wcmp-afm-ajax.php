@@ -347,7 +347,7 @@ class WCMp_AFM_Ajax {
 
             do_action( 'wcmp_afm_product_bulk_edit_save', $product );
         }
-        $status = array( 'status' => true, 'message' => sprintf( _n( '%s Product updated successfully', '%s Products updated successfully', $update_counter, WCMp_AFM_TEXT_DOMAIN ) ), number_format_i18n( $update_counter ) );
+        $status = array( 'status' => true, 'message' => sprintf( _n( '%s Product updated successfully', '%s Products updated successfully', $update_counter, 'wcmp-afm' ) ), number_format_i18n( $update_counter ) );
         wp_send_json( $status );
     }
 
@@ -444,7 +444,7 @@ class WCMp_AFM_Ajax {
                 $variation_id = $variation_object->get_id();
                 $variation = get_post( $variation_id );
                 $variation_data = array_merge( array_map( 'maybe_unserialize', get_post_custom( $variation_id ) ), wc_get_product_variation_attributes( $variation_id ) ); // kept for BW compatibility.
-                include( WCMp_AFM_PLUGIN_DIR . 'views/products/woocommerce/html-product-variations.php' );
+                afm()->template->get_template( 'products/woocommerce/html-product-variations.php', array( 'variation_object' => $variation_object, 'variation_id' => $variation_id, 'variation_data' => $variation_data, 'variation' => $variation, 'product_object' => $product_object ) );
                 $loop ++;
             }
         }
@@ -477,7 +477,7 @@ class WCMp_AFM_Ajax {
         $variation = get_post( $variation_id );
         $variation_data = array_merge( array_map( 'maybe_unserialize', get_post_custom( $variation_id ) ), wc_get_product_variation_attributes( $variation_id ) ); // kept for BW compatibility.
         
-        include( WCMp_AFM_PLUGIN_DIR . 'views/products/woocommerce/html-product-variations.php' );
+        afm()->template->get_template( 'products/woocommerce/html-product-variations.php', array( 'variation_object' => $variation_object, 'variation_id' => $variation_id, 'variation_data' => $variation_data, 'variation' => $variation, 'product_object' => $product_object ) );
         
         wp_die();
     }
@@ -493,7 +493,7 @@ class WCMp_AFM_Ajax {
 
         $i = absint( $_POST['i'] );
         $rnb_taxonomies = array( 'rnb_categories', 'pickup_location', 'dropoff_location', 'resource', 'person', 'deposite', 'attributes', 'features' );
-        include( WCMp_AFM_PLUGIN_DIR . 'views/products/rental/html-product-rental-inventory.php' );
+        afm()->template->get_template( 'products/rental/html-product-rental-inventory.php', array( 'i' => $i, 'rnb_taxonomies' => $rnb_taxonomies ) );
         wp_die();
     }
 
@@ -508,7 +508,7 @@ class WCMp_AFM_Ajax {
 
         $i = absint( $_POST['i'] );
         $j = absint( $_POST['j'] );
-        include( WCMp_AFM_PLUGIN_DIR . 'views/products/rental/html-product-rental-availability.php' );
+        afm()->template->get_template( 'products/rental/html-product-rental-availability.php', array( 'i' => $i, 'j' => $j ) );
         wp_die();
     }
 
@@ -522,7 +522,7 @@ class WCMp_AFM_Ajax {
         }
 
         $i = absint( $_POST['i'] );
-        include( WCMp_AFM_PLUGIN_DIR . 'views/products/rental/html-product-rental-own-avaiablity.php' );
+        afm()->template->get_template( 'products/rental/html-product-rental-own-avaiablity.php', array( 'i' => $i ) );
         wp_die();
     }
 
@@ -664,7 +664,7 @@ class WCMp_AFM_Ajax {
 
         $i = absint( $_POST['i'] );
 
-        include( WCMp_AFM_PLUGIN_DIR . 'views/products/rental/html-product-price-calculation.php' );
+        afm()->template->get_template( 'products/rental/html-product-price-calculation.php', array( 'i' => $i ) );
         wp_die();
     }
 
@@ -679,7 +679,7 @@ class WCMp_AFM_Ajax {
 
         $i = absint( $_POST['i'] );
 
-        include( WCMp_AFM_PLUGIN_DIR . 'views/products/rental/html-product-price-discount.php' );
+        afm()->template->get_template( 'products/rental/html-product-price-discount.php', array( 'i' => $i ) );
         wp_die();
     }
 
@@ -855,7 +855,7 @@ class WCMp_AFM_Ajax {
         $person_type_id = $person_type->save();
 
         if ( $person_type_id ) {
-            include( WCMp_AFM_PLUGIN_DIR . 'views/products/booking/html-product-booking-persons.php' );
+            afm()->template->get_template( 'products/booking/html-product-booking-persons.php', array( 'post_id' => $post_id, 'loop' => $loop, 'person_type' => $person_type, 'person_type_id' => $person_type_id ) );
         }
         die();
     }
@@ -905,7 +905,7 @@ class WCMp_AFM_Ajax {
             $product->save();
 
             ob_start();
-            include( WCMp_AFM_PLUGIN_DIR . 'views/products/booking/html-product-booking-resources.php' );
+            afm()->template->get_template( 'products/booking/html-product-booking-resources.php', array( 'id' => $id, 'loop' => $loop, 'resource' => $resource ) );
             wp_send_json( array( 'html' => ob_get_clean() ) );
         }
 
@@ -1081,7 +1081,7 @@ class WCMp_AFM_Ajax {
 
                 ob_start();
 
-                include( WCMp_AFM_PLUGIN_DIR . 'views/products/bundle/html-product-bundle-items.php' );
+                afm()->template->get_template( 'products/bundle/html-product-bundle-items.php', array( 'loop' => $loop, 'product_id' => $product_id, 'item_id' => $item_id, 'tabs' => $tabs, 'title' => $title, 'item_availability' => $item_availability ) );
                 $response['markup'] = ob_get_clean();
             } else {
                 $response['message'] = __( 'The selected product cannot be bundled. Please select a simple product, a variable product, or a simple/variable subscription.', 'woocommerce-product-bundles' );
@@ -1563,7 +1563,7 @@ class WCMp_AFM_Ajax {
                     }
 
                     $row = array();
-                    $row['quote'] = "<a href='" . esc_url( wcmp_get_vendor_dashboard_endpoint_url( 'quote-details', $quote_single->ID ) ) . "'><strong>#" . esc_html__( $quote_single->ID ) . "</strong></a> " . esc_html__( 'by', WCMp_AFM_TEXT_DOMAIN ) . " " . $forms['quote_first_name'] . " " . $forms['quote_last_name'];
+                    $row['quote'] = "<a href='" . esc_url( wcmp_get_vendor_dashboard_endpoint_url( 'quote-details', $quote_single->ID ) ) . "'><strong>#" . esc_html__( $quote_single->ID ) . "</strong></a> " . esc_html__( 'by', 'wcmp-afm' ) . " " . $forms['quote_first_name'] . " " . $forms['quote_last_name'];
                     $row['status'] = ucfirst( substr( get_post_status( $quote_single->ID ), 6 ) );
 
                     $product_id = get_post_meta( $quote_single->ID, 'add-to-cart', true );
@@ -1664,13 +1664,13 @@ class WCMp_AFM_Ajax {
                     <div class="<?php echo $content_class ?>">
                         <?php echo wpautop( wptexturize( wp_kses_post( $comment->comment_content ) ) ); ?>
                     </div>
-                    <p class="meta"><?php printf( __( 'added on %1$s at %2$s', WCMp_AFM_TEXT_DOMAIN ), date_i18n( wc_date_format(), strtotime( $comment->comment_date ) ), date_i18n( wc_time_format(), strtotime( $comment->comment_date ) ) ); ?>
-                        <?php printf( ' ' . __( 'by %s', WCMp_AFM_TEXT_DOMAIN ), $comment->comment_author ); ?>
+                    <p class="meta"><?php printf( __( 'added on %1$s at %2$s', 'wcmp-afm' ), date_i18n( wc_date_format(), strtotime( $comment->comment_date ) ), date_i18n( wc_time_format(), strtotime( $comment->comment_date ) ) ); ?>
+                        <?php printf( ' ' . __( 'by %s', 'wcmp-afm' ), $comment->comment_author ); ?>
                     </p>
                 </li><?php
             }
         } else {
-            wp_die( __( 'Invalid product status.', WCMp_AFM_TEXT_DOMAIN ) );
+            wp_die( __( 'Invalid product status.', 'wcmp-afm' ) );
         }
         wp_die();
     }
@@ -1716,7 +1716,7 @@ class WCMp_AFM_Ajax {
         if ( isset( $data['quote_price'] ) ) {
             update_post_meta( $quote_id, '_quote_price', $data['quote_price'] );
         }
-        wp_send_json( array( 'message' => __( 'Quote successfully updated and emailed to the customer', WCMp_AFM_TEXT_DOMAIN ) ) );
+        wp_send_json( array( 'message' => __( 'Quote successfully updated and emailed to the customer', 'wcmp-afm' ) ) );
         wp_die();
     }
 

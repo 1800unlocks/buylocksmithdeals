@@ -59,28 +59,28 @@ class WCMP_Product_Import_Controller extends WC_Product_CSV_Importer_Controller 
             unset($headers[$key]);
         }
         if (empty($sample)) {                                                                                                      
-            $this->add_error(__('The file is empty, please try again with a new file.', WCMp_AFM_TEXT_DOMAIN));
+            $this->add_error(__('The file is empty, please try again with a new file.', 'wcmp-afm'));
             return;
         }
         include_once( WC_ABSPATH . 'includes/admin/importers/views/html-csv-import-mapping.php' );
     }
 
     public static function dc_map_columns($options) {
-        $options['wc_pb_bundled_items'] = __('Bundled Items (JSON-encoded)', WCMp_AFM_TEXT_DOMAIN);
-        $options['wc_pb_layout'] = __('Bundle Layout', WCMp_AFM_TEXT_DOMAIN);
-        $options['wc_pb_group_mode'] = __('Bundle Group Mode', WCMp_AFM_TEXT_DOMAIN);
-        $options['wc_pb_editable_in_cart'] = __('Bundle Cart Editing', WCMp_AFM_TEXT_DOMAIN);
-        $options['wc_pb_sold_individually_context'] = __('Bundle Sold Individually', WCMp_AFM_TEXT_DOMAIN);
+        $options['wc_pb_bundled_items'] = __('Bundled Items (JSON-encoded)', 'wcmp-afm');
+        $options['wc_pb_layout'] = __('Bundle Layout', 'wcmp-afm');
+        $options['wc_pb_group_mode'] = __('Bundle Group Mode', 'wcmp-afm');
+        $options['wc_pb_editable_in_cart'] = __('Bundle Cart Editing', 'wcmp-afm');
+        $options['wc_pb_sold_individually_context'] = __('Bundle Sold Individually', 'wcmp-afm');
 
         return $options;
     }
 
     public static function dc_add_columns_to_mapping_screen($columns) {
-        $columns[__('Bundled Items (JSON-encoded)', WCMp_AFM_TEXT_DOMAIN)] = 'wc_pb_bundled_items';
-        $columns[__('Bundle Layout', WCMp_AFM_TEXT_DOMAIN)] = 'wc_pb_layout';
-        $columns[__('Bundle Group Mode', WCMp_AFM_TEXT_DOMAIN)] = 'wc_pb_group_mode';
-        $columns[__('Bundle Cart Editing', WCMp_AFM_TEXT_DOMAIN)] = 'wc_pb_editable_in_cart';
-        $columns[__('Bundle Sold Individually', WCMp_AFM_TEXT_DOMAIN)] = 'wc_pb_sold_individually_context';
+        $columns[__('Bundled Items (JSON-encoded)', 'wcmp-afm')] = 'wc_pb_bundled_items';
+        $columns[__('Bundle Layout', 'wcmp-afm')] = 'wc_pb_layout';
+        $columns[__('Bundle Group Mode', 'wcmp-afm')] = 'wc_pb_group_mode';
+        $columns[__('Bundle Cart Editing', 'wcmp-afm')] = 'wc_pb_editable_in_cart';
+        $columns[__('Bundle Sold Individually', 'wcmp-afm')] = 'wc_pb_sold_individually_context';
 
         // Always add English mappings.
         $columns['Bundled Items (JSON-encoded)'] = 'wc_pb_bundled_items';
@@ -95,9 +95,14 @@ class WCMP_Product_Import_Controller extends WC_Product_CSV_Importer_Controller 
     public function import() {
         global $WCMP_Product_Import_Export_Bundle;
         if (!is_file($this->file)) {
-            $this->add_error(__('The file does not exist, please try again.', WCMp_AFM_TEXT_DOMAIN));
+            $this->add_error(__('The file does not exist, please try again.', 'wcmp-afm'));
             return;
         }
+
+        // get the the role object
+        $user = new WP_User( get_current_vendor_id() );
+        // grant the manage_product_terms capability
+        $user->add_cap( 'manage_product_terms', true );
 
         if (!empty($_POST['map_to'])) {
             $mapping_from = wp_unslash($_POST['map_from']);
@@ -118,6 +123,9 @@ class WCMP_Product_Import_Controller extends WC_Product_CSV_Importer_Controller 
         ));
         wp_enqueue_script('dc-product-import');
         include_once( WC()->plugin_path() . '/includes/admin/importers/views/html-csv-import-progress.php' );
+
+        // Remove the manage_product_terms capability
+        $user->remove_cap( 'manage_product_terms' );
     }
     
     public function upload_form_handler() {

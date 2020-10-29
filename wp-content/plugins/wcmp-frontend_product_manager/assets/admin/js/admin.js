@@ -1,24 +1,21 @@
 jQuery(document).ready(function($) {
-	$('.img_tip').each(function() {
+	$('body').delegate('.img_tip', 'mouseover', function(event) {
 		$(this).qtip({
-			content: $(this).attr('data-desc'),
-			position: {
+		    overwrite: false,
+		    content: $(this).attr('data-desc'),
+			style: {
+				classes: 'qtip-dark qtip-shadow qtip-rounded qtip-dc-css'
+			},
+		    position: {
 				my: 'center left',
 				at: 'center right',
 				viewport: $(window)
 			},
-			show: {
-				event: 'mouseover',
-				solo: true,
-			},
-			hide: {
-				inactive: 6000,
-				fixed: true
-			},
-			style: {
-				classes: 'qtip-dark qtip-shadow qtip-rounded qtip-dc-css'
-			}
-		});
+		    show: {
+			    event: event.type, 
+			    ready: true 
+		    }
+		}, event);
 	});
 	
 	$('.dc_datepicker').each(function() {
