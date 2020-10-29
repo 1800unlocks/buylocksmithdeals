@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advanced Frontend Manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-10 11:51+0000\n"
+"POT-Creation-Date: 2020-07-09 07:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -15,12 +15,10 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.2.0; wp-4.9.9"
 
-#: includes/class-wcmp-afm-dependencies.php:143
-#, php-format
-msgid ""
-"%sAdvanced Frontend Manager is inactive.%s The %sWC Marketplace%s must be "
-"active for the Advanced Frontend Manager to work. Please %sinstall, activate "
-"& make sure WC Marketplace%s is updated"
+#: includes/class-wcmp-afm-woo-helper-functions.php:55
+#: includes/class-wcmp-afm-woo-helper-functions.php:64
+#: classes/class-wcmp-afm.php:159 classes/class-wcmp-afm.php:168
+msgid "Cheatin&#8217; huh?"
 msgstr ""
 
 #: includes/class-wcmp-afm-dependencies.php:137
@@ -31,11 +29,752 @@ msgid ""
 "activate WooCommerce%s"
 msgstr ""
 
+#: includes/class-wcmp-afm-dependencies.php:143
+#, php-format
+msgid ""
+"%sAdvanced Frontend Manager is inactive.%s The %sWC Marketplace%s must be "
+"active for the Advanced Frontend Manager to work. Please %sinstall, activate "
+"& make sure WC Marketplace%s is updated"
+msgstr ""
+
+#: includes/class-wcmp-afm-dependencies.php:149
+msgid ""
+"Warning! This version of Frontend Manager is not compatible with older "
+"version of WC Marketplace. Please update to WCMp 3.3 or later."
+msgstr ""
+
 #: includes/class-wcmp-afm-dependencies.php:155
 #, php-format
 msgid ""
 "%sAdvanced Frontend Manager%s requires PHP 5.5.16 or greater. We recommend "
 "upgrading to PHP 5.5.16 or greater."
+msgstr ""
+
+#: includes/class-wcmp-afm-dependencies.php:199
+#: views/products/rental/html-endpoint-request-quote.php:29
+msgid "Quote"
+msgstr ""
+
+#: includes/class-wcmp-afm-dependencies.php:208
+msgid "Quote Request"
+msgstr ""
+
+#: includes/class-wcmp-afm-dependencies.php:212
+msgid "Rental Calendar"
+msgstr ""
+
+#: includes/class-wcmp-afm-dependencies.php:370
+msgid "Auctions"
+msgstr ""
+
+#: includes/class-wcmp-afm-dependencies.php:438
+#: classes/endpoints/class-wcmp-afm-assign-affiliate-endpoint.php:31
+msgid "Request Affiliate"
+msgstr ""
+
+#: includes/class-wcmp-afm-dependencies.php:447
+msgid "Manage Affiliate"
+msgstr ""
+
+#: includes/wcmp-afm-core-functions.php:132
+msgid "Add new product category"
+msgstr ""
+
+#: includes/wcmp-afm-core-functions.php:135
+msgid "Add new item"
+msgstr ""
+
+#: includes/wcmp-afm-core-functions.php:374
+msgid "Select"
+msgstr ""
+
+#: classes/class-wcmp-afm-ajax.php:350
+#, php-format
+msgid "%s Product updated successfully"
+msgid_plural "%s Products updated successfully"
+msgstr[0] ""
+msgstr[1] ""
+
+#: classes/class-wcmp-afm-ajax.php:1564
+msgid "by"
+msgstr ""
+
+#: classes/class-wcmp-afm-ajax.php:1665
+#: views/products/rental/html-endpoint-quote-details.php:181
+#, php-format
+msgid "added on %1$s at %2$s"
+msgstr ""
+
+#: classes/class-wcmp-afm-ajax.php:1666
+#: views/products/rental/html-endpoint-quote-details.php:182
+#, php-format
+msgid "by %s"
+msgstr ""
+
+#: classes/class-wcmp-afm-ajax.php:1671
+msgid "Invalid product status."
+msgstr ""
+
+#: classes/class-wcmp-afm-ajax.php:1717
+msgid "Quote successfully updated and emailed to the customer"
+msgstr ""
+
+#: classes/class-wcmp-afm-admin.php:57
+msgid ""
+"Offer a single frontend dashboard for all vendor purpose and eliminate their "
+"backend access requirement."
+msgstr ""
+
+#: classes/class-wcmp-afm-admin.php:75
+msgid "Vendor Import Capability"
+msgstr ""
+
+#: classes/class-wcmp-afm-admin.php:75
+msgid "Allow vendors to import products."
+msgstr ""
+
+#: classes/class-wcmp-afm-admin.php:76
+msgid "Vendor Export Capability"
+msgstr ""
+
+#: classes/class-wcmp-afm-admin.php:76
+msgid "Allow vendors to export products."
+msgstr ""
+
+#: classes/class-wcmp-afm.php:462
+msgid "Import"
+msgstr ""
+
+#: classes/class-wcmp-afm.php:466
+msgid "Export"
+msgstr ""
+
+#: classes/class-wcmp-afm-endpoint.php:135
+msgid "You are not authorized to perform this action!"
+msgstr ""
+
+#: classes/class-wcmp-afm-import-controller.php:62
+msgid "The file is empty, please try again with a new file."
+msgstr ""
+
+#: classes/class-wcmp-afm-import-controller.php:69
+#: classes/class-wcmp-afm-import-controller.php:79
+msgid "Bundled Items (JSON-encoded)"
+msgstr ""
+
+#: classes/class-wcmp-afm-import-controller.php:70
+#: classes/class-wcmp-afm-import-controller.php:80
+msgid "Bundle Layout"
+msgstr ""
+
+#: classes/class-wcmp-afm-import-controller.php:71
+#: classes/class-wcmp-afm-import-controller.php:81
+msgid "Bundle Group Mode"
+msgstr ""
+
+#: classes/class-wcmp-afm-import-controller.php:72
+#: classes/class-wcmp-afm-import-controller.php:82
+msgid "Bundle Cart Editing"
+msgstr ""
+
+#: classes/class-wcmp-afm-import-controller.php:73
+#: classes/class-wcmp-afm-import-controller.php:83
+msgid "Bundle Sold Individually"
+msgstr ""
+
+#: classes/class-wcmp-afm-import-controller.php:98
+msgid "The file does not exist, please try again."
+msgstr ""
+
+#: classes/class-wcmp-afm-frontend.php:91
+msgid "No products selected!"
+msgstr ""
+
+#: classes/class-wcmp-afm-frontend.php:149
+msgid "Edit Product"
+msgstr ""
+
+#: views/bulk-actions/html-bulk-edit-product.php:27
+msgid "Products to edit"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-manage-affiliate-endpoint.php:14
+#: views/products/yith-auction/html-endpoint-auctions.php:33
+#: views/products/simple-auction/html-endpoint-auctions.php:30
+msgid "Name"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-manage-affiliate-endpoint.php:15
+#: classes/integrations/class-wcmp-afm-affiliate-wp-integration.php:391
+msgid "Affiliate ID"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-manage-affiliate-endpoint.php:16
+msgid "Paid Earnings"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-manage-affiliate-endpoint.php:17
+msgid "Unpaid Earnings"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-manage-affiliate-endpoint.php:18
+msgid "Rate"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-manage-affiliate-endpoint.php:19
+msgid "Paid Referrals"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-manage-affiliate-endpoint.php:20
+msgid "Unpaid Referrals"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-manage-affiliate-endpoint.php:21
+msgid "Visit"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-manage-affiliate-endpoint.php:22
+#: classes/integrations/class-wcmp-afm-affiliate-wp-integration.php:392
+#: views/products/rental/html-endpoint-request-quote.php:30
+msgid "Status"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-manage-affiliate-endpoint.php:24
+msgid "User ID"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-manage-affiliate-endpoint.php:25
+msgid "Action"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-manage-affiliate-endpoint.php:59
+msgid "You did not assign with any affiliate yet!!!"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-bookings-endpoint.php:23
+#: classes/endpoints/class-wcmp-afm-create-booking-endpoint.php:33
+#: classes/endpoints/class-wcmp-afm-booking-notification-endpoint.php:25
+#: classes/endpoints/class-wcmp-afm-request-quote-endpoint.php:18
+#: classes/endpoints/class-wcmp-afm-simple-auctions-endpoint.php:19
+#: classes/endpoints/class-wcmp-afm-resources-endpoint.php:21
+#: classes/endpoints/class-wcmp-afm-yith-auctions-endpoint.php:19
+#: classes/endpoints/class-wcmp-afm-appointments-endpoint.php:39
+#: classes/endpoints/class-wcmp-afm-appointment-calendar-endpoint.php:29
+#: classes/endpoints/class-wcmp-afm-quote-details-endpoint.php:19
+#: classes/endpoints/class-wcmp-afm-booking-calendar-endpoint.php:30
+#: classes/endpoints/class-wcmp-afm-subscriptions-endpoint.php:23
+#: classes/endpoints/class-wcmp-afm-rental-calendar-endpoint.php:20
+msgid ""
+"You do not have permission to view this content. Please contact site "
+"administrator."
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-bookings-endpoint.php:48
+msgid "No bookings found!"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-bookings-endpoint.php:49
+#: classes/endpoints/class-wcmp-afm-request-quote-endpoint.php:28
+#: classes/endpoints/class-wcmp-afm-simple-auctions-endpoint.php:32
+#: classes/endpoints/class-wcmp-afm-resources-endpoint.php:36
+#: classes/endpoints/class-wcmp-afm-yith-auctions-endpoint.php:33
+#: classes/endpoints/class-wcmp-afm-appointments-endpoint.php:61
+#: classes/endpoints/class-wcmp-afm-subscriptions-endpoint.php:38
+msgid "Processing..."
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-bookings-endpoint.php:50
+msgid "Showing _START_ to _END_ of _TOTAL_ bookings"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-bookings-endpoint.php:51
+msgid "Showing 0 to 0 of 0 bookings"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-bookings-endpoint.php:52
+#: classes/endpoints/class-wcmp-afm-request-quote-endpoint.php:31
+#: classes/endpoints/class-wcmp-afm-simple-auctions-endpoint.php:35
+#: classes/endpoints/class-wcmp-afm-resources-endpoint.php:39
+#: classes/endpoints/class-wcmp-afm-yith-auctions-endpoint.php:36
+#: classes/endpoints/class-wcmp-afm-appointments-endpoint.php:64
+#: classes/endpoints/class-wcmp-afm-subscriptions-endpoint.php:41
+msgid "Number of rows _MENU_"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-bookings-endpoint.php:53
+msgid "No matching bookings found"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-bookings-endpoint.php:54
+#: classes/endpoints/class-wcmp-afm-request-quote-endpoint.php:33
+#: classes/endpoints/class-wcmp-afm-simple-auctions-endpoint.php:37
+#: classes/endpoints/class-wcmp-afm-resources-endpoint.php:41
+#: classes/endpoints/class-wcmp-afm-yith-auctions-endpoint.php:38
+#: classes/endpoints/class-wcmp-afm-appointments-endpoint.php:66
+#: classes/endpoints/class-wcmp-afm-subscriptions-endpoint.php:43
+msgid "Next"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-bookings-endpoint.php:55
+#: classes/endpoints/class-wcmp-afm-request-quote-endpoint.php:34
+#: classes/endpoints/class-wcmp-afm-simple-auctions-endpoint.php:38
+#: classes/endpoints/class-wcmp-afm-resources-endpoint.php:42
+#: classes/endpoints/class-wcmp-afm-yith-auctions-endpoint.php:39
+#: classes/endpoints/class-wcmp-afm-appointments-endpoint.php:67
+#: classes/endpoints/class-wcmp-afm-subscriptions-endpoint.php:44
+msgid "Previous"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-bookings-endpoint.php:56
+#: classes/endpoints/class-wcmp-afm-request-quote-endpoint.php:35
+#: classes/endpoints/class-wcmp-afm-simple-auctions-endpoint.php:39
+#: classes/endpoints/class-wcmp-afm-resources-endpoint.php:43
+#: classes/endpoints/class-wcmp-afm-yith-auctions-endpoint.php:40
+#: classes/endpoints/class-wcmp-afm-appointments-endpoint.php:68
+#: classes/endpoints/class-wcmp-afm-subscriptions-endpoint.php:45
+msgid "Reload"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-request-quote-endpoint.php:27
+msgid "No quotes found!"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-request-quote-endpoint.php:29
+msgid "Showing _START_ to _END_ of _TOTAL_ quotes"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-request-quote-endpoint.php:30
+msgid "Showing 0 to 0 of 0 quotes"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-request-quote-endpoint.php:32
+msgid "No matching quotes found"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-assign-affiliate-endpoint.php:15
+msgid "Request Vendor Affiliate"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-assign-affiliate-endpoint.php:20
+msgid "Email Id *"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-assign-affiliate-endpoint.php:23
+msgid "(Add an existing user as your Affiliate.)"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-assign-affiliate-endpoint.php:29
+msgid "* This field is required, you must fill some information."
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-simple-auctions-endpoint.php:31
+#: classes/endpoints/class-wcmp-afm-yith-auctions-endpoint.php:32
+msgid "No auctions found!"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-simple-auctions-endpoint.php:33
+#: classes/endpoints/class-wcmp-afm-yith-auctions-endpoint.php:34
+msgid "Showing _START_ to _END_ of _TOTAL_ auctions"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-simple-auctions-endpoint.php:34
+#: classes/endpoints/class-wcmp-afm-yith-auctions-endpoint.php:35
+msgid "Showing 0 to 0 of 0 auctions"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-simple-auctions-endpoint.php:36
+#: classes/endpoints/class-wcmp-afm-yith-auctions-endpoint.php:37
+msgid "No matching auctions found"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-simple-auctions-endpoint.php:40
+msgid "Auction filter By"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-resources-endpoint.php:35
+msgid "No resources found!"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-resources-endpoint.php:37
+msgid "Showing _START_ to _END_ of _TOTAL_ resources"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-resources-endpoint.php:38
+msgid "Showing 0 to 0 of 0 resources"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-resources-endpoint.php:40
+msgid "No matching resources found"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-appointments-endpoint.php:60
+msgid "No appointments found!"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-appointments-endpoint.php:62
+msgid "Showing _START_ to _END_ of _TOTAL_ appointments"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-appointments-endpoint.php:63
+msgid "Showing 0 to 0 of 0 appointments"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-appointments-endpoint.php:65
+msgid "No matching appointments found"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-subscriptions-endpoint.php:37
+msgid "No subscriptions found!"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-subscriptions-endpoint.php:39
+msgid "Showing _START_ to _END_ of _TOTAL_ subscriptions"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-subscriptions-endpoint.php:40
+msgid "Showing 0 to 0 of 0 subscriptions"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-subscriptions-endpoint.php:42
+msgid "No matching subscriptions found"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-rental-calendar-endpoint.php:87
+msgid "Order Total"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-rental-calendar-endpoint.php:134
+msgid "Start:"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-rental-calendar-endpoint.php:135
+msgid "End:"
+msgstr ""
+
+#: classes/endpoints/class-wcmp-afm-rental-calendar-endpoint.php:137
+msgid "View Order"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-appointment-integration.php:604
+msgid "Appointment status updated successfully"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-appointment-integration.php:606
+msgid "Update failed! Invalid appointment, "
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-rental-integration.php:87
+#: classes/integrations/class-wcmp-afm-rentalpro-integration.php:294
+msgid "Remove this availability range?"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-product-addons-integration.php:67
+msgid "Last option can not be deleted"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-simple-auction-integration.php:129
+msgid "Automatic relist"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-simple-auction-integration.php:201
+msgid "Are you sure you want to delete the customer's bid?"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-simple-auction-integration.php:202
+msgid "Are you sure you want to remove reserve price?"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-simple-auction-integration.php:425
+msgid "Active"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-simple-auction-integration.php:426
+msgid "Finished"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-simple-auction-integration.php:427
+msgid "Fail"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-simple-auction-integration.php:428
+msgid "Sold"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-simple-auction-integration.php:429
+msgid "Paid"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-booking-integration.php:796
+msgid "Invalid resource."
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-booking-integration.php:820
+msgid "Resource published successfully"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-booking-integration.php:824
+msgid "Resource updated successfully"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-booking-integration.php:840
+msgid "Booking status updated successfully"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-booking-integration.php:842
+msgid "Update failed! Invalid booking, "
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-product-bundle-integration.php:184
+msgid "Are you sure you want to remove this product?"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-rentalpro-integration.php:232
+msgid "Rentals"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-rentalpro-integration.php:293
+msgid "Remove this inventory item?"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-rentalpro-integration.php:295
+msgid "Remove this days range?"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-rentalpro-integration.php:296
+msgid "Remove this discount?"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-affiliate-wp-integration.php:122
+msgid "AffiliateWP"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-affiliate-wp-integration.php:155
+msgid "Affiliate Management"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-affiliate-wp-integration.php:258
+msgid "Assign Vendor"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-affiliate-wp-integration.php:262
+msgid "Select Vendor"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-affiliate-wp-integration.php:284
+msgid "Affiliate"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-affiliate-wp-integration.php:286
+msgid "Enable Request Affiliate"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-affiliate-wp-integration.php:295
+msgid "Who Will Bear the Affiliate charge"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-affiliate-wp-integration.php:295
+msgid "Admin"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-affiliate-wp-integration.php:295
+msgid "Vendor "
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-affiliate-wp-integration.php:339
+msgid "You have successfully removed from this affiliate"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-affiliate-wp-integration.php:349
+msgid "Email fields is empty"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-affiliate-wp-integration.php:350
+msgid "You have already assign with this affiliate"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-affiliate-wp-integration.php:351
+msgid "You have succesfully applied for affiliate"
+msgstr ""
+
+#: classes/integrations/class-wcmp-afm-affiliate-wp-integration.php:393
+msgid "Accept"
+msgstr ""
+
+#: views/products/subscription/html-endpoint-subscriptions.php:28
+#: views/products/appointment/html-endpoint-appointments1.php:27
+#: views/products/booking/html-endpoint-bookings.php:27
+msgid "All"
+msgstr ""
+
+#: views/products/subscription/html-endpoint-single-subscription.php:45
+msgid "Customer Information"
+msgstr ""
+
+#: views/products/subscription/html-endpoint-single-subscription.php:50
+msgid "Name:"
+msgstr ""
+
+#: views/products/subscription/html-endpoint-single-subscription.php:54
+msgid "Email address:"
+msgstr ""
+
+#: views/products/subscription/html-endpoint-single-subscription.php:58
+msgid "Phone:"
+msgstr ""
+
+#: views/products/subscription/html-endpoint-single-subscription.php:66
+msgid "Customer Address"
+msgstr ""
+
+#: views/products/subscription/html-endpoint-single-subscription.php:109
+msgid "Start Date:"
+msgstr ""
+
+#: views/products/subscription/html-endpoint-single-subscription.php:113
+msgid "Trial End:"
+msgstr ""
+
+#: views/products/subscription/html-endpoint-single-subscription.php:117
+msgid "Next Payment:"
+msgstr ""
+
+#: views/products/subscription/html-endpoint-single-subscription.php:121
+msgid "End Date:"
+msgstr ""
+
+#: views/products/subscription/html-endpoint-single-subscription.php:126
+msgid "Price:"
+msgstr ""
+
+#: views/products/appointment/html-endpoint-single-appointment.php:59
+msgid "Appointment status:"
+msgstr ""
+
+#: views/products/appointment/html-endpoint-single-appointment.php:64
+#: views/products/booking/html-endpoint-single-booking.php:63
+msgid "Order details:"
+msgstr ""
+
+#: views/products/appointment/html-endpoint-single-appointment.php:115
+#: views/products/booking/html-endpoint-add-resource.php:104
+#: views/products/booking/html-endpoint-single-booking.php:154
+msgid "Back"
+msgstr ""
+
+#: views/products/yith-auction/html-product-bid-info.php:24
+msgid "Auction details"
+msgstr ""
+
+#: views/products/yith-auction/html-product-after-auction-data.php:134
+msgid ""
+"Change the dates and click on the update button to re-schedule the auction"
+msgstr ""
+
+#: views/products/simple-auction/html-endpoint-auctions.php:31
+msgid "Start Date"
+msgstr ""
+
+#: views/products/simple-auction/html-endpoint-auctions.php:32
+msgid "End Date"
+msgstr ""
+
+#: views/products/simple-auction/html-endpoint-auctions.php:33
+msgid "Auction status"
+msgstr ""
+
+#: views/products/simple-auction/html-endpoint-auctions.php:34
+msgid "Max bid"
+msgstr ""
+
+#: views/products/rental/html-product-data-price-calculation.php:74
+msgid "Set daily pricing plan"
+msgstr ""
+
+#: views/products/rental/html-endpoint-quote-details.php:26
+#: views/products/rental/html-endpoint-quote-details.php:46
+msgid "Invalid quote"
+msgstr ""
+
+#: views/products/rental/html-endpoint-quote-details.php:150
+msgid "Quote request #"
+msgstr ""
+
+#: views/products/rental/html-endpoint-quote-details.php:157
+msgid "Quote message"
+msgstr ""
+
+#: views/products/rental/html-endpoint-quote-details.php:164
+msgid "Add Message"
+msgstr ""
+
+#: views/products/rental/html-endpoint-quote-details.php:191
+msgid "Quote management"
+msgstr ""
+
+#: views/products/rental/html-endpoint-quote-details.php:307
+#: views/products/rental/html-endpoint-quote-details.php:331
+msgid "Per Day"
+msgstr ""
+
+#: views/products/rental/html-endpoint-quote-details.php:309
+#: views/products/rental/html-endpoint-quote-details.php:333
+msgid "One Time"
+msgstr ""
+
+#: views/products/rental/html-endpoint-quote-details.php:356
+msgid "Customer information"
+msgstr ""
+
+#: views/products/rental/html-endpoint-quote-details.php:375
+msgid "Quote actions :"
+msgstr ""
+
+#: views/products/rental/html-endpoint-quote-details.php:392
+#: views/products/rental/html-endpoint-quote-details.php:409
+msgid "Quote Status"
+msgstr ""
+
+#: views/products/rental/html-endpoint-quote-details.php:400
+#: views/products/rental/html-endpoint-quote-details.php:410
+msgid "Price"
+msgstr ""
+
+#: views/products/rental/html-endpoint-quote-details.php:407
+msgid "Update Quote"
+msgstr ""
+
+#: views/products/rental/html-endpoint-request-quote.php:31
+msgid "Product"
+msgstr ""
+
+#: views/products/rental/html-endpoint-request-quote.php:32
+msgid "Email"
+msgstr ""
+
+#: views/products/rental/html-endpoint-request-quote.php:33
+msgid "Date"
+msgstr ""
+
+#: views/products/rental/html-product-rental-availability.php:24
+#: views/products/rental/html-product-rental-own-avaiablity.php:24
+msgid "From..."
+msgstr ""
+
+#: views/products/rental/html-product-rental-availability.php:29
+#: views/products/rental/html-product-rental-own-avaiablity.php:25
+msgid "To..."
+msgstr ""
+
+#: views/products/booking/html-endpoint-add-resource.php:35
+msgid "Resource Title"
+msgstr ""
+
+#: views/products/booking/html-endpoint-single-booking.php:58
+msgid "Booking status:"
+msgstr ""
+
+#: views/products/booking/html-endpoint-single-booking.php:79
+msgid "Resource:"
 msgstr ""
 
 #. Name of the plugin
@@ -48,42 +787,14 @@ msgid ""
 "the Advanced Frontend Manager."
 msgstr ""
 
-#: includes/class-wcmp-afm-dependencies.php:370
-msgid "Auctions"
-msgstr ""
-
-#: classes/class-wcmp-afm.php:159 classes/class-wcmp-afm.php:168
-#: includes/class-wcmp-afm-woo-helper-functions.php:55
-#: includes/class-wcmp-afm-woo-helper-functions.php:64
-msgid "Cheatin&#8217; huh?"
-msgstr ""
-
-#. Author URI of the plugin
-msgid "https://wc-marketplace.com"
-msgstr ""
-
 #. URI of the plugin
 msgid "https://wc-marketplace.com/"
 msgstr ""
 
-#: includes/class-wcmp-afm-dependencies.php:199
-msgid "Quote"
-msgstr ""
-
-#: includes/class-wcmp-afm-dependencies.php:208
-msgid "Quote Request"
-msgstr ""
-
-#: includes/class-wcmp-afm-dependencies.php:212
-msgid "Rental Calendar"
-msgstr ""
-
-#: includes/class-wcmp-afm-dependencies.php:149
-msgid ""
-"Warning! This version of Frontend Manager is not compatible with older "
-"version of WC Marketplace. Please update to WCMp 3.3 or later."
-msgstr ""
-
 #. Author of the plugin
 msgid "WC Marketplace"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://wc-marketplace.com"
 msgstr ""

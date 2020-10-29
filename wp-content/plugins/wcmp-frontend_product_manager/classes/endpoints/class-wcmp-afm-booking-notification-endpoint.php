@@ -22,7 +22,7 @@ class WCMp_AFM_Booking_Notification_Endpoint {
             ?>
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <?php esc_html_e( 'You do not have permission to view this content. Please contact site administrator.', WCMp_AFM_TEXT_DOMAIN ); ?>
+                    <?php esc_html_e( 'You do not have permission to view this content. Please contact site administrator.', 'wcmp-afm' ); ?>
                 </div>
             </div>
             <?php

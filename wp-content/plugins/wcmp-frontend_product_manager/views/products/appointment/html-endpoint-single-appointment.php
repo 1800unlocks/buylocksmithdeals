@@ -56,12 +56,12 @@ $statuses = array_unique( array_merge( get_wc_appointment_statuses( 'user', true
                 <div class="panel-body panel-content-padding form-horizontal" id="appointment_details">
                     <table class="table vertical-th table-bordered appointment-customer-details">
                         <tr>
-                            <th><?php esc_html_e( 'Appointment status:', WCMp_AFM_TEXT_DOMAIN ); ?></th>
+                            <th><?php esc_html_e( 'Appointment status:', 'wcmp-afm' ); ?></th>
                             <td><span class="status <?php esc_attr_e( $appointment->get_status() ); ?>"><?php esc_html_e( $appointment->get_status() ); ?></span></td>
                         </tr>
                         <?php if ( $order ) { ?>
                             <tr>
-                                <th><?php esc_html_e( 'Order details:', WCMp_AFM_TEXT_DOMAIN ); ?></th>
+                                <th><?php esc_html_e( 'Order details:', 'wcmp-afm' ); ?></th>
                                 <td><?php echo '<a href="' . wcmp_get_vendor_dashboard_endpoint_url( get_wcmp_vendor_settings( 'wcmp_vendor_orders_endpoint', 'vendor', 'general', 'vendor-orders' ), $order_id ) . '">#' . $order->get_order_number() . '</a> &ndash; <span class="status ' . esc_attr( $order->get_status() ) . '">' . esc_html( wc_get_order_status_name( $order->get_status() ) ) . '</span>'; ?></td>
                             </tr>
                         <?php } ?>
@@ -112,7 +112,7 @@ $statuses = array_unique( array_merge( get_wc_appointment_statuses( 'user', true
                         </form>
                     <?php else : ?>
                         <div class="wcmp-action-container">
-                            <a href="<?php echo esc_url( wcmp_get_vendor_dashboard_endpoint_url( 'appointments' ) ); ?>" class="btn btn-default"><?php esc_html_e( 'Back', WCMp_AFM_TEXT_DOMAIN ); ?></>
+                            <a href="<?php echo esc_url( wcmp_get_vendor_dashboard_endpoint_url( 'appointments' ) ); ?>" class="btn btn-default"><?php esc_html_e( 'Back', 'wcmp-afm' ); ?></>
                         </div>
                     <?php endif; ?>
                 </div>

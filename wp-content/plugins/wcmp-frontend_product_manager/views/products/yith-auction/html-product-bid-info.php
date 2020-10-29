@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <div class="panel panel-default pannel-outer-heading auction-details-wrapper show_if_auction">
     <div class="panel-heading">
-        <h3 class="pull-left"><?php esc_html_e( 'Auction details', WCMp_AFM_TEXT_DOMAIN ); ?></h3>
+        <h3 class="pull-left"><?php esc_html_e( 'Auction details', 'wcmp-afm' ); ?></h3>
     </div>
     <div class="panel-body panel-content-padding form-group-wrapper"> 
         <!-- templates -->

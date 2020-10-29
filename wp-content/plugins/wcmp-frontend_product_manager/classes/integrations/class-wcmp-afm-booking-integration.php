@@ -38,6 +38,8 @@ class WCMp_AFM_Booking_Integration {
         add_filter( 'wcmp_advance_product_script_params', array( $this, 'add_localize_params' ) );
         add_action( 'afm_enqueue_dashboard_scripts', array( $this, 'booking_endpoint_scripts' ), 10, 4 );
 
+        add_filter( 'woocommerce_email_classes', array( $this, 'afm_booking_emails' ) );
+
         // Bookable Product Additional Tabs
         add_filter( 'wcmp_product_data_tabs', array( $this, 'booking_additional_tabs' ) );
         add_action( 'wcmp_product_tabs_content', array( $this, 'booking_additional_tabs_content' ) );
@@ -429,6 +431,18 @@ class WCMp_AFM_Booking_Integration {
         }
     }
 
+    public function afm_booking_emails($emails ) {
+        if ( ! isset( $emails['WC_Email_Vendor_New_Booking'] ) ) {
+            include('email/booking/class-wcmp-vendor-new-booking.php');
+            $emails['WC_Email_Vendor_New_Booking'] = new WC_Email_Vendor_New_Booking();
+        }
+        if ( ! isset( $emails['WC_Email_Vendor_Booking_Cancelled'] ) ) {
+            include('email/booking/class-wcmp-vendor-booking-cancelled.php');
+            $emails['WC_Email_Vendor_Booking_Cancelled'] = new WC_Email_Vendor_Booking_Cancelled();
+         }
+        return $emails;
+    }
+
     public function add_localize_params( $params ) {
         $new_params = array(
             'add_person_nonce'       => wp_create_nonce( 'add-person' ),
@@ -793,7 +807,7 @@ class WCMp_AFM_Booking_Integration {
                             $resource_id = absint( $_POST['resource_id'] );
                             if ( ! in_array( $resource_id, $vendor_resource_ids ) ) {
                                 $resource_id = 0;
-                                wp_die( __( 'Invalid resource.', WCMp_AFM_TEXT_DOMAIN ) );
+                                wp_die( __( 'Invalid resource.', 'wcmp-afm' ) );
                             }
                         } else {
                             $is_updated = false;
@@ -817,11 +831,11 @@ class WCMp_AFM_Booking_Integration {
                             wc_add_notice( $resource_id->get_error_message(), 'error' );
                         }
                         if ( ! $is_updated ) {
-                            wc_add_notice( __( 'Resource published successfully', WCMp_AFM_TEXT_DOMAIN ), 'success' );
+                            wc_add_notice( __( 'Resource published successfully', 'wcmp-afm' ), 'success' );
                             wp_redirect( wcmp_get_vendor_dashboard_endpoint_url( 'resources', $resource_id ) );
                             exit;
                         }
-                        wc_add_notice( __( 'Resource updated successfully', WCMp_AFM_TEXT_DOMAIN ), 'error' );
+                        wc_add_notice( __( 'Resource updated successfully', 'wcmp-afm' ), 'error' );
                     } else {
                         wp_die( -1 );
                     }
@@ -837,9 +851,9 @@ class WCMp_AFM_Booking_Integration {
                                 'status' => wc_clean( $_POST['_booking_status'] ),
                             ) );
                             $booking->save();
-                            wc_add_notice( __( 'Booking status updated successfully', WCMp_AFM_TEXT_DOMAIN ), 'success' );
+                            wc_add_notice( __( 'Booking status updated successfully', 'wcmp-afm' ), 'success' );
                         } else {
-                            wc_add_notice( __( 'Update failed! Invalid booking, ', WCMp_AFM_TEXT_DOMAIN ), 'success' );
+                            wc_add_notice( __( 'Update failed! Invalid booking, ', 'wcmp-afm' ), 'success' );
                         }
                     } else {
                         wp_die( -1 );

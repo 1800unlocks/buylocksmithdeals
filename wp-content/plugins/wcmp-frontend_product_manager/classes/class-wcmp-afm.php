@@ -459,11 +459,11 @@ final class WCMp_AFM {
      */
     public function add_wcmp_endpoints_query_vars( $endpoints ) {
         $endpoints['product-import'] = apply_filters( 'wcmp_afm_product_import_endpoints', array(
-            'label' => __('Import', WCMp_AFM_TEXT_DOMAIN),
+            'label' => __('Import', 'wcmp-afm'),
             'endpoint' => 'product-import'
         ) );
         $endpoints['product-export'] = apply_filters( 'wcmp_afm_product_export_endpoints', array(
-            'label' => __('Export', WCMp_AFM_TEXT_DOMAIN),
+            'label' => __('Export', 'wcmp-afm'),
             'endpoint' => 'product-export'
         ) );
         

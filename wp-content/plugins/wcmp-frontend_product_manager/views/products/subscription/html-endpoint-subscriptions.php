@@ -25,7 +25,7 @@ do_action( 'before_wcmp_vendor_dashboard_subscriptions_table' );
 <div class="col-md-12">
     <div class="panel panel-default panel-pading">
         <?php
-        $statuses = array_unique( array_merge( array( 'all' => __( 'All', WCMp_AFM_TEXT_DOMAIN) ), wcs_get_subscription_statuses( ) ) );
+        $statuses = array_unique( array_merge( array( 'all' => __( 'All', 'wcmp-afm') ), wcs_get_subscription_statuses( ) ) );
         $current_status = ! empty( $_GET['post_status'] ) ? wc_clean( $_GET['post_status'] ) : 'all';
         echo '<ul class="subscription_status by_status nav nav-pills">';
         foreach ( $statuses as $key => $label ) {

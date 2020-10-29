@@ -42,20 +42,20 @@ defined( 'ABSPATH' ) || exit;
         <div class="col-md-8 subscription-details-wrapper">
             <div class="panel panel-default pannel-outer-heading">
                 <div class="panel-heading">
-                    <h3><?php esc_html_e( 'Customer Information', WCMp_AFM_TEXT_DOMAIN ); ?></h3>
+                    <h3><?php esc_html_e( 'Customer Information', 'wcmp-afm' ); ?></h3>
                 </div>
                 <div class="panel-body panel-content-padding form-horizontal" id="subscription_details">
                     <table class="table deep subscription-customer-details">
                         <tr>
-                            <th><?php esc_html_e( 'Name:', WCMp_AFM_TEXT_DOMAIN ); ?></th>
+                            <th><?php esc_html_e( 'Name:', 'wcmp-afm' ); ?></th>
                             <td><span class="customer_name"><?php esc_html_e( trim( $subscription->get_billing_first_name() . ' ' . $subscription->get_billing_last_name() ) ); ?></span></td>
                         </tr>
                         <tr>
-                            <th><?php esc_html_e( 'Email address:', WCMp_AFM_TEXT_DOMAIN ); ?></th>
+                            <th><?php esc_html_e( 'Email address:', 'wcmp-afm' ); ?></th>
                             <td><span class="customer_email"><?php esc_html_e( $subscription->get_billing_email() ); ?></span></td>
                         </tr>
                         <tr>
-                            <th><?php esc_html_e( 'Phone:', WCMp_AFM_TEXT_DOMAIN ); ?></th>
+                            <th><?php esc_html_e( 'Phone:', 'wcmp-afm' ); ?></th>
                             <td><span class="customer_phone"><?php esc_html_e( $subscription->get_billing_phone() ); ?></span></td>
                         </tr>
                     </table>
@@ -63,7 +63,7 @@ defined( 'ABSPATH' ) || exit;
                 
 				<div class="panel panel-default pannel-outer-heading">
 					<div class="panel-heading">
-						<h3><?php esc_html_e( 'Customer Address', WCMp_AFM_TEXT_DOMAIN ); ?></h3>
+						<h3><?php esc_html_e( 'Customer Address', 'wcmp-afm' ); ?></h3>
 					</div>
 					<div class="panel-body panel-content-padding form-horizontal" id="subscription_details">
 						<div class="col-md-4">
@@ -106,24 +106,24 @@ defined( 'ABSPATH' ) || exit;
 							<td><?php echo esc_html( wcs_get_subscription_period_interval_strings( $subscription->get_billing_interval() ) ) . ' ' . esc_html( wcs_get_subscription_period_strings( 1, $subscription->get_billing_period() ) ); ?></td>
 						</tr>
 						<tr class="view">
-							<th><?php esc_html_e( 'Start Date:', WCMp_AFM_TEXT_DOMAIN ); ?></th>
+							<th><?php esc_html_e( 'Start Date:', 'wcmp-afm' ); ?></th>
 							<td><?php echo esc_html( date_i18n( wc_date_format(), $subscription->get_time( 'date_created', 'site' ) ) ); ?></td>
 						</tr>
 						<tr class="view">
-							<th><?php esc_html_e( 'Trial End:', WCMp_AFM_TEXT_DOMAIN ); ?></th>
+							<th><?php esc_html_e( 'Trial End:', 'wcmp-afm' ); ?></th>
 							<td><?php $date_type = wcs_normalise_date_type_key( 'trial_end_date' ); echo $subscription->get_date_to_display( $date_type ); ?></td>
 						</tr>
 						<tr class="view">
-							<th><?php esc_html_e( 'Next Payment:', WCMp_AFM_TEXT_DOMAIN ); ?></th>
+							<th><?php esc_html_e( 'Next Payment:', 'wcmp-afm' ); ?></th>
 							<td><?php $date_type = wcs_normalise_date_type_key( 'next_payment_date' ); echo $subscription->get_date_to_display( $date_type ); ?></td>
 						</tr>
 						<tr class="view">
-							<th><?php esc_html_e( 'End Date:', WCMp_AFM_TEXT_DOMAIN ); ?></th>
+							<th><?php esc_html_e( 'End Date:', 'wcmp-afm' ); ?></th>
 							<td><?php $end_date = ( 0 < $subscription->get_time( 'end' ) ) ? date_i18n( wc_date_format(), $subscription->get_time( 'end', 'site' ) ) : _x( 'When Cancelled', 'Used as end date for an indefinite subscription', 'woocommerce-subscriptions' );
 								echo esc_html( $end_date ); ?></td>
 						</tr>
 						<tr class="view">
-							<th><?php esc_html_e( 'Price:', WCMp_AFM_TEXT_DOMAIN ); ?></th>
+							<th><?php esc_html_e( 'Price:', 'wcmp-afm' ); ?></th>
 							<td><?php echo $subscription->get_formatted_order_total(); ?></td>
 						</tr>
                     </table>

@@ -126,7 +126,7 @@ class WCMp_AFM_Simple_Auction_Integration {
         );
         $auction_tabs['automatic_relist'] = array(
             'p_type'   => 'auction',
-            'label'    => __( 'Automatic relist', WCMp_AFM_TEXT_DOMAIN ),
+            'label'    => __( 'Automatic relist', 'wcmp-afm' ),
             'target'   => 'automatic_relist_auction_product_data',
             'class'    => array( 'show_if_auction' ),
             'priority' => '78',
@@ -198,8 +198,8 @@ class WCMp_AFM_Simple_Auction_Integration {
     public function add_localize_params( $params ) {
         $new_params = array(
             'SA_nonce'            => wp_create_nonce( 'SAajax-nonce' ),
-            'i18n_delete_bid'     => esc_js( __( 'Are you sure you want to delete the customer\'s bid?', WCMp_AFM_TEXT_DOMAIN ) ),
-            'i18n_remove_reserve' => esc_js( __( 'Are you sure you want to remove reserve price?', WCMp_AFM_TEXT_DOMAIN ) ),
+            'i18n_delete_bid'     => esc_js( __( 'Are you sure you want to delete the customer\'s bid?', 'wcmp-afm' ) ),
+            'i18n_remove_reserve' => esc_js( __( 'Are you sure you want to remove reserve price?', 'wcmp-afm' ) ),
         );
         return array_merge( $params, $new_params );
     }
@@ -422,11 +422,11 @@ class WCMp_AFM_Simple_Auction_Integration {
      */
     public static function auction_status_filter_options() {
         $output = array(
-            'active'   => __( 'Active', WCMp_AFM_TEXT_DOMAIN ),
-            'finished' => __( 'Finished', WCMp_AFM_TEXT_DOMAIN ),
-            'fail'     => __( 'Fail', WCMp_AFM_TEXT_DOMAIN ),
-            'sold'     => __( 'Sold', WCMp_AFM_TEXT_DOMAIN ),
-            'payed'    => __( 'Paid', WCMp_AFM_TEXT_DOMAIN ),
+            'active'   => __( 'Active', 'wcmp-afm' ),
+            'finished' => __( 'Finished', 'wcmp-afm' ),
+            'fail'     => __( 'Fail', 'wcmp-afm' ),
+            'sold'     => __( 'Sold', 'wcmp-afm' ),
+            'payed'    => __( 'Paid', 'wcmp-afm' ),
         );
         return apply_filters( 'wcmp_afm_simple_auction_page_filters', $output );
     }

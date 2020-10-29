@@ -2,10 +2,17 @@
 
 /**
  * Days range price plans template
- * Not overridable
+*
+ * This template can be overridden by copying it to yourtheme/wcmp-afm/products/rental/html-product-price-calculation.php.
  *
- * @author 		WC Marketplace
- * @package 	WCMp_AFM/views/products/rental
+ * HOWEVER, on occasion AFM will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @author      WC Marketplace
+ * @package     WCMp_AFM/views/products/rental
  * @version     3.0.0
  */
 defined( 'ABSPATH' ) || exit;
@@ -18,7 +25,7 @@ $cost_applicable = ! empty( $day_range['cost_applicable'] ) ? wc_clean( $day_ran
 <div class="wcmp-metabox-wrapper redq_days_range" rel="<?php echo esc_attr( $i ); ?>">
     <div class="wcmp-metabox-title days-range-title" data-toggle="collapse" data-target="#days_range_<?php echo esc_attr( $i ); ?>"  aria-expanded="false" aria-controls="collapseExample">
         <div class="days_range_group">
-            <strong class="summary"><?php _e( sprintf( __( ' Days ( <span class="min">%d</span> - <span class="max">%d</span> ) -  Cost : <span class="price">%s</span>%s', WCMp_AFM_TEXT_DOMAIN ), $min_days, $max_days, $range_cost, get_woocommerce_currency_symbol() ) ); ?></strong>
+            <strong class="summary"><?php _e( sprintf( __( ' Days ( <span class="min">%d</span> - <span class="max">%d</span> ) -  Cost : <span class="price">%s</span>%s', 'wcmp-afm' ), $min_days, $max_days, $range_cost, get_woocommerce_currency_symbol() ) ); ?></strong>
         </div>
         <div class="wcmp-metabox-action days_range_action">
             <i class="wcmp-font ico-up-arrow-icon"></i>

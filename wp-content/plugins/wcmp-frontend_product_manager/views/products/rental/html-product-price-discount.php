@@ -2,10 +2,17 @@
 
 /**
  * price discount range template
- * Not overridable
+  *
+ * This template can be overridden by copying it to yourtheme/wcmp-afm/products/rental/html-product-price-discount.php.
  *
- * @author 		WC Marketplace
- * @package 	WCMp_AFM/views/products/rental
+ * HOWEVER, on occasion AFM will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @author      WC Marketplace
+ * @package     WCMp_AFM/views/products/rental
  * @version     3.0.0
  */
 defined( 'ABSPATH' ) || exit;
@@ -26,7 +33,7 @@ $symbol = ( $discount_type === 'percentage' ) ? '%' : get_woocommerce_currency_s
 <div class="wcmp-metabox-wrapper redq_price_discount" rel="<?php echo esc_attr( $i ); ?>">
     <div class="wcmp-metabox-title price-discount-title" data-toggle="collapse" data-target="#price_discount_<?php echo esc_attr( $i ); ?>"  aria-expanded="false" aria-controls="collapseExample">
         <div class="price_discount_group">
-            <strong class="summary"><?php _e( sprintf( __( ' Days ( <span class="min">%d</span> - <span class="max">%d</span> ) -  Discount : <span class="discount">%s</span><span class="symbol">%s</span>', WCMp_AFM_TEXT_DOMAIN ), $min_days, $max_days, $discount_amount, $symbol ) ); ?></strong>
+            <strong class="summary"><?php _e( sprintf( __( ' Days ( <span class="min">%d</span> - <span class="max">%d</span> ) -  Discount : <span class="discount">%s</span><span class="symbol">%s</span>', 'wcmp-afm' ), $min_days, $max_days, $discount_amount, $symbol ) ); ?></strong>
         </div>
         <div class="wcmp-metabox-action price_discount_action">
             <i class="wcmp-font ico-up-arrow-icon"></i>

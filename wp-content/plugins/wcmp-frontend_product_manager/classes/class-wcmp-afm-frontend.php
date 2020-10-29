@@ -88,7 +88,7 @@ class WCMp_AFM_Frontend {
                 'ajax_url'          => WC()->ajax_url(),
                 'bulk_edit_nonce'   => wp_create_nonce( 'afm-bulk-edit' ),
                 'i18n_bulk_edit'    => esc_js( __( 'Bulk Edit' ) ),
-                'i18n_no_selection' => esc_js( __( 'No products selected!', WCMp_AFM_TEXT_DOMAIN ) ),
+                'i18n_no_selection' => esc_js( __( 'No products selected!', 'wcmp-afm' ) ),
             ) );
         }
         do_action( 'afm_enqueue_dashboard_scripts', $endpoint, $frontend_script_path, $lib_path, $suffix );
@@ -146,7 +146,7 @@ class WCMp_AFM_Frontend {
         $product_id = isset( $wp->query_vars[$add_product_endpoint] ) ? $wp->query_vars[$add_product_endpoint] : '';
 
         if ( $product_id && wc_get_product( $product_id ) && $current_endpoint === $add_product_endpoint ) {
-            return str_replace( __( 'Add Product', 'dc-woocommerce-multi-vendor' ), __( 'Edit Product', WCMp_AFM_TEXT_DOMAIN ), $breadcrumbs );
+            return str_replace( __( 'Add Product', 'dc-woocommerce-multi-vendor' ), __( 'Edit Product', 'wcmp-afm' ), $breadcrumbs );
         }
         return $breadcrumbs;
     }
