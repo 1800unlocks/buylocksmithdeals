@@ -432,8 +432,12 @@ final class BuyLockSmithDealsCustomizationAjax {
 				)
 			); 
                         $headers = "Content-Type: text/html\r\n";
+
+                        //send custom mail
+                        do_action( 'custom_review_email', $order_id);
+                        
                         //send the email through wordpress
-                        $mailer->send( $recipient, $subject, $content, $headers, $attachments );
+                        // $mailer->send( $recipient, $subject, $content, $headers, $attachments );
                     }
                     else{
                         // mail send to admin for poor rating
@@ -583,13 +587,14 @@ final class BuyLockSmithDealsCustomizationAjax {
 			$headers = "Content-Type: text/html\r\n";
 		   
 			//send the email through wordpress
-			$mailer->send( $recipient, $subject, $content, $headers, $attachments );
+			// $mailer->send( $recipient, $subject, $content, $headers, $attachments );
 			/*********************/
 			
 			 if( $order ) {
 				//   echo $order_id;
 					$order = new WC_Order($order_id);
 				  $order->update_status($selected_status);
+                  do_action('woocommerce_order_status_completed',$order_id);
 				  
 				}
 			

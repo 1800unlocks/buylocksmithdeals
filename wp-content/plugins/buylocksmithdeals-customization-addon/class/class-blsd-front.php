@@ -29,52 +29,87 @@ class BuyLockSmithDealsCustomizationFrontEnd {
     }
 
     public function init_hooks() {
-        // add_action('pre_get_posts', array($this, 'target_main_conditional_product_list'), 100, 1);
-        // add_filter( 'woocommerce_related_products', array($this, 'woocommerce_related_products_function'),100,3 );
-        
-        add_action('pre_get_posts', array($this, 'disable_product_after_vendor_action'), 1000, 1);
+	        // add_action('pre_get_posts', array($this, 'target_main_conditional_product_list'), 100, 1);
+	        // add_filter( 'woocommerce_related_products', array($this, 'woocommerce_related_products_function'),100,3 );
+	        
+	        add_action('pre_get_posts', array($this, 'disable_product_after_vendor_action'), 1000, 1);
 
-        add_filter('woocommerce_product_tabs', array($this, 'blsd_woo_TnC_tab'), 50, 1);
-        /*         * ********25-10-2019*********** */
-        add_action('woocommerce_before_add_to_cart_button', array($this, 'blsd_frontend_before_add_to_cart_btn'));
-        add_filter('woocommerce_add_cart_item_data', array($this, 'blsd_add_custom_data_to_cart_item'), 10, 3);
-        add_filter('woocommerce_get_item_data', array($this, 'blsd_display_custom_text_cart'), 20, 2);
-        add_action('woocommerce_checkout_create_order_line_item', array($this, 'blsd_add_custom_data_order_items'), 10, 4);
-        add_action('woocommerce_before_calculate_totals', array($this, 'blsd_before_calculate_totals'), 10, 1);
-        add_filter('woocommerce_booking_single_add_to_cart_text', array($this, 'woo_custom_single_add_to_cart_text'), 100000);  // 2.1 +
+	        add_filter('woocommerce_product_tabs', array($this, 'blsd_woo_TnC_tab'), 50, 1);
+	        /*         * ********25-10-2019*********** */
+			
+			/*******************NEED TO Change******************************/
+	        add_action('woocommerce_before_add_to_cart_button', array($this, 'blsd_frontend_before_add_to_cart_btn'));
+			/*******************NEED TO Change END******************************/
+			
+	        add_filter('woocommerce_add_cart_item_data', array($this, 'blsd_add_custom_data_to_cart_item'), 10, 3);
+	        add_filter('woocommerce_get_item_data', array($this, 'blsd_display_custom_text_cart'), 20, 2);
+	        add_action('woocommerce_checkout_create_order_line_item', array($this, 'blsd_add_custom_data_order_items'), 10, 4);
+			
+			/*******************NEED TO Change******************************/
+	        add_action('woocommerce_before_calculate_totals', array($this, 'blsd_before_calculate_totals'), 10, 1);
+			/*******************NEED TO Change End******************************/
+			
+	        add_filter('woocommerce_booking_single_add_to_cart_text', array($this, 'woo_custom_single_add_to_cart_text'), 100000);  // 2.1 +
 
-        add_action('wp_head', array($this, 'blsd_Checkout_page_css'));
-        add_action('wp_footer', array($this, 'blsd_checkout_remove_item'));
-        add_action('woocommerce_review_order_before_payment', array($this, 'add_heading_payment'));
-        add_action('woocommerce_checkout_order_review', array($this, 'blsd_woocommerce_checkout_billing'), 15);
-        add_action('woocommerce_before_checkout_billing_form', array($this, 'add_service_location'),10,1);
-        add_filter("wc_stripe_payment_request_supported_types", array($this,'platinum_prize_draws_wc_stripe_payment_request_supported_types'), 10);
-        //add_shortcode('stripe_apple_pay',array($this,'show_apple_pay_button'));
-        add_action('wp_footer', array($this, 'dynamic_sidebar_front'), 5);
-        // add_filter('azexo_page_title',array($this,'custom_action_after_single_product_title'),10,1 );
-        add_action("get_template_part", array($this, 'overwrite_general_title'), 100, 3);
-        add_filter('wp_nav_menu_items', array($this, 'get_vendor_profile_in_menu'), 10, 2);
-        add_filter('wpseo_breadcrumb_single_link', array($this, 'ss_breadcrumb_single_link'), 10, 2);
-        
-        add_action('wp_enqueue_scripts', array($this, 'blsd_add_js_frontend'));
-        add_action( 'woocommerce_thankyou', array($this, 'blsd_vendor_new_order'),10,1 ); 
-    
-        add_filter( 'woocommerce_product_add_to_cart_text', array($this, 'blsd_vendor_view_change_text'),10,2 );
-        add_filter( 'woocommerce_product_addons_option_price', array($this,'blsd_hide_addon_price'),10,4);
-        add_action('woocommerce_after_single_product_summary', array($this, 'blsd_add_buy_now_deal_page'));
-        add_shortcode('blsd_vendor_product', array($this, 'blsd_vendor_product'));
-		// add_action( 'woocommerce_thankyou', array($this,'custom_woocommerce_auto_complete_order') );
-		add_action( 'gform_after_submission', array($this,'after_registration_form_submission'), 10, 2 );
-		add_filter( 'wcmp_pending_vendor_dashboard_message', array($this, 'pending_vendor_message'),10,1);
-		add_filter( 'gform_confirmation', array($this, 'blsd_gforms_confirmation_dynamic_redirect'), 10, 4 );
-		add_filter('wcmp_vendor_registration_header_text',array($this,'blsd_change_vendor_header_registration_text'),10,1);
-		add_filter('wcmp_vendor_registration_submit',array($this,'blsd_change_vendor_registration_button_text'),15,1);
-		add_filter( 'woocommerce_add_error', array($this,'my_woocommerce_add_error'),10,1 );
-		add_action( 'woocommerce_setup_footer',array($this,'blsd_apply_css') );
+	        add_action('wp_head', array($this, 'blsd_Checkout_page_css'));
+	        add_action('wp_footer', array($this, 'blsd_checkout_remove_item'));
+	        add_action('woocommerce_review_order_before_payment', array($this, 'add_heading_payment'));
+	        add_action('woocommerce_checkout_order_review', array($this, 'blsd_woocommerce_checkout_billing'), 15);
+	        add_action('woocommerce_before_checkout_billing_form', array($this, 'add_service_location'),10,1);
+	        add_filter("wc_stripe_payment_request_supported_types", array($this,'platinum_prize_draws_wc_stripe_payment_request_supported_types'), 10);
+	        //add_shortcode('stripe_apple_pay',array($this,'show_apple_pay_button'));
+	        add_action('wp_footer', array($this, 'dynamic_sidebar_front'), 5);
+	        // add_filter('azexo_page_title',array($this,'custom_action_after_single_product_title'),10,1 );
+	        add_action("get_template_part", array($this, 'overwrite_general_title'), 100, 3);
+	        add_filter('wp_nav_menu_items', array($this, 'get_vendor_profile_in_menu'), 10, 2);
+	        add_filter('wpseo_breadcrumb_single_link', array($this, 'ss_breadcrumb_single_link'), 10, 2);
+	        
+			/*******************NEED TO Change******************************/
+	        add_action('wp_enqueue_scripts', array($this, 'blsd_add_js_frontend'));
+			/*******************NEED TO Change End******************************/
+			
+	        add_action( 'woocommerce_thankyou', array($this, 'blsd_vendor_new_order'),10,1 ); 
+	    
+	        add_filter( 'woocommerce_product_add_to_cart_text', array($this, 'blsd_vendor_view_change_text'),10,2 );
+	        add_filter( 'woocommerce_product_addons_option_price', array($this,'blsd_hide_addon_price'),10,4);
+	        add_action('woocommerce_after_single_product_summary', array($this, 'blsd_add_buy_now_deal_page'));
+	        add_shortcode('blsd_vendor_product', array($this, 'blsd_vendor_product'));
+			// add_action( 'woocommerce_thankyou', array($this,'custom_woocommerce_auto_complete_order') );
+			add_action( 'gform_after_submission', array($this,'after_registration_form_submission'), 10, 2 );
+			add_filter( 'wcmp_pending_vendor_dashboard_message', array($this, 'pending_vendor_message'),10,1);
+			add_filter( 'gform_confirmation', array($this, 'blsd_gforms_confirmation_dynamic_redirect'), 10, 4 );
+			add_filter('wcmp_vendor_registration_header_text',array($this,'blsd_change_vendor_header_registration_text'),10,1);
+			add_filter('wcmp_vendor_registration_submit',array($this,'blsd_change_vendor_registration_button_text'),15,1);
+			add_filter( 'woocommerce_add_error', array($this,'my_woocommerce_add_error'),10,1 );
+			// add_action( 'woocommerce_setup_footer',array($this,'blsd_apply_css') );
+			add_action( 'wp_head',array($this,'blsd_apply_css') );
+			add_shortcode('BLSD_CC_BREADCRUMB', array($this,'blsd_cart_checkout_breadcrumb') );
 		}
+
 		function blsd_apply_css(){
-			echo 'assssssssssssssssssssdddaaaaaaa';
+			global $woocommerce,$WCMp;
+            $items = $woocommerce->cart->get_cart();
+            foreach($items as $item => $values) { 
+                $product_id = $values['product_id'];
+                $vendor_id = get_wcmp_product_vendors($product_id);
+                setcookie("current_item_vendor", $vendor_id->id, time() + (86400 * 30) );
+            } 
 		}
+
+		function blsd_cart_checkout_breadcrumb(){
+			global $WCMp;
+
+			if(isset($_COOKIE["current_item_vendor"])){ 
+				$vendor_details = get_wcmp_vendor($_COOKIE["current_item_vendor"]);
+				$store_name = get_user_meta($vendor_details->user_data->ID, '_vendor_page_title', true );
+			    echo '<p id="breadcrumbs"><a class="other-breadcrumbs" href="'.site_url().'">Home</a> » <a class="other-breadcrumbs" href="'.$vendor_details->permalink.'">'.$store_name.'</a></p>'; 
+			} else{ 
+			    echo '<p id="breadcrumbs"><a class="other-breadcrumbs" href="'.site_url().'">Home</a> </p>';
+			} 
+			
+		}
+
+
 		function my_woocommerce_add_error($error){
 			if( 'Please read and accept the terms and conditions to proceed with your order.' == $error ) {
 				$error = 'Please read and accept the "Terms of service" and "Privacy policy" to proceed with your order.';
@@ -465,12 +500,31 @@ class BuyLockSmithDealsCustomizationFrontEnd {
    function blsd_add_js_frontend(){
        global $WCMp;
        if (!is_admin()) {
+		   /******************Code For Custom Order***********************/
+		   if(is_user_logged_in()){
+			   $user_id = get_current_user_id();
+			   $get_user_custom_product 	= 	get_user_meta($user_id,'_custom_product_id', true);
+			   $product_exist = 0;
+			   if(!WC()->cart->is_empty()){
+				   foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+					    $product_id = $cart_item['product_id'];
+						if($product_id == $get_user_custom_product){
+							$product_exist = 1;
+							break;
+						}
+				   }
+			   }
+			   if($product_exist == 1){
+				   return;
+			   }
+		   }
+		   /******************Code For Custom Order END ***********************/
            $vendor = get_wcmp_vendor(get_current_vendor_id());
-           if($vendor && !is_vendor_dashboard()){
-               wp_dequeue_script('wc-bookings-booking-form');
-                wp_enqueue_script('wc-bookings-booking-form',BUYLOCKSMITH_DEALS_ASSETS_PATH . 'js/frontend.js', array( 'jquery', 'jquery-blockui', 'jquery-ui-datepicker', 'underscore' ), WC_BOOKINGS_VERSION, true );
-       
-           }
+			   if($vendor && !is_vendor_dashboard()){
+				   wp_dequeue_script('wc-bookings-booking-form');
+					wp_enqueue_script('wc-bookings-booking-form',BUYLOCKSMITH_DEALS_ASSETS_PATH . 'js/frontend.js', array( 'jquery', 'jquery-blockui', 'jquery-ui-datepicker', 'underscore' ), WC_BOOKINGS_VERSION, true );
+		   
+			   }
            }
    }
 
@@ -479,7 +533,7 @@ class BuyLockSmithDealsCustomizationFrontEnd {
         $element = '';
         $element = esc_attr(apply_filters('wpseo_breadcrumb_single_link_wrapper', $element));
         $link_output = $element;
-        //print_r($link);
+        // print_r($link);
         $vendor_url = home_url() . '/locksmith-store/';
         if (strpos($link['url'], $vendor_url) !== false) {
             $link_output .= ' <a href="' .
@@ -516,9 +570,13 @@ class BuyLockSmithDealsCustomizationFrontEnd {
 					
         } else {
             if (isset($link['url'])) {
-                $link_output .= '<a href="' .
+                 if($link['text'] == 'Deals'){
+
+                }else{
+                    $link_output .= '<a href="' .
                         esc_url($link['url']) . '"class="other-breadcrumbs">' .
                         esc_html($link['text']) . '</a>';
+                }
             }
         }
         return $link_output;
@@ -853,15 +911,22 @@ class BuyLockSmithDealsCustomizationFrontEnd {
         } else {
             $product_parent_id = $product_id;
         }
+        // echo $product_parent_id;
         $product_car_key = get_post_meta($product_parent_id, 'product_car_key', true);
         $product_lock_rekeying = get_post_meta($product_parent_id, 'product_lock_rekeying', true);
 
         $default_product_car_cat_id = get_post_meta($product_parent_id, 'default_product_car_cat_id', true);
         $default_product_lock_rekeying_cat_id = get_post_meta($product_parent_id, 'default_product_lock_rekeying_cat_id', true);
+
+        // echo $default_product_car_cat_id;
+
+        $term = get_term_by('id', $default_product_car_cat_id, 'faq_cat');
+
+        // echo $term->name;
+
         if ($product_car_key == 'yes') {
-	   $faqterm = get_term( $default_product_car_cat_id, $taxonomy );
-	   $faqslug = $faqterm->slug;
-	   echo do_shortcode('[faq cat="' . $faqslug . '"]');
+            // echo do_shortcode('[faq cat_id="' . $default_product_car_cat_id . '"]');
+            echo do_shortcode('[faq cat="' . $term->slug . '"]');
         }
         /*if ($product_lock_rekeying == 'yes') {
             echo do_shortcode('[faq cat_id="' . $default_product_lock_rekeying_cat_id . '"]');
@@ -1047,7 +1112,8 @@ class BuyLockSmithDealsCustomizationFrontEnd {
 		$quantity_locksmith_replaced_deadbolt = get_post_meta($post_id, 'quantity_locksmith_replaced_deadbolt', true);
         /*********************************/
         
-        
+        echo '<input type="hidden" name="distance_between" id="distance_between" value="0">';
+        echo '<input type="hidden" name="distance_extra_price" id="distance_extra_price" value="0">';
         echo '<div class="main_loader disabled"><img class="loader_img" src="'.$loader_img.'"></div>';
         echo '<input type="hidden" name="amount" id="amount" value="">';
         echo '<input type="hidden" name="booking_price" id="booking_price" value="">';
@@ -1510,16 +1576,22 @@ class BuyLockSmithDealsCustomizationFrontEnd {
 					 service_location_price = 0;
 				 }
 
-				 //in-shop price
-				var in_shop_pricing_cost = '<?php echo $in_shop_pricing_cost; ?>';
-				if (Number.isNaN(in_shop_pricing_cost)) {
-				    in_shop_pricing_cost = 0;
-				}
+				if(service_location_val != ''){
+				 	//in-shop price
+					var in_shop_pricing_cost = '<?php echo $in_shop_pricing_cost; ?>';
+					if (Number.isNaN(in_shop_pricing_cost)) {
+					    in_shop_pricing_cost = 0;
+					}
 
-				//in-shop price Duplicate
-				var in_shop_duplication_price_cost = '<?php echo $in_shop_duplication_price_cost; ?>';
-				if (Number.isNaN(in_shop_duplication_price_cost)) {
-				    in_shop_duplication_price_cost = 0;
+					//in-shop price Duplicate
+					var in_shop_duplication_price_cost = '<?php echo $in_shop_duplication_price_cost; ?>';
+					if (Number.isNaN(in_shop_duplication_price_cost)) {
+					    in_shop_duplication_price_cost = 0;
+					}
+
+					console.log('service_location_label: ',service_location_label);
+					console.log('service_location_val: ',service_location_val);
+					console.log('service_location_price: ',service_location_price);
 				}
 
 				if (service_location_price >= 0 && service_location_val != '' && service_location_label == 'Customer’s Location') {
@@ -2475,78 +2547,81 @@ class BuyLockSmithDealsCustomizationFrontEnd {
 
                         var address = GetAddress(car_latitude, car_longitude);
                         var extra_price = parseFloat(get_extra_price(car_latitude, car_longitude));
+                        setTimeout(function(){
+	                        console.log(extra_price, 'extra_price');
+	                    	extra_price = parseFloat( jQuery("#distance_extra_price").val() );
+	                        address_parent_div.parent().children('.select_car_address').children('.extra_amount').val(extra_price);
+	                        var amount = parseFloat(jQuery('#amount').val());
+	                        var booking_price = parseFloat(jQuery('#booking_price').val());
+	                        var booking_price_with_tax = parseFloat(jQuery('#booking_price_with_tax').val());
+	                        var car_key_price = parseFloat(jQuery('#car_key_price').val());
+	                        var deadbolt_install_price = parseFloat(jQuery('#deadbolt_install_price').val());
+	                        var extra_deadbolt_cylinder_price = parseFloat(jQuery('#extra_deadbolt_cylinder_price').val());
+	                        var car_programming_fees = parseFloat(jQuery('#car_programming_fees').val());
+	                        
+	                        var no_of_keys_want_to_made=jQuery('#no_of_keys_want_to_made').val();
+	                        /* var cost_to_cut_additional_key=parseFloat('<?php echo $cost_to_cut_additional_key; ?>');
+	                        var cost_to_program_additional_key=parseFloat('<?php echo $cost_to_program_additional_key; ?>');
+	                        var total_key_cost=parseFloat(cost_to_cut_additional_key+cost_to_program_additional_key);
+	                        var key_cost=parseFloat(no_of_keys_want_to_made*total_key_cost); */
+	                        var key_cost=0;
+	                             
+	                        if (Number.isNaN(booking_price)) {
+	                            booking_price = 0;
+	                        }
+	                        if (Number.isNaN(car_key_price)) {
+	                            car_key_price = 0;
+	                        }
+	                        if (Number.isNaN(deadbolt_install_price)) {
+	                            deadbolt_install_price = 0;
+	                        }
+							if (Number.isNaN(extra_deadbolt_cylinder_price)) {
+	                            extra_deadbolt_cylinder_price = 0;
+	                        }
+	                        if (Number.isNaN(car_programming_fees)) {
+	                            car_programming_fees = 0;
+	                        }
+	                        if (Number.isNaN(key_cost)) {
+	                            key_cost = 0;
+	                        }
+	                       
+	                        booking_price = parseFloat(booking_price);
 
-                        address_parent_div.parent().children('.select_car_address').children('.extra_amount').val(extra_price);
-                        var amount = parseFloat(jQuery('#amount').val());
-                        var booking_price = parseFloat(jQuery('#booking_price').val());
-                        var booking_price_with_tax = parseFloat(jQuery('#booking_price_with_tax').val());
-                        var car_key_price = parseFloat(jQuery('#car_key_price').val());
-                        var deadbolt_install_price = parseFloat(jQuery('#deadbolt_install_price').val());
-                        var extra_deadbolt_cylinder_price = parseFloat(jQuery('#extra_deadbolt_cylinder_price').val());
-                        var car_programming_fees = parseFloat(jQuery('#car_programming_fees').val());
-                        
-                        var no_of_keys_want_to_made=jQuery('#no_of_keys_want_to_made').val();
-                        /* var cost_to_cut_additional_key=parseFloat('<?php echo $cost_to_cut_additional_key; ?>');
-                        var cost_to_program_additional_key=parseFloat('<?php echo $cost_to_program_additional_key; ?>');
-                        var total_key_cost=parseFloat(cost_to_cut_additional_key+cost_to_program_additional_key);
-                        var key_cost=parseFloat(no_of_keys_want_to_made*total_key_cost); */
-                        var key_cost=0;
-                             
-                        if (Number.isNaN(booking_price)) {
-                            booking_price = 0;
-                        }
-                        if (Number.isNaN(car_key_price)) {
-                            car_key_price = 0;
-                        }
-                        if (Number.isNaN(deadbolt_install_price)) {
-                            deadbolt_install_price = 0;
-                        }
-						if (Number.isNaN(extra_deadbolt_cylinder_price)) {
-                            extra_deadbolt_cylinder_price = 0;
-                        }
-                        if (Number.isNaN(car_programming_fees)) {
-                            car_programming_fees = 0;
-                        }
-                        if (Number.isNaN(key_cost)) {
-                            key_cost = 0;
-                        }
-                       
-                        booking_price = parseFloat(booking_price);
+	                        if (Number.isNaN(amount)) {
+	                            amount = 0;
+	                        }
+	                        if (Number.isNaN(extra_price)) {
+	                            extra_price = 0;
+	                        }
+	                        //jQuery('#amount').val(amount + extra_price);
+	                        var total_amount = amount + extra_price;
 
-                        if (Number.isNaN(amount)) {
-                            amount = 0;
-                        }
-                        if (Number.isNaN(extra_price)) {
-                            extra_price = 0;
-                        }
-                        //jQuery('#amount').val(amount + extra_price);
-                        var total_amount = amount + extra_price;
+	                        total_service_booking_amount = amount + extra_price + booking_price + car_key_price + key_cost +car_programming_fees+deadbolt_install_price+extra_deadbolt_cylinder_price;
+	                        if (booking_price_with_tax == '' ) {
+	                            var tax=0;
+	                        } else {
+	                            var tax=(total_service_booking_amount*booking_price_with_tax)/100;
+	                            
+	                        }
+	                        var total_service_booking = total_service_booking_amount+tax;
+	                        jQuery('#map_display').addClass('disabled');
+	                        setTimeout(function () {
+	                            total_amount = parseFloat(total_amount);
+	                            var html = '<span class="currency"><?php echo $currenct_symbol; ?></span>' + (total_amount).toFixed(2);
+	                            jQuery('.product-addon-totals .wc-pao-col2 .amount').html(html);
+	                            //jQuery('.wc-pao-addon-select').find(':selected').attr('data-price',total_amount.toFixed(2));
+	                            //jQuery('.wc-pao-addon-select').find(':selected').attr('data-raw-price',total_amount.toFixed(2));
+	                            if (booking_price != 0) {
+	                                var subtotal_html = '<p class="price">Subtotal <span class="amount"><span class="currency"><?php echo $currenct_symbol; ?></span>' + ( parseFloat(total_service_booking)).toFixed(2) + '</span></p>';
+	                                jQuery('.wc-pao-subtotal-line').html(subtotal_html);
+	                                
+	                               // jQuery('#show_total_amount_with_tax .price_total').html(( parseFloat(total_service_booking)).toFixed(2));
+	                            }
 
+	                        }, 3000);
 
+	                    }, 2000);
 
-
-                          total_service_booking_amount = amount + extra_price + booking_price + car_key_price + key_cost +car_programming_fees+deadbolt_install_price+extra_deadbolt_cylinder_price;
-                        if (booking_price_with_tax == '' ) {
-                            var tax=0;
-                        } else {
-                            var tax=(total_service_booking_amount*booking_price_with_tax)/100;
-                            
-                        }
-                        var total_service_booking = total_service_booking_amount+tax;
-                        jQuery('#map_display').addClass('disabled');
-                        setTimeout(function () {
-                            total_amount = parseFloat(total_amount);
-                            var html = '<span class="currency"><?php echo $currenct_symbol; ?></span>' + (total_amount).toFixed(2);
-                            jQuery('.product-addon-totals .wc-pao-col2 .amount').html(html);
-                            //jQuery('.wc-pao-addon-select').find(':selected').attr('data-price',total_amount.toFixed(2));
-                            //jQuery('.wc-pao-addon-select').find(':selected').attr('data-raw-price',total_amount.toFixed(2));
-                            if (booking_price != 0) {
-                                var subtotal_html = '<p class="price">Subtotal <span class="amount"><span class="currency"><?php echo $currenct_symbol; ?></span>' + ( parseFloat(total_service_booking)).toFixed(2) + '</span></p>';
-                                jQuery('.wc-pao-subtotal-line').html(subtotal_html);
-                                
-                               // jQuery('#show_total_amount_with_tax .price_total').html(( parseFloat(total_service_booking)).toFixed(2));
-                            }
-                        }, 3000);
                         jQuery.ajax({
                             type: 'POST',
                             url: '<?php echo add_query_arg('action', 'calculate_product_tax', $WCMp->ajax_url()); ?>',
@@ -2617,41 +2692,46 @@ class BuyLockSmithDealsCustomizationFrontEnd {
 
                     var address = GetAddress(car_latitude, car_longitude);
                     var extra_price = parseFloat(get_extra_price(car_latitude, car_longitude));
-                    console.log(extra_price, 'extra_price');
-                    jQuery('#extra_amount_property').val(extra_price);
-                    var amount = parseFloat(jQuery('#amount').val());
-                    var booking_price = jQuery('#booking_price').val();
-                    var booking_price_with_tax = parseFloat(jQuery('#booking_price_with_tax').val());
-                    if (Number.isNaN(booking_price)) {
-                        booking_price = 0;
-                    }
-                    if (booking_price == '') {
-                        booking_price = 0;
-                    }
-                    booking_price = parseFloat(booking_price);
-                    if (Number.isNaN(amount)) {
-                        amount = 0;
-                    }
-                    if (Number.isNaN(extra_price)) {
-                        extra_price = 0;
-                    }
-					if (Number.isNaN(booking_price_with_tax)) {
-                        booking_price_with_tax = 0;
-                    }
-                    //jQuery('#amount').val(amount + extra_price);
-                    var total_amount = amount + extra_price;
+                    setTimeout(function(){
+                        console.log(extra_price, 'extra_price');
+                    	extra_price = parseFloat( jQuery("#distance_extra_price").val() );
+	                    jQuery('#extra_amount_property').val(extra_price);
+	                    var amount = parseFloat(jQuery('#amount').val());
+	                    var booking_price = jQuery('#booking_price').val();
+	                    var booking_price_with_tax = parseFloat(jQuery('#booking_price_with_tax').val());
+	                    if (Number.isNaN(booking_price)) {
+	                        booking_price = 0;
+	                    }
+	                    if (booking_price == '') {
+	                        booking_price = 0;
+	                    }
+	                    booking_price = parseFloat(booking_price);
+	                    if (Number.isNaN(amount)) {
+	                        amount = 0;
+	                    }
+	                    if (Number.isNaN(extra_price)) {
+	                        extra_price = 0;
+	                    }
+						if (Number.isNaN(booking_price_with_tax)) {
+	                        booking_price_with_tax = 0;
+	                    }
+	                    //jQuery('#amount').val(amount + extra_price);
+	                    var total_amount = amount + extra_price;
+                	
 
+                    	console.log('total_amount',total_amount);
+                        var extra_cylinder_price =  parseFloat(jQuery('#extra_cylinder_price').val());
 
-                    console.log('total_amount',total_amount);
-                       var extra_cylinder_price =  parseFloat(jQuery('#extra_cylinder_price').val());
                         if (Number.isNaN(extra_cylinder_price)) {
                              extra_cylinder_price = 0;
                           }
-						  var extra_house_key_price =  parseFloat(jQuery('#extra_house_key_price').val());
+						
+						var extra_house_key_price =  parseFloat(jQuery('#extra_house_key_price').val());
                         if (Number.isNaN(extra_house_key_price)) {
                              extra_house_key_price = 0;
                           }
-						  var deadbolt_install_price = parseFloat(jQuery('#deadbolt_install_price').val());
+						
+						var deadbolt_install_price = parseFloat(jQuery('#deadbolt_install_price').val());
                         var extra_deadbolt_cylinder_price = parseFloat(jQuery('#extra_deadbolt_cylinder_price').val());
                         
 						if (Number.isNaN(deadbolt_install_price)) {
@@ -2661,9 +2741,9 @@ class BuyLockSmithDealsCustomizationFrontEnd {
                             extra_deadbolt_cylinder_price = 0;
                         }
 
-                    console.log('amount,extra_price, booking_price', amount, extra_price, booking_price);
-                     total_service_booking_amount = amount + extra_price + booking_price+extra_cylinder_price+extra_house_key_price+deadbolt_install_price+extra_deadbolt_cylinder_price;
-                     console.log(booking_price_with_tax,'booking_price_with_taxbooking_price_with_tax');
+                    	console.log('amount,extra_price, booking_price', amount, extra_price, booking_price);
+                     	total_service_booking_amount = amount + extra_price + booking_price+extra_cylinder_price+extra_house_key_price+deadbolt_install_price+extra_deadbolt_cylinder_price;
+                     	console.log(booking_price_with_tax,'booking_price_with_taxbooking_price_with_tax');
                         if (booking_price_with_tax == '' ) {
                             var tax=0;
                         } else {
@@ -2671,18 +2751,24 @@ class BuyLockSmithDealsCustomizationFrontEnd {
                             
                         }
                         var total_service_booking = total_service_booking_amount+tax;
-                    jQuery('#map_display').addClass('disabled');
-                    setTimeout(function () {
-                        var html = '<span class="currency"><?php echo $currenct_symbol; ?></span>' + total_amount.toFixed(2);
-                        jQuery('.product-addon-totals .wc-pao-col2 .amount').html(html);
-                        //jQuery('.wc-pao-addon-select').find(':selected').attr('data-price',total_amount.toFixed(2));
-                        //jQuery('.wc-pao-addon-select').find(':selected').attr('data-raw-price',total_amount.toFixed(2));
-                        if (booking_price != 0) {
-                            var subtotal_html = '<p class="price">Subtotal <span class="amount"><span class="currency"><?php echo $currenct_symbol; ?></span>' + ( parseFloat(total_service_booking)).toFixed(2) + '</span></p>';
-                            jQuery('.wc-pao-subtotal-line').html(subtotal_html);
-                           // jQuery('#show_total_amount_with_tax .price_total').html(( parseFloat(total_service_booking)).toFixed(2));
-                        }
-                    }, 3000);
+                    	jQuery('#map_display').addClass('disabled');
+                    
+
+	                    setTimeout(function () {
+	                        var html = '<span class="currency"><?php echo $currenct_symbol; ?></span>' + total_amount.toFixed(2);
+	                        jQuery('.product-addon-totals .wc-pao-col2 .amount').html(html);
+	                        //jQuery('.wc-pao-addon-select').find(':selected').attr('data-price',total_amount.toFixed(2));
+	                        //jQuery('.wc-pao-addon-select').find(':selected').attr('data-raw-price',total_amount.toFixed(2));
+	                        if (booking_price != 0) {
+	                            var subtotal_html = '<p class="price">Subtotal <span class="amount"><span class="currency"><?php echo $currenct_symbol; ?></span>' + ( parseFloat(total_service_booking)).toFixed(2) + '</span></p>';
+	                            jQuery('.wc-pao-subtotal-line').html(subtotal_html);
+	                           // jQuery('#show_total_amount_with_tax .price_total').html(( parseFloat(total_service_booking)).toFixed(2));
+	                        }
+	                    }, 3000);
+
+                    }, 2000);
+
+
                     jQuery.ajax({
                         type: 'POST',
                         url: '<?php echo add_query_arg('action', 'calculate_product_tax', $WCMp->ajax_url()); ?>',
@@ -3371,6 +3457,7 @@ class BuyLockSmithDealsCustomizationFrontEnd {
 				function calculate_house_key_final_amount(extra_house_keys,extra_per_house_key_price){
 					var service_location_val = jQuery('.wc-pao-addon-select').val();
                     var service_location_price = jQuery('.wc-pao-addon-select').find(':selected').attr('data-price');
+                    var service_location_label = jQuery('.wc-pao-addon-select').find(':selected').attr('data-label');
                     if (Number.isNaN(service_location_price)) {
                          service_location_price = 0;
                      }
@@ -3401,6 +3488,9 @@ class BuyLockSmithDealsCustomizationFrontEnd {
                     if (Number.isNaN(in_shop_duplication_price_cost)) {
                         in_shop_duplication_price_cost = 0;
                     }
+                    if(service_location_label == 'Customer’s Location') {
+						in_shop_duplication_price_cost = 0;
+					}
                     //in shop caluculation
                     var quantity_of_extra_house_keys=parseInt(jQuery('#quantity_of_extra_house_keys').val());
                     if (in_shop_duplication_price_cost > 0) {
@@ -3512,6 +3602,7 @@ class BuyLockSmithDealsCustomizationFrontEnd {
                 function calculate_final_amount(extra_cylinders,extra_per_cylinders_price){
                     var service_location_val = jQuery('.wc-pao-addon-select').val();
                     var service_location_price = jQuery('.wc-pao-addon-select').find(':selected').attr('data-price');
+                    var service_location_label = jQuery('.wc-pao-addon-select').find(':selected').attr('data-label');
                     if (Number.isNaN(service_location_price)) {
                          service_location_price = 0;
                      }
@@ -3542,6 +3633,9 @@ class BuyLockSmithDealsCustomizationFrontEnd {
                     if (Number.isNaN(in_shop_pricing_cost)) {
                         in_shop_pricing_cost = 0;
                     }
+                    if(service_location_label == 'Customer’s Location') {
+						in_shop_pricing_cost = 0;
+					}
                     //in shop caluculation
                     var quantity_of_locks_to_rekey=parseInt(jQuery('#quantity_of_locks_to_rekey').val());
                     if (in_shop_pricing_cost > 0) {
@@ -3742,14 +3836,15 @@ class BuyLockSmithDealsCustomizationFrontEnd {
             function initMap() {
                 address_selected = 0;
                 var map = new google.maps.Map(document.getElementById('map'), {
-                    center: {lat: -33.8688, lng: 151.2195},
+                    // center: {lat: -33.8688, lng: 151.2195},
+                    center: {lat: 37.5407, lng: -77.4360},
                     zoom: 13
                 });
                 var input = document.getElementById('pac-input');
                 var autocomplete = new google.maps.places.Autocomplete(input);
                 var infowindow = new google.maps.InfoWindow();
                 var infowindowContent = document.getElementById('infowindow-content');
-
+                autocomplete.setTypes(["address"]);
                 infowindow.setContent(infowindowContent);
 
 
@@ -3871,48 +3966,82 @@ class BuyLockSmithDealsCustomizationFrontEnd {
                 }
             }
 
+            function getDistance(lat1, lon1, lat2, lon2)
+            {
+                var ori = lat1+','+lon1;
+                var des = lat2+','+lon2;
+                //Find the distance
+                var distanceService = new google.maps.DistanceMatrixService();
+                distanceService.getDistanceMatrix({
+                    origins: [ori],
+                    destinations: [des],
+                    travelMode: google.maps.TravelMode.WALKING,
+                    unitSystem: google.maps.UnitSystem.METRIC,
+                    durationInTraffic: true,
+                    avoidHighways: false,
+                    avoidTolls: false
+                },
+                function (response, status) {
+                    if (status !== google.maps.DistanceMatrixStatus.OK) {
+                        console.log('Error:', status);
+                    } else {
+                        // return response.rows[0].elements[0].distance.value;
+                        var dists =response.rows[0].elements[0].distance.value / 1609;
+                        jQuery("#distance_between").val(dists);
+                        console.log(response.rows[0].elements[0].distance.value);
+                        
+                    }
+                });   
+            }
+
             function get_extra_price(car_latitude, car_longitude) {
                 var vendor_latitude = '<?php echo $vendor_latitude; ?>';
                 var vendor_longitude = '<?php echo $vendor_longitude; ?>';
                 var miles = Math.ceil(parseFloat(distance(vendor_latitude, vendor_longitude, car_latitude, car_longitude, 'M')));
-                console.log('miles:' + miles);
-                var maximum_miles = parseFloat(<?php echo $maximum_miles; ?>);
-                var default_miles = parseFloat(<?php echo $default_miles; ?>);
-                var extra_permile_price = '<?php echo $extra_permile_price; ?>';
-                var element = document.querySelector("#map_display");
-                if (miles > maximum_miles) {
-					console.log('max_mmiles',maximum_miles);
-                    if (element.classList.contains("property")) {
-                        jQuery('.total_miles_property').val(miles);
-                    }
-                    else if (element.classList.contains("car")) {
-                        address_parent_div.parent().children('.select_car_address').children('.total_miles').val(miles);
-                    }
-                    jQuery('#booking_servicable').val('0');
-                    return 0;
-                } else {
-					console.log('else_max_mmiles',maximum_miles);
-                    jQuery('#booking_servicable').val('1');
-						if (miles > default_miles) {
+                getDistance(vendor_latitude, vendor_longitude, car_latitude, car_longitude);
+                setTimeout(function(){
+                	var miles = Math.ceil(parseFloat(jQuery("#distance_between").val()));
+	                console.log('miles:' + miles);
+	                var maximum_miles = parseFloat(<?php echo $maximum_miles; ?>);
+	                var default_miles = parseFloat(<?php echo $default_miles; ?>);
+	                var extra_permile_price = '<?php echo $extra_permile_price; ?>';
+	                var element = document.querySelector("#map_display");
+	                if (miles > maximum_miles) {
+						console.log('max_mmiles',maximum_miles);
+	                    if (element.classList.contains("property")) {
+	                        jQuery('.total_miles_property').val(miles);
+	                    }
+	                    else if (element.classList.contains("car")) {
+	                        address_parent_div.parent().children('.select_car_address').children('.total_miles').val(miles);
+	                    }
+	                    jQuery('#booking_servicable').val('0');
+	                    return 0;
+	                } else {
+						console.log('else_max_mmiles',maximum_miles);
+	                    jQuery('#booking_servicable').val('1');
+							if (miles > default_miles) {
+								if (element.classList.contains("property")) {
+								jQuery('.total_miles_property').val(miles);
+							}
+							else if (element.classList.contains("car")) {
+								address_parent_div.parent().children('.select_car_address').children('.total_miles').val(miles);
+							}
+	                        var difference = miles - default_miles;
+	                        var extra_price = difference * extra_permile_price;
+	                        console.log('extra_price_rsv',extra_price);
+	                        jQuery("#distance_extra_price").val(extra_price);
+	                        return extra_price;
+	                    } else {
 							if (element.classList.contains("property")) {
-							jQuery('.total_miles_property').val(miles);
-						}
-						else if (element.classList.contains("car")) {
-							address_parent_div.parent().children('.select_car_address').children('.total_miles').val(miles);
-						}
-                        var difference = miles - default_miles;
-                        var extra_price = difference * extra_permile_price;
-                        return extra_price;
-                    } else {
-						if (element.classList.contains("property")) {
-                        jQuery('.total_miles_property').val(0);
-						}
-						else if (element.classList.contains("car")) {
-							address_parent_div.parent().children('.select_car_address').children('.total_miles').val(0);
-						}
-                        return 0;
-                    }
-                }
+	                        jQuery('.total_miles_property').val(0);
+							}
+							else if (element.classList.contains("car")) {
+								address_parent_div.parent().children('.select_car_address').children('.total_miles').val(0);
+							}
+	                        return 0;
+	                    }
+	                }
+	            }, 500);
             }
 
 
@@ -4433,11 +4562,19 @@ class BuyLockSmithDealsCustomizationFrontEnd {
         /* if ( empty( $cart_item['serviceable_car'] ) ) {
           return $item_data;
           } */
+         
+        if($_REQUEST['test_rsv'] == '1223'){
+        	echo "<pre>";
+        	print_r($cart_item);
+        	echo "</pre>";
+        }
         echo apply_filters(
                 'woocommerce_cart_item_remove_link_custom', sprintf(
                         '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s" data-cart_item_key="%s">X</a>', esc_url('#'), esc_html__('Remove this item', 'woocommerce'), esc_attr($cart_item['product_id']), esc_attr(''), esc_attr($cart_item['key'])
                 ), $cart_item['key']
         );
+
+        $location_add = $cart_item['addons'][0]['value'];
 		$service_call_price='';
         if (!empty($cart_item['addons'])) {
             foreach ($cart_item['addons'] as $addon) {
@@ -4673,7 +4810,7 @@ class BuyLockSmithDealsCustomizationFrontEnd {
 					}
 				}
 			}else{
-				if(isset($cart_item['booking_charge'])){
+				if(isset($cart_item['booking_charge']) && $cart_item['booking_charge'] > 0){
 					$item_data[] = array(
 		                'key' => __('Labor Price', 'iconic'),
 		                'value' => wc_clean(get_woocommerce_currency_symbol().$cart_item['booking_charge']),
@@ -4719,7 +4856,7 @@ class BuyLockSmithDealsCustomizationFrontEnd {
 		
 
 		  //inshop calculation
-		  if($cart_item['inshop_extra_per_cylinders_price'] > 0 || $cart_item['inshop_extra_per_house_key_price'] > 0)
+		  if($cart_item['inshop_extra_per_cylinders_price'] > 0 || $cart_item['inshop_extra_per_house_key_price'] > 0 )
 		  {
 				  if (isset($cart_item['inshop_extra_per_cylinders_price']) ) {
 					  $value_total=$cart_item['inshop_extra_per_cylinders_price'];
@@ -4890,7 +5027,7 @@ class BuyLockSmithDealsCustomizationFrontEnd {
 			
 			
 			if(!empty($values['booking_charge'])){
-				if(!empty($values['inshop_car_key_price']) || $values['inshop_extra_per_cylinders_price'] > 0 || $values['inshop_extra_per_house_key_price'] > 0){
+				if($values['inshop_extra_per_cylinders_price'] > 0 || $values['inshop_extra_per_house_key_price'] > 0){
 				}else{
 					$item->add_meta_data(__('Labor Price', 'blsd'), get_woocommerce_currency_symbol().$values['booking_charge']);
 				}
@@ -4979,6 +5116,7 @@ class BuyLockSmithDealsCustomizationFrontEnd {
     function blsd_before_calculate_totals($cart_obj) {
         global $woocommerce;
         foreach ($cart_obj->get_cart() as $key => $value) {
+			
             if (isset($value['total_price'])) {
                 $price = $value['total_price'];
                 $value['data']->set_price(( $price));

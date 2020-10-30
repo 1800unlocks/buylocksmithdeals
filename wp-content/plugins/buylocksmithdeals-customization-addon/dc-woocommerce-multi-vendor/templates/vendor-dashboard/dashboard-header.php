@@ -18,42 +18,9 @@ if (!defined('ABSPATH')) {
     exit;
 }
 global $WCMp ,$wp;
-session_start();
+//session_start();
 $vendor = get_wcmp_vendor(get_current_vendor_id());
-$author_id=get_current_vendor_id();
-$address1 = get_user_meta($author_id,'_vendor_address_1',true);
-$address2 = get_user_meta($author_id,'_vendor_address_2',true);
-$city = get_user_meta($author_id,'_vendor_city',true);
-$state = get_user_meta($author_id,'_vendor_state',true);
-$postcode = get_user_meta($author_id,'_vendor_postcode',true);
-$vendor_address=$address1.' '.$address2.' '.$city.' '.$state.' '.$postcode;
-if($address1=='' && $address2 == '' && $city== '' && $state == '' && $postcode ==''){
-     ob_start();
-     $panel = $WCMp->vendor_dashboard->dashboard_header_right_panel_nav();
-     $url=$panel['storefront']['url'];
-     $url_end=strtolower($panel['storefront']['label']);
-     $current_url=home_url( $wp->request );
-     $current_end=end(explode("/", $current_url));
-     if($current_end != $url_end){
-         
-         if(!isset($_SESSION['set_redirect_once']) || $_SESSION['set_redirect_once'] != 'redirected' ){
-            $_SESSION['set_redirect_once']='redirect'; 
-            $_SESSION['set_redirect_message']='Please set address!';
-           wp_redirect($url);
-           exit; 
-       }
-       else{
-        $_SESSION['set_redirect_message']='';    
-       }
-     }
-     else{
-      $_SESSION['set_redirect_once']='redirected';  
-     }
-}   
-else{
-  unset($_SESSION['set_redirect_message']);  
-  unset($_SESSION['set_redirect_once']);
-}
+
 
 if($vendor) {
 	$vendor_logo = $vendor->profile_image ? wp_get_attachment_url($vendor->profile_image) : get_avatar_url(get_current_vendor_id(), array('size' => 80));

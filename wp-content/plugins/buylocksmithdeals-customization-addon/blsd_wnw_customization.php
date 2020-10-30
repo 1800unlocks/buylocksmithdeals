@@ -1,5 +1,23 @@
 <?php
 
+/*Modify product query on forntend for showing deleted product - RSV 13-10-2020 start*/
+
+function shop_filter_cat($query) {
+    if (!is_admin() && is_post_type_archive( 'product' ) && $query->is_main_query()) {
+		
+		$query->set('meta_query', array(
+			array ('key' => '_vendor_product_parent',
+				   'compare' => 'NOT EXISTS'
+			)
+		) );   
+	}
+
+    return $query;
+}
+add_action('pre_get_posts','shop_filter_cat',9999,1);
+
+/*End*/
+
 function avlabs_encrypt_decrypt($action, $string) {
     $output = false;
 
@@ -271,7 +289,7 @@ function avlabs_remove_class_action($tag, $class = '', $method, $priority = null
 
 add_action('wp','print_order');
 function print_order(){
-	if($_REQUEST['print_order'] == 'yes'){
+	if(isset($_REQUEST['print_order']) && $_REQUEST['print_order'] == 'yes'){
 		$order = new WC_Order( 3013 );
 		?>
 		<div class="block-grid two-up" style="Margin: 0 auto; min-width: 320px; max-width: 500px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: transparent;">
@@ -385,4 +403,385 @@ function print_order(){
 		<?php
 				exit;
 	}
+}
+
+
+
+add_filter('woocommerce_email_customizer_plus_short_code_values','woocommerce_email_customizer_plus_short_code_values_new',10,4);
+function woocommerce_email_customizer_plus_short_code_values_new($short_codes, $order, $email_arguments, $sample){
+	global $wpdb;
+	$orderid = $order->get_id();
+	$short_codes['url']['dashboard'] = home_url('dashboard');
+
+	//test vendor logo
+	$suborder_authorname=''; 
+	$profile_image='';
+	$sub_orders = get_children( array('post_parent' => $order->get_id(), 'post_type' => 'shop_order' ) );
+	if(!empty($sub_orders)){
+		foreach($sub_orders as $sorder){
+		$suborder_id=$sorder->ID;
+		$suborder_authorid=$sorder->post_author;
+		$suborder_authorname=get_author_name( $suborder_authorid);
+		$vendor_profile_image = get_user_meta($suborder_authorid, '_vendor_profile_image', true);
+		if (isset($vendor_profile_image) && $vendor_profile_image > 0){
+			$profile_image = wp_get_attachment_url($vendor_profile_image);
+		}
+		$code=$order->get_id()."&".$suborder_id."&".$suborder_authorid;
+		$key='buylocksmithdeals';
+		$string=code_encrypt_new($code, $key);
+		$review_rating=site_url().'/review-rating?code='.$string;
+		}
+	}
+	else{
+		$suborder_authorid = get_post_field( 'post_author', $order->get_id() );
+		$suborder_authorname=get_author_name( $suborder_authorid);
+		$vendor_profile_image = get_user_meta($suborder_authorid, '_vendor_profile_image', true);
+		if (isset($vendor_profile_image) && $vendor_profile_image > 0){
+			$profile_image = wp_get_attachment_url($vendor_profile_image);
+		}
+	}
+	if($profile_image == ''){
+		$short_codes['vendor']['logo'] = $suborder_authorname;
+	}else{
+		$short_codes['vendor']['logo'] = "<img width='100px' height='100px' src=".$profile_image.">";
+	}
+	$short_codes['vendor']['name'] = $suborder_authorname;
+
+	$sub_orders = get_children( array('post_parent' => $orderid, 'post_type' => 'shop_order' ) );
+	$review_rating='';
+	foreach($sub_orders as $sorder){
+		$suborder_id=$sorder->ID;
+		$suborder_authorid=$sorder->post_author;
+		$code=$order->get_id()."&".$suborder_id."&".$suborder_authorid;
+		$key='buylocksmithdeals';
+		$string=BuyLockSmithDealsCustomizationAddon::code_encrypt($code, $key);
+		$review_rating=home_url().'/review-rating?code='.$string;
+	}
+	$vendor_review = '<a href="'.$review_rating.'" target="_blank"><button type="button" style="background: #92d050;display: inline-block;padding: 15px 50px;border: 2px solid #2f528f;border-radius: 10px;font-size: 16px;font-weight: 400;color: #fff;cursor: pointer;">Leave Us A Review</button></a>';
+
+	$short_codes['vendor']['vendor_review_button'] = $vendor_review;
+	
+	//test order end date
+	$order_date = wc_format_datetime( $order->get_date_created() );
+	$short_codes['order']['order_date'] = $order_date; 
+
+	//test job schedule details
+	$booking_id = $wpdb->get_var("SELECT ID FROM wp_posts where post_parent=$orderid AND post_type='wc_booking'");
+	if($booking_id!=''){		
+		$booking = get_wc_booking( $booking_id );
+		$booking_start_date = date('d F,Y', $booking->get_start( 'view' ));
+		$booking_start_time = date('h:i a', $booking->get_start( 'view' ));
+	}
+	$short_codes['job_details']['job_time'] = $booking_start_time;
+	$short_codes['job_details']['job_date'] = $booking_start_date;
+
+	//test job item details
+	$item_details = '';
+	$items = $order->get_items();
+	foreach ( $items as $item_id => $item ) :
+		foreach ( $item->get_formatted_meta_data() as $meta_id => $meta ) {
+			if($meta->key == 'Sold By' || $meta->key == 'Subtotal'){
+
+			}else{
+				$item_details .= '<p><b>'.$meta->key. ': </b>' .$meta->value.'<p>';
+			}
+		}
+	endforeach;
+	foreach ( $order->get_order_item_totals() as $key => $total ) {
+		if($total['label'] == 'Subtotal:'){
+
+		}else{
+			if( 'payment_method' === $key ) { 
+				$value = esc_html( $total['value'] ); 
+			}else{ 
+				$value = wp_kses_post( $total['value'] );
+			}
+			$item_details .= '<p><b>'.esc_html( $total['label'] ). ' </b>' .$value.'<p>';
+		}
+	}
+	$short_codes['job_details']['job_meta_all'] = $item_details;
+
+
+	//test vendor details
+	global $WCMp;
+	$items = $order->get_items( 'line_item' );
+	$vendor_array = array();
+	$vendor_details = '';
+	$author_id = '';
+	$is_csd_by_admin = '';
+	foreach( $items as $item_id => $item ) {			
+		$product_id = wc_get_order_item_meta( $item_id, '_product_id', true );
+		if( $product_id ) {				
+			$author_id = wc_get_order_item_meta( $item_id, '_vendor_id', true );
+			if( empty($author_id) ) {
+				$product_vendors = get_wcmp_product_vendors($product_id);
+				if(isset($product_vendors) && (!empty($product_vendors))) {
+					$author_id = $product_vendors->id;
+				}
+				else {
+					$author_id = get_post_field('post_author', $product_id);
+				}
+			}
+			if(isset($vendor_array[$author_id])){
+				$vendor_array[$author_id] = $vendor_array[$author_id].','.$item['name'];
+			}
+			else {
+				$vendor_array[$author_id] = $item['name'];
+			}								
+		}						
+	}
+
+	foreach ($vendor_array as $vendor_id => $products) {
+		if(is_user_wcmp_vendor($vendor_id)){
+			$vendor_meta = get_user_meta($vendor_id);
+			$vendor = get_wcmp_vendor($vendor_id);
+			
+			$vendor_details .= "<p><b>Name: </b>".$vendor->page_title."</p>";
+			$vendor_details .= "<p><b>Get Out Latest Offers at: </b>".site_url().'/locksmith-store/'.$vendor->page_slug."</p>";
+		
+			if($vendor_meta['_vendor_phone'][0] !=''){
+
+				$vendor_details .= "<p><b>Call us: </b>".$vendor_meta['_vendor_phone'][0]."</p>";
+
+			}
+		}
+	}
+	$short_codes['vendor']['contact_details'] = $vendor_details;
+
+	//test order disbute details
+	$dispute_table_name = BuyLockSmithDealsCustomizationAddon::blsd_dispute_table_name();
+	$query = "SELECT * FROM $dispute_table_name WHERE order_id = $suborder_id order by id DESC";
+	$result_dispute = $wpdb->get_row($query);
+	$ordersub = new WC_Order($suborder_id);
+	if($result_dispute){
+		$dispute_message_table_name = BuyLockSmithDealsCustomizationAddon::blsd_dispute_message_table_name();
+		$query = "SELECT * FROM $dispute_message_table_name WHERE dispute_id = $result_dispute->id order by id DESC";
+		$result_message_dispute = $wpdb->get_row($query);
+		
+		ob_start();
+		$customer_dispute_data = blsd_email_dispute_content($order, $result_dispute->who_opose_user_id, $result_message_dispute->title, $result_message_dispute->message, $result_message_dispute->username, $result_message_dispute->phone_number, $result_message_dispute->email, $suborder_id, $is_admin = '0');
+		$customer_dispute_data_echo = ob_get_contents();
+		ob_get_clean();
+		// $short_codes['dispute']['customer_details'] = 'dklfjsldfjkslf';
+		$short_codes['dispute']['customer_details'] = $customer_dispute_data_echo;
+	}
+
+	//test vendor order email details
+	$vendor_order_details = '';
+	$update_job_time = '';
+	$mark_complete = '';
+	$vendor = get_wcmp_vendor(absint($suborder_authorid));
+	$text_align = is_rtl() ? 'right' : 'left';
+	$vendor_order_id = $order->get_id();
+	$vendor_id = $vendor->id;
+	$main_order_id = $wpdb->get_var("SELECT post_parent FROM wp_posts where ID=$vendor_order_id AND post_type='shop_order'");
+	$booking_id = $wpdb->get_var("SELECT ID FROM wp_posts where post_parent=$main_order_id AND post_type='wc_booking'");
+	//important button	
+		if($booking_id != '' && $vendor_id !='' && $vendor_order_id != ''){
+			$request = $vendor_id.'-'.$vendor_order_id.'-'.$booking_id;
+			$encrypt_key = avlabs_encrypt_decrypt('encrypt',$request);
+			$url = site_url().'/?verify='.$encrypt_key;
+			
+			$code=$vendor_id."&".$vendor_order_id;
+			$key='buylocksmithdeals';
+			$string=BuyLockSmithDealsCustomizationAddon::code_encrypt($code, $key);
+			$markUrl = home_url().'/vendor-confirmation?code='.$string;
+			
+			$unique_id=get_post_meta($vendor_order_id,'unique_token',true); 
+			if(empty($unique_id) && $unique_id =='' ){
+				$unique_id=substr(base_convert(sha1(uniqid(mt_rand())), 16, 36), 0, 10);
+			}
+			update_post_meta($vendor_order_id,'unique_token',$unique_id); 
+
+			$update_job_time .='<a href="'.$url.'" style="font-weight: normal;text-decoration: underline;border: 1px solid #77c84e;background: #77c84e;padding: 8px;border-radius: 6px;color: #fff;text-decoration: none;font-weight: 600;">Update Job Time/Date</a>';
+			$mark_complete .= '<a href="'.$markUrl.'" style="font-weight: normal;text-decoration: underline;border: 1px solid #77c84e;background: #77c84e;padding: 8px;border-radius: 6px;color: #fff;text-decoration: none;font-weight: 600;">Mark Completed</a>';
+			
+		}
+	
+		//vendor order table
+
+		ob_start();
+		?>
+			<table cellspacing="0" cellpadding="6" style="width: 100%; border: 1px solid #eee;" border="1" bordercolor="#eee">
+				<thead>
+					<tr>
+						<?php do_action('wcmp_before_vendor_order_table_header', $order, $vendor->term_id); ?>
+						<th scope="col" style="text-align:<?php echo $text_align; ?>; border: 1px solid #eee;"><?php _e('Product', 'dc-woocommerce-multi-vendor'); ?></th>
+						<th scope="col" style="text-align:<?php echo $text_align; ?>; border: 1px solid #eee;"><?php _e('Quantity', 'dc-woocommerce-multi-vendor'); ?></th>
+						<th scope="col" style="text-align:<?php echo $text_align; ?>; border: 1px solid #eee;"><?php _e('Commission', 'dc-woocommerce-multi-vendor'); ?></th>
+						<?php do_action('wcmp_after_vendor_order_table_header', $order, $vendor->term_id); ?>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+					$vendor->vendor_order_item_table($order, $vendor->term_id);
+
+					?>
+				</tbody>
+			</table>
+			
+			<?php
+		$vendor_order_details = ob_get_contents();
+		ob_get_clean();
+	$short_codes['vendor']['order_details'] = $vendor_order_details; 
+	$short_codes['vendor']['update_job_time'] = $update_job_time; 
+	$short_codes['vendor']['mark_complete'] = $mark_complete; 
+
+	//test feedback code
+	$social_logo = '';
+	
+	$suborder_authorname=''; 
+	$profile_image='';
+	$sub_orders = get_children( array('post_parent' => $orderid, 'post_type' => 'shop_order' ) );
+	foreach($sub_orders as $sorder){
+		$suborder_id=$sorder->ID;
+		$suborder_authorid=$sorder->post_author;
+		$suborder_authorname=get_author_name( $suborder_authorid);
+		$vendor_profile_image = get_user_meta($suborder_authorid, '_vendor_profile_image', true);
+		if (isset($vendor_profile_image) && $vendor_profile_image > 0){
+			$profile_image = wp_get_attachment_url($vendor_profile_image);
+		}
+	}
+
+	$sharing_fb_image=BUYLOCKSMITH_DEALS_ASSETS_PATH.'img/review-us-facebook.jpg';
+	$sharing_google_image=BUYLOCKSMITH_DEALS_ASSETS_PATH.'img/review-us-google.jpg';
+	$sharing_unlocks_image=BUYLOCKSMITH_DEALS_ASSETS_PATH.'img/review-us-1800.jpg';
+	$vendor_fb_profile = get_user_meta($suborder_authorid, '_vendor_fb_profile', true);
+	$vendor_google_plus_profile = get_user_meta($suborder_authorid, '_vendor_google_plus_profile', true);
+	$vendor_1800_unlocks_profile = get_user_meta($suborder_authorid,'vendor_1800_unlocks_profile',1);
+
+	$social_logo = '<div style="margin-bottom: 40px;">
+	<table class="td" cellspacing="0" cellpadding="6" style="width: 100%; font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;">
+		<tbody>
+				<tr>
+					<td>
+						<a href="'.$vendor_fb_profile.'" target="_blank" ><img src="'.$sharing_fb_image.'" height="150" width="140"></a>       
+						<a href="'.$vendor_google_plus_profile.'" target="_blank" ><img src="'.$sharing_google_image.'" height="150" width="140"></a>       
+						<a href="'.$vendor_1800_unlocks_profile.'" target="_blank" ><img src="'.$sharing_unlocks_image.'" height="150" width="140"></a>       
+					</td>
+				</tr>
+		</tbody>
+	</table>
+	</div>';
+
+	$short_codes['vendor']['social_logo'] = $social_logo; 
+	
+	//job update
+	$booking_orders = get_children( array('post_parent' => $orderid, 'post_type' => 'wc_booking' ) );
+	foreach($booking_orders as $border){
+		$border_id=$border->ID;
+		$old_booking_details = get_post_meta($border_id, 'booking_update_details', true);
+	}
+	$additional_content_data=explode('||',$old_booking_details);
+	$short_codes['booking']['before'] = $additional_content_data[0].' at '.$additional_content_data[1];
+	$short_codes['booking']['after'] = $additional_content_data[2].' at '.$additional_content_data[3];
+
+	return $short_codes;
+}
+
+
+function blsd_email_dispute_content($order, $customer_id, $title, $message_dispute, $username, $phone_number, $email, $order_number, $is_admin) {
+
+	$order_id = $order->get_order_number();
+	// echo "<br>";
+	$body = '';
+	$order_post = get_post($order_id);
+	$parent_id = wp_get_post_parent_id($order_post);
+	// echo "<br>";
+	$product_table = '<table style="width:100%;border-collapse: collapse;" border="1">
+	<tr>
+	  <th>Order ID</th>
+	  <th>Parent Order ID</th>
+	  <th>Product</th>
+	</tr>';
+	$order_items = $order->get_items();
+	foreach ($order->get_items() as $item_id => $item_data) {
+		// Get an instance of corresponding the WC_Product object
+		$product = $item_data->get_product();
+		  if($product!=''){
+			$product_name = $product->get_name(); // Get the product name
+		}else{
+			global $wpdb;
+			$table_name = $wpdb->prefix.'woocommerce_order_items';
+			 $query = "SELECT order_item_name FROM $table_name WHERE order_item_id=$item_id";
+				$results_order_item = (array) $wpdb->get_results($wpdb->prepare($query, $type), ARRAY_A);
+			   if(count($results_order_item)){
+				   $product_name = $results_order_item[0]['order_item_name'];
+			   }
+		}
+
+		$item_quantity = $item_data->get_quantity(); // Get the item quantity
+
+		$item_total = $item_data->get_total(); // Get the item line total
+
+		$product_table .= "<tr><td>$order_id</td>";
+		$product_table .= "<td>$parent_id</td>";
+		$product_table .= "<td> $product_name X $item_quantity = ". number_format((float)$item_total, 2, '.', ''). " </td></tr>";
+	}
+	$product_table .= '</table>';
+
+	if($is_admin == '0'){
+	//if customer 
+		$body='';
+		$body .='<tr><td>';
+		$body .='<span>Name:'.$username.'</span>'.'<br>';
+		$body .='<span>Phone Number:'.$phone_number.'</span>'.'<br>';
+		$body .='<span>Email:'.$email.'</span>'.'<br>';
+		$body .='<span>Order Number:'.$order_number.'</span>'.'<br>';
+		$body .='<span>Dispute Title:'.$title.'</span>'.'<br>';
+		$body .='<span>Dispute Message:'.$message_dispute.'</span>'.'<br>';
+		$body .='</br></br>';
+		$body .='Product detail:';
+		$body .=$product_table;
+		
+		$body .='</td></tr>';
+		$body .='Please visit in your account.';
+			
+	}else{
+
+	//if admin 
+		$body='';
+		$body .='<tr><td>';
+		$body .='<span>Name:'.$username.'</span>'.'<br>';
+		$body .='<span>Phone Number:'.$phone_number.'</span>'.'<br>';
+		$body .='<span>Email:'.$email.'</span>'.'<br>';
+		$body .='<span>Order Number:'.$order_number.'</span>'.'<br>';
+		$body .='<span>Dispute Title:'.$title.'</span>'.'<br>';
+		$body .='<span>Dispute Message:'.$message_dispute.'</span>'.'<br>';
+		$body .='</br></br>';
+		$body .='Product detail:';
+		$body .=$product_table;
+		
+		$body .='</td></tr>';
+	}
+?>
+	<div style="margin-bottom: 40px;">
+			<table class="td" cellspacing="0" cellpadding="6" style="width: 100%; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;" >
+					<tbody>
+						<?php echo $body; ?>
+					</tbody>
+			</table>
+	</div>
+<?php
+
+
+}
+
+function code_encrypt_new($string, $key) {
+	$result = "";
+	for ($i = 0; $i < strlen($string); $i++) {
+		$char = substr($string, $i, 1);
+		$keychar = substr($key, ($i % strlen($key)) - 1, 1);
+		$char = chr(ord($char) + ord($keychar));
+		$result .= $char;
+	}
+	$salt_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxys0123456789";
+	$length = rand(1, 15);
+	$salt = "";
+	for ($i = 0; $i <= $length; $i++) {
+		$salt .= substr($salt_string, rand(0, strlen($salt_string)), 1);
+	}
+	$salt_length = strlen($salt);
+	$end_length = strlen(strval($salt_length));
+	return base64_encode($result . $salt . $salt_length . $end_length);
 }

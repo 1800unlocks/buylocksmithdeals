@@ -213,8 +213,12 @@ class BuyLockSmithDealsCustomizationEmail {
 				)
 			); 
                         $headers = "Content-Type: text/html\r\n";
+
+                        //send custom email blsd
+                        do_action( 'vendor_dispute_email', $parent_order_id );
+
                         //send the email through wordpress
-                        $mailer->send( $recipient, $subject, $content, $headers, $attachments );
+                        // $mailer->send( $recipient, $subject, $content, $headers, $attachments );
         
             /*************************************/
             
@@ -278,8 +282,12 @@ class BuyLockSmithDealsCustomizationEmail {
 				)
 			); 
 			$headers = "Content-Type: text/html\r\n";
+
+            //send custom email blsd
+            do_action( 'vendor_dispute_email', $parent_order_id, $admin_id);
+
 			//send the email through wordpress
-			$mailer->send( $recipient, $subject, $content, $headers, $attachments );
+			// $mailer->send( $recipient, $subject, $content, $headers, $attachments );
             
             /************************************/
           //  wp_mail($to, $subject, $message, $headers);

@@ -63,6 +63,11 @@ if(isset($_POST['update_btn']) && $_POST['update_btn'] == 'Update'){
 		$booking->save();
 
 		do_action( 'woocommerce_booking_process_meta', $post_id );
+
+		$booking_update_details = $before_update_booking_date.'||'.$before_update_booking_time.'||'.$after_update_booking_date.'||'.$after_update_booking_time;
+		update_post_meta($post_id, 'booking_update_details',$booking_update_details);
+
+
                 $order = wc_get_order( $orderid );
                 $parent_order_id = $order->get_parent_id();
                 $parent_order = wc_get_order( $parent_order_id );
@@ -87,8 +92,12 @@ if(isset($_POST['update_btn']) && $_POST['update_btn'] == 'Update'){
 				)
 			); 
                 $headers = "Content-Type: text/html\r\n";
+
+                //send custom email
+                do_action('vendor_job_change_email',$parent_order_id);
+                
                 //send the email through wordpress
-                $mailer->send( $recipient, $subject, $content, $headers, $attachments );
+                // $mailer->send( $recipient, $subject, $content, $headers, $attachments );
 
 		
                 

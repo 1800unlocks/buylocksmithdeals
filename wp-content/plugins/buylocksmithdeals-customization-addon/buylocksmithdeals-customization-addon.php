@@ -49,6 +49,7 @@ define( 'BUYLOCKSMITH_DEALS_WC_BOOKINGS_TEMPLATE_PATH', untrailingslashit( plugi
 define( 'BUYLOCKSMITH_DEALS_DIR' , __DIR__  );
 
 include('blsd_wnw_customization.php');
+include('custom-order-function.php');
 // Include the main WooCommerce class.
 if (!class_exists('BuyLockSmithDealsCustomizationAddon', false)) {
 
@@ -104,7 +105,7 @@ function wpa3396_page_template( $page_template )
     return $page_template;
 }
 
-add_action('wp','test_commission');
+//add_action('wp','test_commission');
 
 function test_commission(){
     global $WCMp;
@@ -144,7 +145,7 @@ function test_commission(){
 }
 
 /**************************29-07-2020**************************************/
-add_action( 'woocommerce_order_status_processing', 'avlabs_woocommerce_order_status_processing', 10, 1 );
+/* add_action( 'woocommerce_order_status_processing', 'avlabs_woocommerce_order_status_processing', 10, 1 );
 add_action( 'woocommerce_order_status_completed', 'avlabs_woocommerce_order_status_processing', 10, 1 );
 
 function avlabs_woocommerce_order_status_processing($order_id){
@@ -173,7 +174,7 @@ function avlabs_woocommerce_order_status_processing($order_id){
 		
 								$myfile = fopen("order_created.txt", "w") or die("Unable to open file!");
 								fwrite($myfile, serialize($response));
-								fclose($myfile); */
+								fclose($myfile); 
 								
 							}
 					 }
@@ -185,3 +186,17 @@ function avlabs_woocommerce_order_status_processing($order_id){
 		 }
 		 
 }
+ */
+add_filter('woocommerce_ajax_loader_url', 'woo_custom_cart_loader');
+function woo_custom_cart_loader() {
+ 
+ global $woocommerce;
+ 
+    if(is_checkout() || is_cart()){
+        return __('https://buylocksmithdeals.com/wp-content/uploads/2020/09/gif-loading.gif', 'woocommerce');
+    } else {
+        return __('https://buylocksmithdeals.com/wp-content/uploads/2020/09/gif-loading.gif', 'woocommerce');
+    }
+}
+
+include('blsd-email-manager.php');
